@@ -1,0 +1,5 @@
+Warning (10268): Verilog HDL information at Drive_Clock.v(36): always construct contains both blocking and non-blocking assignments
+Warning (10268): Verilog HDL information at App_Led.v(29): always construct contains both blocking and non-blocking assignments
+Warning (10268): Verilog HDL information at Drive_Usart_Handle.v(41): always construct contains both blocking and non-blocking assignments
+Warning (10268): Verilog HDL information at Drive_Usart_Handle.v(195): always construct contains both blocking and non-blocking assignments
+Warning (10268): Verilog HDL information at Drive_Usart_Bsp.v(79): always construct contains both blocking and non-blocking assignments

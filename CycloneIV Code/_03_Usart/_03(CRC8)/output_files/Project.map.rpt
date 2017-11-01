@@ -1,0 +1,1043 @@
+Analysis & Synthesis report for Project
+Wed Apr 26 21:26:55 2017
+Quartus II 64-Bit Version 15.0.0 Build 145 04/22/2015 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. User-Specified and Inferred Latches
+  9. Registers Removed During Synthesis
+ 10. General Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Parameter Settings for User Entity Instance: Drive_Uart_Top:Drive_Uart_Top0|uart_rx:uart_rx
+ 13. Parameter Settings for User Entity Instance: Drive_Uart_Top:Drive_Uart_Top0|uart_tx:uart_tx
+ 14. Parameter Settings for Inferred Entity Instance: Drive_Clock:Drive_Clock0|lpm_divide:Mod2
+ 15. Parameter Settings for Inferred Entity Instance: App_Led:App_Led0|lpm_divide:Mod0
+ 16. Parameter Settings for Inferred Entity Instance: Drive_Clock:Drive_Clock0|lpm_divide:Mod0
+ 17. Parameter Settings for Inferred Entity Instance: Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|lpm_divide:Mod0
+ 18. Port Connectivity Checks: "Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff"
+ 19. Port Connectivity Checks: "Drive_Clock:Drive_Clock0"
+ 20. Post-Synthesis Netlist Statistics for Top Partition
+ 21. Elapsed Time Per Partition
+ 22. Analysis & Synthesis Messages
+ 23. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2015 Altera Corporation. All rights reserved.
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, the Altera Quartus II License Agreement,
+the Altera MegaCore Function License Agreement, or other 
+applicable license agreement, including, without limitation, 
+that your use is for the sole purpose of programming logic 
+devices manufactured by Altera and sold by Altera or its 
+authorized distributors.  Please refer to the applicable 
+agreement for further details.
+
+
+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++------------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Wed Apr 26 21:26:55 2017       ;
+; Quartus II 64-Bit Version          ; 15.0.0 Build 145 04/22/2015 SJ Full Version ;
+; Revision Name                      ; Project                                     ;
+; Top-level Entity Name              ; Interface_bsp                               ;
+; Family                             ; Cyclone IV E                                ;
+; Total logic elements               ; 1,387                                       ;
+;     Total combinational functions  ; 1,385                                       ;
+;     Dedicated logic registers      ; 117                                         ;
+; Total registers                    ; 117                                         ;
+; Total pins                         ; 12                                          ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 0                                           ;
+; Embedded Multiplier 9-bit elements ; 0                                           ;
+; Total PLLs                         ; 0                                           ;
++------------------------------------+---------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EP4CE22E22C8       ;                    ;
+; Top-level entity name                                                      ; Interface_bsp      ; Project            ;
+; Family name                                                                ; Cyclone IV E       ; Cyclone V          ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                 ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM Block Balancing                                                   ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; On                 ; On                 ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
+; Synthesis Seed                                                             ; 1                  ; 1                  ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 6           ;
+; Maximum allowed            ; 6           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 6           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-6         ; < 0.1%      ;
++----------------------------+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                               ;
++----------------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path       ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                                     ; Library ;
++----------------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------------------------+---------+
+; _01_Interface/Interface_bsp.v          ; yes             ; User Verilog HDL File        ; E:/_10_EnglishPath/_05_CycloneIV Code/_03_Usart/_03(CRC8)/_01_Interface/Interface_bsp.v          ;         ;
+; _02_Drive/Drive_Clock.v                ; yes             ; User Verilog HDL File        ; E:/_10_EnglishPath/_05_CycloneIV Code/_03_Usart/_03(CRC8)/_02_Drive/Drive_Clock.v                ;         ;
+; _03_App/App_Led.v                      ; yes             ; User Verilog HDL File        ; E:/_10_EnglishPath/_05_CycloneIV Code/_03_Usart/_03(CRC8)/_03_App/App_Led.v                      ;         ;
+; _02_Drive/Drive_Uart/Drive_Uart_Top.v  ; yes             ; User Verilog HDL File        ; E:/_10_EnglishPath/_05_CycloneIV Code/_03_Usart/_03(CRC8)/_02_Drive/Drive_Uart/Drive_Uart_Top.v  ;         ;
+; _02_Drive/Drive_Uart/uart_rx.v         ; yes             ; User Verilog HDL File        ; E:/_10_EnglishPath/_05_CycloneIV Code/_03_Usart/_03(CRC8)/_02_Drive/Drive_Uart/uart_rx.v         ;         ;
+; _02_Drive/Drive_Uart/uart_tx.v         ; yes             ; User Verilog HDL File        ; E:/_10_EnglishPath/_05_CycloneIV Code/_03_Usart/_03(CRC8)/_02_Drive/Drive_Uart/uart_tx.v         ;         ;
+; _02_Drive/Drive_Uart/clkdiv.v          ; yes             ; User Verilog HDL File        ; E:/_10_EnglishPath/_05_CycloneIV Code/_03_Usart/_03(CRC8)/_02_Drive/Drive_Uart/clkdiv.v          ;         ;
+; _02_Drive/Drive_Uart/Drive_Uart_Buff.v ; yes             ; User Verilog HDL File        ; E:/_10_EnglishPath/_05_CycloneIV Code/_03_Usart/_03(CRC8)/_02_Drive/Drive_Uart/Drive_Uart_Buff.v ;         ;
+; lpm_divide.tdf                         ; yes             ; Megafunction                 ; d:/altera/15/quartus/libraries/megafunctions/lpm_divide.tdf                                      ;         ;
+; abs_divider.inc                        ; yes             ; Megafunction                 ; d:/altera/15/quartus/libraries/megafunctions/abs_divider.inc                                     ;         ;
+; sign_div_unsign.inc                    ; yes             ; Megafunction                 ; d:/altera/15/quartus/libraries/megafunctions/sign_div_unsign.inc                                 ;         ;
+; aglobal150.inc                         ; yes             ; Megafunction                 ; d:/altera/15/quartus/libraries/megafunctions/aglobal150.inc                                      ;         ;
+; db/lpm_divide_lcm.tdf                  ; yes             ; Auto-Generated Megafunction  ; E:/_10_EnglishPath/_05_CycloneIV Code/_03_Usart/_03(CRC8)/db/lpm_divide_lcm.tdf                  ;         ;
+; db/sign_div_unsign_bnh.tdf             ; yes             ; Auto-Generated Megafunction  ; E:/_10_EnglishPath/_05_CycloneIV Code/_03_Usart/_03(CRC8)/db/sign_div_unsign_bnh.tdf             ;         ;
+; db/alt_u_div_9af.tdf                   ; yes             ; Auto-Generated Megafunction  ; E:/_10_EnglishPath/_05_CycloneIV Code/_03_Usart/_03(CRC8)/db/alt_u_div_9af.tdf                   ;         ;
+; db/add_sub_7pc.tdf                     ; yes             ; Auto-Generated Megafunction  ; E:/_10_EnglishPath/_05_CycloneIV Code/_03_Usart/_03(CRC8)/db/add_sub_7pc.tdf                     ;         ;
+; db/add_sub_8pc.tdf                     ; yes             ; Auto-Generated Megafunction  ; E:/_10_EnglishPath/_05_CycloneIV Code/_03_Usart/_03(CRC8)/db/add_sub_8pc.tdf                     ;         ;
+; db/lpm_divide_bbm.tdf                  ; yes             ; Auto-Generated Megafunction  ; E:/_10_EnglishPath/_05_CycloneIV Code/_03_Usart/_03(CRC8)/db/lpm_divide_bbm.tdf                  ;         ;
+; db/sign_div_unsign_0mh.tdf             ; yes             ; Auto-Generated Megafunction  ; E:/_10_EnglishPath/_05_CycloneIV Code/_03_Usart/_03(CRC8)/db/sign_div_unsign_0mh.tdf             ;         ;
+; db/alt_u_div_k7f.tdf                   ; yes             ; Auto-Generated Megafunction  ; E:/_10_EnglishPath/_05_CycloneIV Code/_03_Usart/_03(CRC8)/db/alt_u_div_k7f.tdf                   ;         ;
+; db/lpm_divide_qcm.tdf                  ; yes             ; Auto-Generated Megafunction  ; E:/_10_EnglishPath/_05_CycloneIV Code/_03_Usart/_03(CRC8)/db/lpm_divide_qcm.tdf                  ;         ;
+; db/sign_div_unsign_fnh.tdf             ; yes             ; Auto-Generated Megafunction  ; E:/_10_EnglishPath/_05_CycloneIV Code/_03_Usart/_03(CRC8)/db/sign_div_unsign_fnh.tdf             ;         ;
+; db/alt_u_div_iaf.tdf                   ; yes             ; Auto-Generated Megafunction  ; E:/_10_EnglishPath/_05_CycloneIV Code/_03_Usart/_03(CRC8)/db/alt_u_div_iaf.tdf                   ;         ;
+; db/lpm_divide_n9m.tdf                  ; yes             ; Auto-Generated Megafunction  ; E:/_10_EnglishPath/_05_CycloneIV Code/_03_Usart/_03(CRC8)/db/lpm_divide_n9m.tdf                  ;         ;
+; db/sign_div_unsign_ckh.tdf             ; yes             ; Auto-Generated Megafunction  ; E:/_10_EnglishPath/_05_CycloneIV Code/_03_Usart/_03(CRC8)/db/sign_div_unsign_ckh.tdf             ;         ;
+; db/alt_u_div_c4f.tdf                   ; yes             ; Auto-Generated Megafunction  ; E:/_10_EnglishPath/_05_CycloneIV Code/_03_Usart/_03(CRC8)/db/alt_u_div_c4f.tdf                   ;         ;
++----------------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------------------------+---------+
+
+
++------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                ;
++---------------------------------------------+--------------+
+; Resource                                    ; Usage        ;
++---------------------------------------------+--------------+
+; Estimated Total logic elements              ; 1,387        ;
+;                                             ;              ;
+; Total combinational functions               ; 1385         ;
+; Logic element usage by number of LUT inputs ;              ;
+;     -- 4 input functions                    ; 461          ;
+;     -- 3 input functions                    ; 379          ;
+;     -- <=2 input functions                  ; 545          ;
+;                                             ;              ;
+; Logic elements by mode                      ;              ;
+;     -- normal mode                          ; 986          ;
+;     -- arithmetic mode                      ; 399          ;
+;                                             ;              ;
+; Total registers                             ; 117          ;
+;     -- Dedicated logic registers            ; 117          ;
+;     -- I/O registers                        ; 0            ;
+;                                             ;              ;
+; I/O pins                                    ; 12           ;
+;                                             ;              ;
+; Embedded Multiplier 9-bit elements          ; 0            ;
+;                                             ;              ;
+; Maximum fan-out node                        ; in_clr~input ;
+; Maximum fan-out                             ; 85           ;
+; Total fan-out                               ; 4381         ;
+; Average fan-out                             ; 2.85         ;
++---------------------------------------------+--------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                                     ;
++----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node                   ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                                           ; Library Name ;
++----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
+; |Interface_bsp                               ; 1385 (0)          ; 117 (0)      ; 0           ; 0            ; 0       ; 0         ; 12   ; 0            ; |Interface_bsp                                                                                                                                                                ; work         ;
+;    |App_Led:App_Led0|                        ; 54 (13)           ; 10 (10)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Interface_bsp|App_Led:App_Led0                                                                                                                                               ; work         ;
+;       |lpm_divide:Mod0|                      ; 41 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Interface_bsp|App_Led:App_Led0|lpm_divide:Mod0                                                                                                                               ; work         ;
+;          |lpm_divide_bbm:auto_generated|     ; 41 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Interface_bsp|App_Led:App_Led0|lpm_divide:Mod0|lpm_divide_bbm:auto_generated                                                                                                 ; work         ;
+;             |sign_div_unsign_0mh:divider|    ; 41 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Interface_bsp|App_Led:App_Led0|lpm_divide:Mod0|lpm_divide_bbm:auto_generated|sign_div_unsign_0mh:divider                                                                     ; work         ;
+;                |alt_u_div_k7f:divider|       ; 41 (41)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Interface_bsp|App_Led:App_Led0|lpm_divide:Mod0|lpm_divide_bbm:auto_generated|sign_div_unsign_0mh:divider|alt_u_div_k7f:divider                                               ; work         ;
+;    |Drive_Clock:Drive_Clock0|                ; 809 (49)          ; 30 (30)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Interface_bsp|Drive_Clock:Drive_Clock0                                                                                                                                       ; work         ;
+;       |lpm_divide:Mod0|                      ; 141 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Interface_bsp|Drive_Clock:Drive_Clock0|lpm_divide:Mod0                                                                                                                       ; work         ;
+;          |lpm_divide_qcm:auto_generated|     ; 141 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Interface_bsp|Drive_Clock:Drive_Clock0|lpm_divide:Mod0|lpm_divide_qcm:auto_generated                                                                                         ; work         ;
+;             |sign_div_unsign_fnh:divider|    ; 141 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Interface_bsp|Drive_Clock:Drive_Clock0|lpm_divide:Mod0|lpm_divide_qcm:auto_generated|sign_div_unsign_fnh:divider                                                             ; work         ;
+;                |alt_u_div_iaf:divider|       ; 141 (141)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Interface_bsp|Drive_Clock:Drive_Clock0|lpm_divide:Mod0|lpm_divide_qcm:auto_generated|sign_div_unsign_fnh:divider|alt_u_div_iaf:divider                                       ; work         ;
+;       |lpm_divide:Mod2|                      ; 619 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Interface_bsp|Drive_Clock:Drive_Clock0|lpm_divide:Mod2                                                                                                                       ; work         ;
+;          |lpm_divide_lcm:auto_generated|     ; 619 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Interface_bsp|Drive_Clock:Drive_Clock0|lpm_divide:Mod2|lpm_divide_lcm:auto_generated                                                                                         ; work         ;
+;             |sign_div_unsign_bnh:divider|    ; 619 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Interface_bsp|Drive_Clock:Drive_Clock0|lpm_divide:Mod2|lpm_divide_lcm:auto_generated|sign_div_unsign_bnh:divider                                                             ; work         ;
+;                |alt_u_div_9af:divider|       ; 619 (619)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Interface_bsp|Drive_Clock:Drive_Clock0|lpm_divide:Mod2|lpm_divide_lcm:auto_generated|sign_div_unsign_bnh:divider|alt_u_div_9af:divider                                       ; work         ;
+;    |Drive_Uart_Top:Drive_Uart_Top0|          ; 522 (0)           ; 77 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Interface_bsp|Drive_Uart_Top:Drive_Uart_Top0                                                                                                                                 ; work         ;
+;       |Drive_Uart_Buff:Drive_Uart_Buff|      ; 406 (386)         ; 26 (26)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Interface_bsp|Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff                                                                                                 ; work         ;
+;          |lpm_divide:Mod0|                   ; 20 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Interface_bsp|Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|lpm_divide:Mod0                                                                                 ; work         ;
+;             |lpm_divide_n9m:auto_generated|  ; 20 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Interface_bsp|Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|lpm_divide:Mod0|lpm_divide_n9m:auto_generated                                                   ; work         ;
+;                |sign_div_unsign_ckh:divider| ; 20 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Interface_bsp|Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|lpm_divide:Mod0|lpm_divide_n9m:auto_generated|sign_div_unsign_ckh:divider                       ; work         ;
+;                   |alt_u_div_c4f:divider|    ; 20 (20)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Interface_bsp|Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|lpm_divide:Mod0|lpm_divide_n9m:auto_generated|sign_div_unsign_ckh:divider|alt_u_div_c4f:divider ; work         ;
+;       |clkdiv:clkdiv|                        ; 29 (29)           ; 17 (17)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Interface_bsp|Drive_Uart_Top:Drive_Uart_Top0|clkdiv:clkdiv                                                                                                                   ; work         ;
+;       |uart_rx:uart_rx|                      ; 50 (50)           ; 21 (21)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Interface_bsp|Drive_Uart_Top:Drive_Uart_Top0|uart_rx:uart_rx                                                                                                                 ; work         ;
+;       |uart_tx:uart_tx|                      ; 37 (37)           ; 13 (13)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Interface_bsp|Drive_Uart_Top:Drive_Uart_Top0|uart_tx:uart_tx                                                                                                                 ; work         ;
++----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                                                                                                           ;
++-----------------------------------------------------------------------------------+----------------------------------------------------------------------------------+------------------------+
+; Latch Name                                                                        ; Latch Enable Signal                                                              ; Free of Timing Hazards ;
++-----------------------------------------------------------------------------------+----------------------------------------------------------------------------------+------------------------+
+; Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|led[0]             ; Drive_Uart_Top:Drive_Uart_Top0|uart_rx:uart_rx|rdsig                             ; yes                    ;
+; Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|send_buff[2][4]    ; Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|send_buff[2][0]   ; yes                    ;
+; Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|send_buff[5][4]    ; Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|send_buff[3][0]   ; yes                    ;
+; Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|send_buff[8][4]    ; Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|send_buff[3][0]   ; yes                    ;
+; Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|send_start_flag    ; Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|send_start_flag   ; yes                    ;
+; Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|send_buff[5][5]    ; Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|send_buff[3][0]   ; yes                    ;
+; Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|send_buff[4][5]    ; Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|send_buff[3][0]   ; yes                    ;
+; Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|send_buff[3][5]    ; Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|send_buff[3][0]   ; yes                    ;
+; Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|send_buff[8][3]    ; Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|send_buff[3][0]   ; yes                    ;
+; Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|send_buff[7][3]    ; Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|send_buff[3][0]   ; yes                    ;
+; Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|send_buff[4][3]    ; Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|send_buff[3][0]   ; yes                    ;
+; Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|send_buff[1][3]    ; Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|send_buff[2][0]   ; yes                    ;
+; Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|send_buff[7][6]    ; Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|send_buff[3][0]   ; yes                    ;
+; Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|send_buff[8][6]    ; Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|send_buff[3][0]   ; yes                    ;
+; Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|send_buff[6][6]    ; Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|send_buff[3][0]   ; yes                    ;
+; Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|send_buff[7][0]    ; Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|send_buff[3][0]   ; yes                    ;
+; Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|send_buff[5][0]    ; Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|send_buff[3][0]   ; yes                    ;
+; Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|send_buff[1][0]    ; Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|send_buff[2][0]   ; yes                    ;
+; Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|send_buff[3][0]    ; Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|send_buff[3][0]   ; yes                    ;
+; Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|send_buff[2][1]    ; Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|send_buff[2][0]   ; yes                    ;
+; Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|send_buff[5][1]    ; Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|send_buff[3][0]   ; yes                    ;
+; Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|send_buff[1][1]    ; Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|send_buff[2][0]   ; yes                    ;
+; Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|send_buff[6][1]    ; Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|send_buff[3][0]   ; yes                    ;
+; Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|send_buff[7][2]    ; Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|send_buff[3][0]   ; yes                    ;
+; Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|send_buff[5][2]    ; Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|send_buff[3][0]   ; yes                    ;
+; Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|send_buff[4][2]    ; Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|send_buff[3][0]   ; yes                    ;
+; Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|send_buff[2][2]    ; Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|send_buff[2][0]   ; yes                    ;
+; Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|send_buff[1][2]    ; Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|send_buff[2][0]   ; yes                    ;
+; Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|receive_buff[1][0] ; Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|Decoder0          ; yes                    ;
+; Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|receive_buff[1][1] ; Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|Decoder0          ; yes                    ;
+; Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|receive_buff[1][2] ; Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|Decoder0          ; yes                    ;
+; Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|receive_buff[1][3] ; Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|Decoder0          ; yes                    ;
+; Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|receive_buff[1][4] ; Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|Decoder0          ; yes                    ;
+; Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|receive_buff[1][5] ; Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|Decoder0          ; yes                    ;
+; Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|receive_buff[1][6] ; Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|Decoder0          ; yes                    ;
+; Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|receive_buff[1][7] ; Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|Decoder0          ; yes                    ;
+; Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|receive_buff_flag  ; Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|receive_buff_flag ; yes                    ;
+; Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|receive_buff[0][0] ; Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|Decoder0          ; yes                    ;
+; Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|receive_buff[0][1] ; Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|Decoder0          ; yes                    ;
+; Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|receive_buff[0][2] ; Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|Decoder0          ; yes                    ;
+; Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|receive_buff[0][3] ; Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|Decoder0          ; yes                    ;
+; Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|receive_buff[0][4] ; Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|Decoder0          ; yes                    ;
+; Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|receive_buff[0][5] ; Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|Decoder0          ; yes                    ;
+; Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|receive_buff[0][6] ; Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|Decoder0          ; yes                    ;
+; Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|receive_buff[0][7] ; Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|Decoder0          ; yes                    ;
+; Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|receive_cnt[0]     ; Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|receive_cnt[7]    ; yes                    ;
+; Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|receive_cnt[1]     ; Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|receive_cnt[7]    ; yes                    ;
+; Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|receive_cnt[2]     ; Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|receive_cnt[7]    ; yes                    ;
+; Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|receive_cnt[3]     ; Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|receive_cnt[7]    ; yes                    ;
+; Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|receive_buff[9][0] ; Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|Decoder0          ; yes                    ;
+; Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|receive_buff[9][1] ; Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|Decoder0          ; yes                    ;
+; Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|receive_buff[9][2] ; Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|Decoder0          ; yes                    ;
+; Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|receive_buff[9][3] ; Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|Decoder0          ; yes                    ;
+; Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|receive_buff[9][4] ; Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|Decoder0          ; yes                    ;
+; Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|receive_buff[9][5] ; Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|Decoder0          ; yes                    ;
+; Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|receive_buff[9][6] ; Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|Decoder0          ; yes                    ;
+; Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|receive_buff[9][7] ; Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|Decoder0          ; yes                    ;
+; Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|receive_time_over  ; Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|receive_time_over ; yes                    ;
+; Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|cnt_ms[0]          ; Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|cnt_ms[0]         ; yes                    ;
+; Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|cnt_ms[1]          ; Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|cnt_ms[0]         ; yes                    ;
+; Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|cnt_ms[2]          ; Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|cnt_ms[0]         ; yes                    ;
+; Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|cnt_ms[3]          ; Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|cnt_ms[0]         ; yes                    ;
+; Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|cnt_ms[4]          ; Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|cnt_ms[0]         ; yes                    ;
+; Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|cnt_ms[5]          ; Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|cnt_ms[0]         ; yes                    ;
+; Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|cnt_ms[6]          ; Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|cnt_ms[0]         ; yes                    ;
+; Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|cnt_ms[7]          ; Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|cnt_ms[0]         ; yes                    ;
+; Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|cnt_ms[8]          ; Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|cnt_ms[0]         ; yes                    ;
+; Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|cnt_ms[9]          ; Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|cnt_ms[0]         ; yes                    ;
+; Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|cnt_ms[10]         ; Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|cnt_ms[0]         ; yes                    ;
+; Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|cnt_ms[11]         ; Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|cnt_ms[0]         ; yes                    ;
+; Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|cnt_ms[12]         ; Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|cnt_ms[0]         ; yes                    ;
+; Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|cnt_ms[13]         ; Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|cnt_ms[0]         ; yes                    ;
+; Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|cnt_ms[14]         ; Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|cnt_ms[0]         ; yes                    ;
+; Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|cnt_ms[15]         ; Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|cnt_ms[0]         ; yes                    ;
+; Number of user-specified and inferred latches = 74                                ;                                                                                  ;                        ;
++-----------------------------------------------------------------------------------+----------------------------------------------------------------------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++-------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                  ;
++--------------------------------------------+----------------------------------------+
+; Register name                              ; Reason for Removal                     ;
++--------------------------------------------+----------------------------------------+
+; App_Led:App_Led0|cnt[9..15]                ; Stuck at GND due to stuck port data_in ;
+; Drive_Clock:Drive_Clock0|time_20ns[29..31] ; Stuck at GND due to stuck port data_in ;
+; Total Number of Removed Registers = 10     ;                                        ;
++--------------------------------------------+----------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 117   ;
+; Number of registers using Synchronous Clear  ; 8     ;
+; Number of registers using Synchronous Load   ; 4     ;
+; Number of registers using Asynchronous Clear ; 68    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 29    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                                 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                       ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------------------------------+
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |Interface_bsp|Drive_Uart_Top:Drive_Uart_Top0|clkdiv:clkdiv|cnt[14]                              ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |Interface_bsp|Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|send_thread_cnt[7] ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |Interface_bsp|Drive_Uart_Top:Drive_Uart_Top0|uart_tx:uart_tx|cnt[0]                             ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; Yes        ; |Interface_bsp|Drive_Uart_Top:Drive_Uart_Top0|uart_rx:uart_rx|cnt[0]                             ;
+; 257:1              ; 4 bits    ; 684 LEs       ; 32 LEs               ; 652 LEs                ; Yes        ; |Interface_bsp|Drive_Uart_Top:Drive_Uart_Top0|uart_tx:uart_tx|cnt[7]                             ;
+; 257:1              ; 5 bits    ; 855 LEs       ; 40 LEs               ; 815 LEs                ; Yes        ; |Interface_bsp|Drive_Uart_Top:Drive_Uart_Top0|uart_rx:uart_rx|cnt[3]                             ;
+; 133:1              ; 2 bits    ; 176 LEs       ; 4 LEs                ; 172 LEs                ; Yes        ; |Interface_bsp|Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|send_crc[1]        ;
+; 135:1              ; 2 bits    ; 180 LEs       ; 8 LEs                ; 172 LEs                ; Yes        ; |Interface_bsp|Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|send_crc[2]        ;
+; 136:1              ; 2 bits    ; 180 LEs       ; 8 LEs                ; 172 LEs                ; Yes        ; |Interface_bsp|Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|send_crc[5]        ;
+; 137:1              ; 2 bits    ; 182 LEs       ; 10 LEs               ; 172 LEs                ; Yes        ; |Interface_bsp|Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|send_crc[7]        ;
+; 4:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; No         ; |Interface_bsp|Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|cnt_ms[6]          ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Drive_Uart_Top:Drive_Uart_Top0|uart_rx:uart_rx ;
++----------------+-------+--------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                               ;
++----------------+-------+--------------------------------------------------------------------+
+; paritymode     ; 0     ; Unsigned Binary                                                    ;
++----------------+-------+--------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Drive_Uart_Top:Drive_Uart_Top0|uart_tx:uart_tx ;
++----------------+-------+--------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                               ;
++----------------+-------+--------------------------------------------------------------------+
+; paritymode     ; 0     ; Unsigned Binary                                                    ;
++----------------+-------+--------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: Drive_Clock:Drive_Clock0|lpm_divide:Mod2 ;
++------------------------+----------------+-------------------------------------------------+
+; Parameter Name         ; Value          ; Type                                            ;
++------------------------+----------------+-------------------------------------------------+
+; LPM_WIDTHN             ; 32             ; Untyped                                         ;
+; LPM_WIDTHD             ; 15             ; Untyped                                         ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                         ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                         ;
+; LPM_PIPELINE           ; 0              ; Untyped                                         ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                         ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                         ;
+; CBXI_PARAMETER         ; lpm_divide_lcm ; Untyped                                         ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                         ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                         ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                      ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                    ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                    ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                  ;
++------------------------+----------------+-------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: App_Led:App_Led0|lpm_divide:Mod0 ;
++------------------------+----------------+-----------------------------------------+
+; Parameter Name         ; Value          ; Type                                    ;
++------------------------+----------------+-----------------------------------------+
+; LPM_WIDTHN             ; 17             ; Untyped                                 ;
+; LPM_WIDTHD             ; 9              ; Untyped                                 ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                 ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                 ;
+; LPM_PIPELINE           ; 0              ; Untyped                                 ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                 ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                 ;
+; CBXI_PARAMETER         ; lpm_divide_bbm ; Untyped                                 ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                 ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                 ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                              ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                            ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                            ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                          ;
++------------------------+----------------+-----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: Drive_Clock:Drive_Clock0|lpm_divide:Mod0 ;
++------------------------+----------------+-------------------------------------------------+
+; Parameter Name         ; Value          ; Type                                            ;
++------------------------+----------------+-------------------------------------------------+
+; LPM_WIDTHN             ; 32             ; Untyped                                         ;
+; LPM_WIDTHD             ; 29             ; Untyped                                         ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                         ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                         ;
+; LPM_PIPELINE           ; 0              ; Untyped                                         ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                         ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                         ;
+; CBXI_PARAMETER         ; lpm_divide_qcm ; Untyped                                         ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                         ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                         ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                      ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                    ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                    ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                  ;
++------------------------+----------------+-------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|lpm_divide:Mod0 ;
++------------------------+----------------+---------------------------------------------------------------------------------------+
+; Parameter Name         ; Value          ; Type                                                                                  ;
++------------------------+----------------+---------------------------------------------------------------------------------------+
+; LPM_WIDTHN             ; 9              ; Untyped                                                                               ;
+; LPM_WIDTHD             ; 4              ; Untyped                                                                               ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                                                               ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                                                               ;
+; LPM_PIPELINE           ; 0              ; Untyped                                                                               ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                                                               ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                                                               ;
+; CBXI_PARAMETER         ; lpm_divide_n9m ; Untyped                                                                               ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                                                               ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                                                               ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                                                            ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                                                          ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                                                          ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                                                        ;
++------------------------+----------------+---------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff"                                                                                        ;
++----------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port           ; Type   ; Severity ; Details                                                                                                                                      ;
++----------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; in_test_freq   ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; in_test_Vpp    ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; out_set_freq   ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                     ;
+; out_set_vpp    ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                     ;
+; out_set_phase  ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                     ;
+; out_set_shifty ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                     ;
++----------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Drive_Clock:Drive_Clock0"                                                                 ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port       ; Type   ; Severity ; Details                                                                             ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
+; out_clk_us ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; out_clk_s  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 12                          ;
+; cycloneiii_ff         ; 117                         ;
+;     CLR               ; 64                          ;
+;     ENA               ; 13                          ;
+;     ENA CLR           ; 4                           ;
+;     ENA SCLR          ; 8                           ;
+;     ENA SLD           ; 4                           ;
+;     plain             ; 24                          ;
+; cycloneiii_lcell_comb ; 1397                        ;
+;     arith             ; 399                         ;
+;         1 data inputs ; 4                           ;
+;         2 data inputs ; 150                         ;
+;         3 data inputs ; 245                         ;
+;     normal            ; 998                         ;
+;         0 data inputs ; 24                          ;
+;         1 data inputs ; 25                          ;
+;         2 data inputs ; 354                         ;
+;         3 data inputs ; 134                         ;
+;         4 data inputs ; 461                         ;
+;                       ;                             ;
+; Max LUT depth         ; 55.50                       ;
+; Average LUT depth     ; 26.56                       ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:08     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Analysis & Synthesis
+    Info: Version 15.0.0 Build 145 04/22/2015 SJ Full Version
+    Info: Processing started: Wed Apr 26 21:26:34 2017
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Project -c Project
+Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file _01_interface/interface_bsp.v
+    Info (12023): Found entity 1: Interface_bsp
+Info (12021): Found 1 design units, including 1 entities, in source file _02_drive/drive_clock.v
+    Info (12023): Found entity 1: Drive_Clock
+Info (12021): Found 1 design units, including 1 entities, in source file _03_app/app_led.v
+    Info (12023): Found entity 1: App_Led
+Info (12021): Found 1 design units, including 1 entities, in source file _02_drive/drive_uart/drive_uart_top.v
+    Info (12023): Found entity 1: Drive_Uart_Top
+Info (12021): Found 1 design units, including 1 entities, in source file _02_drive/drive_uart/uart_rx.v
+    Info (12023): Found entity 1: uart_rx
+Info (12021): Found 1 design units, including 1 entities, in source file _02_drive/drive_uart/uart_tx.v
+    Info (12023): Found entity 1: uart_tx
+Info (12021): Found 1 design units, including 1 entities, in source file _02_drive/drive_uart/clkdiv.v
+    Info (12023): Found entity 1: clkdiv
+Info (12021): Found 1 design units, including 1 entities, in source file _02_drive/drive_uart/drive_uart_buff.v
+    Info (12023): Found entity 1: Drive_Uart_Buff
+Warning (10227): Verilog HDL Port Declaration warning at uart_rx.v(14): data type declaration for "dataout" declares packed dimensions but the port declaration declaration does not
+Info (10499): HDL info at uart_rx.v(10): see declaration for object "dataout"
+Info (12127): Elaborating entity "Interface_bsp" for the top level hierarchy
+Warning (10034): Output port "out_led_bus[4]" at Interface_bsp.v(22) has no driver
+Info (12128): Elaborating entity "Drive_Clock" for hierarchy "Drive_Clock:Drive_Clock0"
+Info (12128): Elaborating entity "App_Led" for hierarchy "App_Led:App_Led0"
+Warning (10230): Verilog HDL assignment warning at App_Led.v(39): truncated value with size 32 to match size of target (16)
+Info (12128): Elaborating entity "Drive_Uart_Top" for hierarchy "Drive_Uart_Top:Drive_Uart_Top0"
+Info (12128): Elaborating entity "clkdiv" for hierarchy "Drive_Uart_Top:Drive_Uart_Top0|clkdiv:clkdiv"
+Info (12128): Elaborating entity "uart_rx" for hierarchy "Drive_Uart_Top:Drive_Uart_Top0|uart_rx:uart_rx"
+Info (12128): Elaborating entity "uart_tx" for hierarchy "Drive_Uart_Top:Drive_Uart_Top0|uart_tx:uart_tx"
+Info (12128): Elaborating entity "Drive_Uart_Buff" for hierarchy "Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff"
+Warning (10858): Verilog HDL warning at Drive_Uart_Buff.v(44): object set_shifty used but never assigned
+Warning (10230): Verilog HDL assignment warning at Drive_Uart_Buff.v(88): truncated value with size 32 to match size of target (8)
+Warning (10270): Verilog HDL Case Statement warning at Drive_Uart_Buff.v(90): incomplete case statement has no default case item
+Warning (10230): Verilog HDL assignment warning at Drive_Uart_Buff.v(100): truncated value with size 32 to match size of target (8)
+Warning (10240): Verilog HDL Always Construct warning at Drive_Uart_Buff.v(59): inferring latch(es) for variable "receive_cnt", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at Drive_Uart_Buff.v(59): inferring latch(es) for variable "receive_time_over", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at Drive_Uart_Buff.v(59): inferring latch(es) for variable "receive_crc", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at Drive_Uart_Buff.v(59): inferring latch(es) for variable "led", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at Drive_Uart_Buff.v(59): inferring latch(es) for variable "receive_buff_flag", which holds its previous value in one or more paths through the always construct
+Warning (10230): Verilog HDL assignment warning at Drive_Uart_Buff.v(119): truncated value with size 32 to match size of target (16)
+Warning (10240): Verilog HDL Always Construct warning at Drive_Uart_Buff.v(109): inferring latch(es) for variable "cnt_ms", which holds its previous value in one or more paths through the always construct
+Warning (10270): Verilog HDL Case Statement warning at Drive_Uart_Buff.v(143): incomplete case statement has no default case item
+Warning (10240): Verilog HDL Always Construct warning at Drive_Uart_Buff.v(129): inferring latch(es) for variable "send_start_flag", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at Drive_Uart_Buff.v(129): inferring latch(es) for variable "set_phase", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at Drive_Uart_Buff.v(129): inferring latch(es) for variable "set_vpp", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at Drive_Uart_Buff.v(129): inferring latch(es) for variable "set_freq", which holds its previous value in one or more paths through the always construct
+Warning (10230): Verilog HDL assignment warning at Drive_Uart_Buff.v(212): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at Drive_Uart_Buff.v(221): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at Drive_Uart_Buff.v(226): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at Drive_Uart_Buff.v(231): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at Drive_Uart_Buff.v(236): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at Drive_Uart_Buff.v(241): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at Drive_Uart_Buff.v(246): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at Drive_Uart_Buff.v(251): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at Drive_Uart_Buff.v(256): truncated value with size 32 to match size of target (8)
+Warning (10030): Net "set_shifty" at Drive_Uart_Buff.v(44) has no driver or initial value, using a default initial value '0'
+Info (10041): Inferred latch for "set_freq[0]" at Drive_Uart_Buff.v(137)
+Info (10041): Inferred latch for "set_freq[1]" at Drive_Uart_Buff.v(137)
+Info (10041): Inferred latch for "set_freq[2]" at Drive_Uart_Buff.v(137)
+Info (10041): Inferred latch for "set_freq[3]" at Drive_Uart_Buff.v(137)
+Info (10041): Inferred latch for "set_freq[4]" at Drive_Uart_Buff.v(137)
+Info (10041): Inferred latch for "set_freq[5]" at Drive_Uart_Buff.v(137)
+Info (10041): Inferred latch for "set_freq[6]" at Drive_Uart_Buff.v(137)
+Info (10041): Inferred latch for "set_freq[7]" at Drive_Uart_Buff.v(137)
+Info (10041): Inferred latch for "set_freq[8]" at Drive_Uart_Buff.v(137)
+Info (10041): Inferred latch for "set_freq[9]" at Drive_Uart_Buff.v(137)
+Info (10041): Inferred latch for "set_freq[10]" at Drive_Uart_Buff.v(137)
+Info (10041): Inferred latch for "set_freq[11]" at Drive_Uart_Buff.v(137)
+Info (10041): Inferred latch for "set_freq[12]" at Drive_Uart_Buff.v(137)
+Info (10041): Inferred latch for "set_freq[13]" at Drive_Uart_Buff.v(137)
+Info (10041): Inferred latch for "set_freq[14]" at Drive_Uart_Buff.v(137)
+Info (10041): Inferred latch for "set_freq[15]" at Drive_Uart_Buff.v(137)
+Info (10041): Inferred latch for "set_freq[16]" at Drive_Uart_Buff.v(137)
+Info (10041): Inferred latch for "set_freq[17]" at Drive_Uart_Buff.v(137)
+Info (10041): Inferred latch for "set_freq[18]" at Drive_Uart_Buff.v(137)
+Info (10041): Inferred latch for "set_freq[19]" at Drive_Uart_Buff.v(137)
+Info (10041): Inferred latch for "set_freq[20]" at Drive_Uart_Buff.v(137)
+Info (10041): Inferred latch for "set_freq[21]" at Drive_Uart_Buff.v(137)
+Info (10041): Inferred latch for "set_freq[22]" at Drive_Uart_Buff.v(137)
+Info (10041): Inferred latch for "set_freq[23]" at Drive_Uart_Buff.v(137)
+Info (10041): Inferred latch for "set_freq[24]" at Drive_Uart_Buff.v(137)
+Info (10041): Inferred latch for "set_freq[25]" at Drive_Uart_Buff.v(137)
+Info (10041): Inferred latch for "set_freq[26]" at Drive_Uart_Buff.v(137)
+Info (10041): Inferred latch for "set_freq[27]" at Drive_Uart_Buff.v(137)
+Info (10041): Inferred latch for "set_freq[28]" at Drive_Uart_Buff.v(137)
+Info (10041): Inferred latch for "set_freq[29]" at Drive_Uart_Buff.v(137)
+Info (10041): Inferred latch for "set_freq[30]" at Drive_Uart_Buff.v(137)
+Info (10041): Inferred latch for "set_freq[31]" at Drive_Uart_Buff.v(137)
+Info (10041): Inferred latch for "set_vpp[0]" at Drive_Uart_Buff.v(137)
+Info (10041): Inferred latch for "set_vpp[1]" at Drive_Uart_Buff.v(137)
+Info (10041): Inferred latch for "set_vpp[2]" at Drive_Uart_Buff.v(137)
+Info (10041): Inferred latch for "set_vpp[3]" at Drive_Uart_Buff.v(137)
+Info (10041): Inferred latch for "set_vpp[4]" at Drive_Uart_Buff.v(137)
+Info (10041): Inferred latch for "set_vpp[5]" at Drive_Uart_Buff.v(137)
+Info (10041): Inferred latch for "set_vpp[6]" at Drive_Uart_Buff.v(137)
+Info (10041): Inferred latch for "set_vpp[7]" at Drive_Uart_Buff.v(137)
+Info (10041): Inferred latch for "set_vpp[8]" at Drive_Uart_Buff.v(137)
+Info (10041): Inferred latch for "set_vpp[9]" at Drive_Uart_Buff.v(137)
+Info (10041): Inferred latch for "set_vpp[10]" at Drive_Uart_Buff.v(137)
+Info (10041): Inferred latch for "set_vpp[11]" at Drive_Uart_Buff.v(137)
+Info (10041): Inferred latch for "set_vpp[12]" at Drive_Uart_Buff.v(137)
+Info (10041): Inferred latch for "set_vpp[13]" at Drive_Uart_Buff.v(137)
+Info (10041): Inferred latch for "set_vpp[14]" at Drive_Uart_Buff.v(137)
+Info (10041): Inferred latch for "set_vpp[15]" at Drive_Uart_Buff.v(137)
+Info (10041): Inferred latch for "set_phase[0]" at Drive_Uart_Buff.v(137)
+Info (10041): Inferred latch for "set_phase[1]" at Drive_Uart_Buff.v(137)
+Info (10041): Inferred latch for "set_phase[2]" at Drive_Uart_Buff.v(137)
+Info (10041): Inferred latch for "set_phase[3]" at Drive_Uart_Buff.v(137)
+Info (10041): Inferred latch for "set_phase[4]" at Drive_Uart_Buff.v(137)
+Info (10041): Inferred latch for "set_phase[5]" at Drive_Uart_Buff.v(137)
+Info (10041): Inferred latch for "set_phase[6]" at Drive_Uart_Buff.v(137)
+Info (10041): Inferred latch for "set_phase[7]" at Drive_Uart_Buff.v(137)
+Info (10041): Inferred latch for "set_phase[8]" at Drive_Uart_Buff.v(137)
+Info (10041): Inferred latch for "set_phase[9]" at Drive_Uart_Buff.v(137)
+Info (10041): Inferred latch for "set_phase[10]" at Drive_Uart_Buff.v(137)
+Info (10041): Inferred latch for "set_phase[11]" at Drive_Uart_Buff.v(137)
+Info (10041): Inferred latch for "set_phase[12]" at Drive_Uart_Buff.v(137)
+Info (10041): Inferred latch for "set_phase[13]" at Drive_Uart_Buff.v(137)
+Info (10041): Inferred latch for "set_phase[14]" at Drive_Uart_Buff.v(137)
+Info (10041): Inferred latch for "set_phase[15]" at Drive_Uart_Buff.v(137)
+Info (10041): Inferred latch for "send_buff[8][0]" at Drive_Uart_Buff.v(137)
+Info (10041): Inferred latch for "send_buff[8][1]" at Drive_Uart_Buff.v(137)
+Info (10041): Inferred latch for "send_buff[8][2]" at Drive_Uart_Buff.v(137)
+Info (10041): Inferred latch for "send_buff[8][3]" at Drive_Uart_Buff.v(137)
+Info (10041): Inferred latch for "send_buff[8][4]" at Drive_Uart_Buff.v(137)
+Info (10041): Inferred latch for "send_buff[8][5]" at Drive_Uart_Buff.v(137)
+Info (10041): Inferred latch for "send_buff[8][6]" at Drive_Uart_Buff.v(137)
+Info (10041): Inferred latch for "send_buff[8][7]" at Drive_Uart_Buff.v(137)
+Info (10041): Inferred latch for "send_buff[7][0]" at Drive_Uart_Buff.v(137)
+Info (10041): Inferred latch for "send_buff[7][1]" at Drive_Uart_Buff.v(137)
+Info (10041): Inferred latch for "send_buff[7][2]" at Drive_Uart_Buff.v(137)
+Info (10041): Inferred latch for "send_buff[7][3]" at Drive_Uart_Buff.v(137)
+Info (10041): Inferred latch for "send_buff[7][4]" at Drive_Uart_Buff.v(137)
+Info (10041): Inferred latch for "send_buff[7][5]" at Drive_Uart_Buff.v(137)
+Info (10041): Inferred latch for "send_buff[7][6]" at Drive_Uart_Buff.v(137)
+Info (10041): Inferred latch for "send_buff[7][7]" at Drive_Uart_Buff.v(137)
+Info (10041): Inferred latch for "send_buff[6][0]" at Drive_Uart_Buff.v(137)
+Info (10041): Inferred latch for "send_buff[6][1]" at Drive_Uart_Buff.v(137)
+Info (10041): Inferred latch for "send_buff[6][2]" at Drive_Uart_Buff.v(137)
+Info (10041): Inferred latch for "send_buff[6][3]" at Drive_Uart_Buff.v(137)
+Info (10041): Inferred latch for "send_buff[6][4]" at Drive_Uart_Buff.v(137)
+Info (10041): Inferred latch for "send_buff[6][5]" at Drive_Uart_Buff.v(137)
+Info (10041): Inferred latch for "send_buff[6][6]" at Drive_Uart_Buff.v(137)
+Info (10041): Inferred latch for "send_buff[6][7]" at Drive_Uart_Buff.v(137)
+Info (10041): Inferred latch for "send_buff[5][0]" at Drive_Uart_Buff.v(137)
+Info (10041): Inferred latch for "send_buff[5][1]" at Drive_Uart_Buff.v(137)
+Info (10041): Inferred latch for "send_buff[5][2]" at Drive_Uart_Buff.v(137)
+Info (10041): Inferred latch for "send_buff[5][3]" at Drive_Uart_Buff.v(137)
+Info (10041): Inferred latch for "send_buff[5][4]" at Drive_Uart_Buff.v(137)
+Info (10041): Inferred latch for "send_buff[5][5]" at Drive_Uart_Buff.v(137)
+Info (10041): Inferred latch for "send_buff[5][6]" at Drive_Uart_Buff.v(137)
+Info (10041): Inferred latch for "send_buff[5][7]" at Drive_Uart_Buff.v(137)
+Info (10041): Inferred latch for "send_buff[4][0]" at Drive_Uart_Buff.v(137)
+Info (10041): Inferred latch for "send_buff[4][1]" at Drive_Uart_Buff.v(137)
+Info (10041): Inferred latch for "send_buff[4][2]" at Drive_Uart_Buff.v(137)
+Info (10041): Inferred latch for "send_buff[4][3]" at Drive_Uart_Buff.v(137)
+Info (10041): Inferred latch for "send_buff[4][4]" at Drive_Uart_Buff.v(137)
+Info (10041): Inferred latch for "send_buff[4][5]" at Drive_Uart_Buff.v(137)
+Info (10041): Inferred latch for "send_buff[4][6]" at Drive_Uart_Buff.v(137)
+Info (10041): Inferred latch for "send_buff[4][7]" at Drive_Uart_Buff.v(137)
+Info (10041): Inferred latch for "send_buff[3][0]" at Drive_Uart_Buff.v(137)
+Info (10041): Inferred latch for "send_buff[3][1]" at Drive_Uart_Buff.v(137)
+Info (10041): Inferred latch for "send_buff[3][2]" at Drive_Uart_Buff.v(137)
+Info (10041): Inferred latch for "send_buff[3][3]" at Drive_Uart_Buff.v(137)
+Info (10041): Inferred latch for "send_buff[3][4]" at Drive_Uart_Buff.v(137)
+Info (10041): Inferred latch for "send_buff[3][5]" at Drive_Uart_Buff.v(137)
+Info (10041): Inferred latch for "send_buff[3][6]" at Drive_Uart_Buff.v(137)
+Info (10041): Inferred latch for "send_buff[3][7]" at Drive_Uart_Buff.v(137)
+Info (10041): Inferred latch for "send_buff[2][0]" at Drive_Uart_Buff.v(137)
+Info (10041): Inferred latch for "send_buff[2][1]" at Drive_Uart_Buff.v(137)
+Info (10041): Inferred latch for "send_buff[2][2]" at Drive_Uart_Buff.v(137)
+Info (10041): Inferred latch for "send_buff[2][3]" at Drive_Uart_Buff.v(137)
+Info (10041): Inferred latch for "send_buff[2][4]" at Drive_Uart_Buff.v(137)
+Info (10041): Inferred latch for "send_buff[2][5]" at Drive_Uart_Buff.v(137)
+Info (10041): Inferred latch for "send_buff[2][6]" at Drive_Uart_Buff.v(137)
+Info (10041): Inferred latch for "send_buff[2][7]" at Drive_Uart_Buff.v(137)
+Info (10041): Inferred latch for "send_buff[1][0]" at Drive_Uart_Buff.v(137)
+Info (10041): Inferred latch for "send_buff[1][1]" at Drive_Uart_Buff.v(137)
+Info (10041): Inferred latch for "send_buff[1][2]" at Drive_Uart_Buff.v(137)
+Info (10041): Inferred latch for "send_buff[1][3]" at Drive_Uart_Buff.v(137)
+Info (10041): Inferred latch for "send_buff[1][4]" at Drive_Uart_Buff.v(137)
+Info (10041): Inferred latch for "send_buff[1][5]" at Drive_Uart_Buff.v(137)
+Info (10041): Inferred latch for "send_buff[1][6]" at Drive_Uart_Buff.v(137)
+Info (10041): Inferred latch for "send_buff[1][7]" at Drive_Uart_Buff.v(137)
+Info (10041): Inferred latch for "send_buff[0][0]" at Drive_Uart_Buff.v(137)
+Info (10041): Inferred latch for "send_buff[0][1]" at Drive_Uart_Buff.v(137)
+Info (10041): Inferred latch for "send_buff[0][2]" at Drive_Uart_Buff.v(137)
+Info (10041): Inferred latch for "send_buff[0][3]" at Drive_Uart_Buff.v(137)
+Info (10041): Inferred latch for "send_buff[0][4]" at Drive_Uart_Buff.v(137)
+Info (10041): Inferred latch for "send_buff[0][5]" at Drive_Uart_Buff.v(137)
+Info (10041): Inferred latch for "send_buff[0][6]" at Drive_Uart_Buff.v(137)
+Info (10041): Inferred latch for "send_buff[0][7]" at Drive_Uart_Buff.v(137)
+Info (10041): Inferred latch for "send_start_flag" at Drive_Uart_Buff.v(137)
+Info (10041): Inferred latch for "cnt_ms[0]" at Drive_Uart_Buff.v(109)
+Info (10041): Inferred latch for "cnt_ms[1]" at Drive_Uart_Buff.v(109)
+Info (10041): Inferred latch for "cnt_ms[2]" at Drive_Uart_Buff.v(109)
+Info (10041): Inferred latch for "cnt_ms[3]" at Drive_Uart_Buff.v(109)
+Info (10041): Inferred latch for "cnt_ms[4]" at Drive_Uart_Buff.v(109)
+Info (10041): Inferred latch for "cnt_ms[5]" at Drive_Uart_Buff.v(109)
+Info (10041): Inferred latch for "cnt_ms[6]" at Drive_Uart_Buff.v(109)
+Info (10041): Inferred latch for "cnt_ms[7]" at Drive_Uart_Buff.v(109)
+Info (10041): Inferred latch for "cnt_ms[8]" at Drive_Uart_Buff.v(109)
+Info (10041): Inferred latch for "cnt_ms[9]" at Drive_Uart_Buff.v(109)
+Info (10041): Inferred latch for "cnt_ms[10]" at Drive_Uart_Buff.v(109)
+Info (10041): Inferred latch for "cnt_ms[11]" at Drive_Uart_Buff.v(109)
+Info (10041): Inferred latch for "cnt_ms[12]" at Drive_Uart_Buff.v(109)
+Info (10041): Inferred latch for "cnt_ms[13]" at Drive_Uart_Buff.v(109)
+Info (10041): Inferred latch for "cnt_ms[14]" at Drive_Uart_Buff.v(109)
+Info (10041): Inferred latch for "cnt_ms[15]" at Drive_Uart_Buff.v(109)
+Info (10041): Inferred latch for "receive_buff[9][0]" at Drive_Uart_Buff.v(59)
+Info (10041): Inferred latch for "receive_buff[9][1]" at Drive_Uart_Buff.v(59)
+Info (10041): Inferred latch for "receive_buff[9][2]" at Drive_Uart_Buff.v(59)
+Info (10041): Inferred latch for "receive_buff[9][3]" at Drive_Uart_Buff.v(59)
+Info (10041): Inferred latch for "receive_buff[9][4]" at Drive_Uart_Buff.v(59)
+Info (10041): Inferred latch for "receive_buff[9][5]" at Drive_Uart_Buff.v(59)
+Info (10041): Inferred latch for "receive_buff[9][6]" at Drive_Uart_Buff.v(59)
+Info (10041): Inferred latch for "receive_buff[9][7]" at Drive_Uart_Buff.v(59)
+Info (10041): Inferred latch for "receive_buff[5][0]" at Drive_Uart_Buff.v(59)
+Info (10041): Inferred latch for "receive_buff[5][1]" at Drive_Uart_Buff.v(59)
+Info (10041): Inferred latch for "receive_buff[5][2]" at Drive_Uart_Buff.v(59)
+Info (10041): Inferred latch for "receive_buff[5][3]" at Drive_Uart_Buff.v(59)
+Info (10041): Inferred latch for "receive_buff[5][4]" at Drive_Uart_Buff.v(59)
+Info (10041): Inferred latch for "receive_buff[5][5]" at Drive_Uart_Buff.v(59)
+Info (10041): Inferred latch for "receive_buff[5][6]" at Drive_Uart_Buff.v(59)
+Info (10041): Inferred latch for "receive_buff[5][7]" at Drive_Uart_Buff.v(59)
+Info (10041): Inferred latch for "receive_buff[4][0]" at Drive_Uart_Buff.v(59)
+Info (10041): Inferred latch for "receive_buff[4][1]" at Drive_Uart_Buff.v(59)
+Info (10041): Inferred latch for "receive_buff[4][2]" at Drive_Uart_Buff.v(59)
+Info (10041): Inferred latch for "receive_buff[4][3]" at Drive_Uart_Buff.v(59)
+Info (10041): Inferred latch for "receive_buff[4][4]" at Drive_Uart_Buff.v(59)
+Info (10041): Inferred latch for "receive_buff[4][5]" at Drive_Uart_Buff.v(59)
+Info (10041): Inferred latch for "receive_buff[4][6]" at Drive_Uart_Buff.v(59)
+Info (10041): Inferred latch for "receive_buff[4][7]" at Drive_Uart_Buff.v(59)
+Info (10041): Inferred latch for "receive_buff[3][0]" at Drive_Uart_Buff.v(59)
+Info (10041): Inferred latch for "receive_buff[3][1]" at Drive_Uart_Buff.v(59)
+Info (10041): Inferred latch for "receive_buff[3][2]" at Drive_Uart_Buff.v(59)
+Info (10041): Inferred latch for "receive_buff[3][3]" at Drive_Uart_Buff.v(59)
+Info (10041): Inferred latch for "receive_buff[3][4]" at Drive_Uart_Buff.v(59)
+Info (10041): Inferred latch for "receive_buff[3][5]" at Drive_Uart_Buff.v(59)
+Info (10041): Inferred latch for "receive_buff[3][6]" at Drive_Uart_Buff.v(59)
+Info (10041): Inferred latch for "receive_buff[3][7]" at Drive_Uart_Buff.v(59)
+Info (10041): Inferred latch for "receive_buff[2][0]" at Drive_Uart_Buff.v(59)
+Info (10041): Inferred latch for "receive_buff[2][1]" at Drive_Uart_Buff.v(59)
+Info (10041): Inferred latch for "receive_buff[2][2]" at Drive_Uart_Buff.v(59)
+Info (10041): Inferred latch for "receive_buff[2][3]" at Drive_Uart_Buff.v(59)
+Info (10041): Inferred latch for "receive_buff[2][4]" at Drive_Uart_Buff.v(59)
+Info (10041): Inferred latch for "receive_buff[2][5]" at Drive_Uart_Buff.v(59)
+Info (10041): Inferred latch for "receive_buff[2][6]" at Drive_Uart_Buff.v(59)
+Info (10041): Inferred latch for "receive_buff[2][7]" at Drive_Uart_Buff.v(59)
+Info (10041): Inferred latch for "receive_buff[1][0]" at Drive_Uart_Buff.v(59)
+Info (10041): Inferred latch for "receive_buff[1][1]" at Drive_Uart_Buff.v(59)
+Info (10041): Inferred latch for "receive_buff[1][2]" at Drive_Uart_Buff.v(59)
+Info (10041): Inferred latch for "receive_buff[1][3]" at Drive_Uart_Buff.v(59)
+Info (10041): Inferred latch for "receive_buff[1][4]" at Drive_Uart_Buff.v(59)
+Info (10041): Inferred latch for "receive_buff[1][5]" at Drive_Uart_Buff.v(59)
+Info (10041): Inferred latch for "receive_buff[1][6]" at Drive_Uart_Buff.v(59)
+Info (10041): Inferred latch for "receive_buff[1][7]" at Drive_Uart_Buff.v(59)
+Info (10041): Inferred latch for "receive_buff[0][0]" at Drive_Uart_Buff.v(59)
+Info (10041): Inferred latch for "receive_buff[0][1]" at Drive_Uart_Buff.v(59)
+Info (10041): Inferred latch for "receive_buff[0][2]" at Drive_Uart_Buff.v(59)
+Info (10041): Inferred latch for "receive_buff[0][3]" at Drive_Uart_Buff.v(59)
+Info (10041): Inferred latch for "receive_buff[0][4]" at Drive_Uart_Buff.v(59)
+Info (10041): Inferred latch for "receive_buff[0][5]" at Drive_Uart_Buff.v(59)
+Info (10041): Inferred latch for "receive_buff[0][6]" at Drive_Uart_Buff.v(59)
+Info (10041): Inferred latch for "receive_buff[0][7]" at Drive_Uart_Buff.v(59)
+Info (10041): Inferred latch for "receive_buff_flag" at Drive_Uart_Buff.v(59)
+Info (10041): Inferred latch for "led[0]" at Drive_Uart_Buff.v(59)
+Info (10041): Inferred latch for "receive_time_over" at Drive_Uart_Buff.v(59)
+Info (10041): Inferred latch for "receive_cnt[0]" at Drive_Uart_Buff.v(59)
+Info (10041): Inferred latch for "receive_cnt[1]" at Drive_Uart_Buff.v(59)
+Info (10041): Inferred latch for "receive_cnt[2]" at Drive_Uart_Buff.v(59)
+Info (10041): Inferred latch for "receive_cnt[3]" at Drive_Uart_Buff.v(59)
+Info (10041): Inferred latch for "receive_cnt[4]" at Drive_Uart_Buff.v(59)
+Info (10041): Inferred latch for "receive_cnt[5]" at Drive_Uart_Buff.v(59)
+Info (10041): Inferred latch for "receive_cnt[6]" at Drive_Uart_Buff.v(59)
+Info (10041): Inferred latch for "receive_cnt[7]" at Drive_Uart_Buff.v(59)
+Info (278001): Inferred 4 megafunctions from design logic
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Drive_Clock:Drive_Clock0|Mod2"
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "App_Led:App_Led0|Mod0"
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Drive_Clock:Drive_Clock0|Mod0"
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|Mod0"
+Info (12130): Elaborated megafunction instantiation "Drive_Clock:Drive_Clock0|lpm_divide:Mod2"
+Info (12133): Instantiated megafunction "Drive_Clock:Drive_Clock0|lpm_divide:Mod2" with the following parameter:
+    Info (12134): Parameter "LPM_WIDTHN" = "32"
+    Info (12134): Parameter "LPM_WIDTHD" = "15"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_lcm.tdf
+    Info (12023): Found entity 1: lpm_divide_lcm
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_bnh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_bnh
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_9af.tdf
+    Info (12023): Found entity 1: alt_u_div_9af
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_7pc.tdf
+    Info (12023): Found entity 1: add_sub_7pc
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_8pc.tdf
+    Info (12023): Found entity 1: add_sub_8pc
+Info (12130): Elaborated megafunction instantiation "App_Led:App_Led0|lpm_divide:Mod0"
+Info (12133): Instantiated megafunction "App_Led:App_Led0|lpm_divide:Mod0" with the following parameter:
+    Info (12134): Parameter "LPM_WIDTHN" = "17"
+    Info (12134): Parameter "LPM_WIDTHD" = "9"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_bbm.tdf
+    Info (12023): Found entity 1: lpm_divide_bbm
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_0mh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_0mh
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_k7f.tdf
+    Info (12023): Found entity 1: alt_u_div_k7f
+Info (12130): Elaborated megafunction instantiation "Drive_Clock:Drive_Clock0|lpm_divide:Mod0"
+Info (12133): Instantiated megafunction "Drive_Clock:Drive_Clock0|lpm_divide:Mod0" with the following parameter:
+    Info (12134): Parameter "LPM_WIDTHN" = "32"
+    Info (12134): Parameter "LPM_WIDTHD" = "29"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_qcm.tdf
+    Info (12023): Found entity 1: lpm_divide_qcm
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_fnh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_fnh
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_iaf.tdf
+    Info (12023): Found entity 1: alt_u_div_iaf
+Info (12130): Elaborated megafunction instantiation "Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|lpm_divide:Mod0"
+Info (12133): Instantiated megafunction "Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|lpm_divide:Mod0" with the following parameter:
+    Info (12134): Parameter "LPM_WIDTHN" = "9"
+    Info (12134): Parameter "LPM_WIDTHD" = "4"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_n9m.tdf
+    Info (12023): Found entity 1: lpm_divide_n9m
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_ckh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_ckh
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_c4f.tdf
+    Info (12023): Found entity 1: alt_u_div_c4f
+Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Info (13025): Duplicate LATCH primitives merged into single LATCH primitive
+    Info (13026): Duplicate LATCH primitive "Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|send_buff[2][1]" merged with LATCH primitive "Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|send_buff[2][4]"
+    Info (13026): Duplicate LATCH primitive "Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|send_buff[2][2]" merged with LATCH primitive "Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|send_buff[2][4]"
+    Info (13026): Duplicate LATCH primitive "Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|send_buff[1][1]" merged with LATCH primitive "Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|send_buff[2][4]"
+    Info (13026): Duplicate LATCH primitive "Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|send_buff[1][3]" merged with LATCH primitive "Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|send_buff[2][4]"
+    Info (13026): Duplicate LATCH primitive "Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|send_buff[3][5]" merged with LATCH primitive "Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|send_buff[5][4]"
+    Info (13026): Duplicate LATCH primitive "Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|send_buff[4][2]" merged with LATCH primitive "Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|send_buff[5][4]"
+    Info (13026): Duplicate LATCH primitive "Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|send_buff[4][3]" merged with LATCH primitive "Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|send_buff[5][4]"
+    Info (13026): Duplicate LATCH primitive "Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|send_buff[4][5]" merged with LATCH primitive "Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|send_buff[5][4]"
+    Info (13026): Duplicate LATCH primitive "Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|send_buff[5][1]" merged with LATCH primitive "Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|send_buff[5][4]"
+    Info (13026): Duplicate LATCH primitive "Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|send_buff[5][2]" merged with LATCH primitive "Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|send_buff[5][4]"
+    Info (13026): Duplicate LATCH primitive "Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|send_buff[5][5]" merged with LATCH primitive "Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|send_buff[5][4]"
+    Info (13026): Duplicate LATCH primitive "Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|send_buff[6][1]" merged with LATCH primitive "Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|send_buff[5][4]"
+    Info (13026): Duplicate LATCH primitive "Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|send_buff[6][6]" merged with LATCH primitive "Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|send_buff[5][4]"
+    Info (13026): Duplicate LATCH primitive "Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|send_buff[7][0]" merged with LATCH primitive "Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|send_buff[5][4]"
+    Info (13026): Duplicate LATCH primitive "Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|send_buff[7][2]" merged with LATCH primitive "Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|send_buff[5][4]"
+    Info (13026): Duplicate LATCH primitive "Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|send_buff[7][3]" merged with LATCH primitive "Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|send_buff[5][4]"
+    Info (13026): Duplicate LATCH primitive "Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|send_buff[7][6]" merged with LATCH primitive "Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|send_buff[5][4]"
+    Info (13026): Duplicate LATCH primitive "Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|send_buff[8][3]" merged with LATCH primitive "Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|send_buff[5][4]"
+    Info (13026): Duplicate LATCH primitive "Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|send_buff[8][4]" merged with LATCH primitive "Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|send_buff[5][4]"
+    Info (13026): Duplicate LATCH primitive "Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|send_buff[8][6]" merged with LATCH primitive "Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|send_buff[5][4]"
+    Info (13026): Duplicate LATCH primitive "Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|send_buff[3][0]" merged with LATCH primitive "Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|send_buff[5][4]"
+    Info (13026): Duplicate LATCH primitive "Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|send_buff[5][0]" merged with LATCH primitive "Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|send_buff[5][4]"
+Warning (13012): Latch Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|send_buff[2][4] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|receive_buff[1][0]
+Warning (13012): Latch Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|send_buff[5][4] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|receive_buff[1][0]
+Warning (13012): Latch Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|send_start_flag has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|receive_buff_flag
+Warning (13012): Latch Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|send_buff[1][0] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|receive_buff[1][0]
+Warning (13012): Latch Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|send_buff[1][2] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|receive_buff[1][0]
+Warning (13012): Latch Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|receive_buff_flag has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|receive_buff[9][0]
+Warning (13012): Latch Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|receive_cnt[0] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Drive_Uart_Top:Drive_Uart_Top0|uart_rx:uart_rx|rdsig
+Warning (13012): Latch Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|receive_cnt[1] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Drive_Uart_Top:Drive_Uart_Top0|uart_rx:uart_rx|rdsig
+Warning (13012): Latch Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|receive_cnt[2] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Drive_Uart_Top:Drive_Uart_Top0|uart_rx:uart_rx|rdsig
+Warning (13012): Latch Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|receive_cnt[3] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Drive_Uart_Top:Drive_Uart_Top0|uart_rx:uart_rx|rdsig
+Warning (13012): Latch Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|receive_time_over has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Drive_Uart_Top:Drive_Uart_Top0|uart_rx:uart_rx|rdsig
+Warning (13012): Latch Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|cnt_ms[0] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Drive_Clock:Drive_Clock0|clk_ms
+Warning (13012): Latch Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|cnt_ms[1] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Drive_Clock:Drive_Clock0|clk_ms
+Warning (13012): Latch Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|cnt_ms[2] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Drive_Clock:Drive_Clock0|clk_ms
+Warning (13012): Latch Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|cnt_ms[3] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Drive_Clock:Drive_Clock0|clk_ms
+Warning (13012): Latch Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|cnt_ms[4] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Drive_Clock:Drive_Clock0|clk_ms
+Warning (13012): Latch Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|cnt_ms[5] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Drive_Clock:Drive_Clock0|clk_ms
+Warning (13012): Latch Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|cnt_ms[6] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Drive_Clock:Drive_Clock0|clk_ms
+Warning (13012): Latch Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|cnt_ms[7] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Drive_Clock:Drive_Clock0|clk_ms
+Warning (13012): Latch Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|cnt_ms[8] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Drive_Clock:Drive_Clock0|clk_ms
+Warning (13012): Latch Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|cnt_ms[9] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Drive_Clock:Drive_Clock0|clk_ms
+Warning (13012): Latch Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|cnt_ms[10] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Drive_Clock:Drive_Clock0|clk_ms
+Warning (13012): Latch Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|cnt_ms[11] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Drive_Clock:Drive_Clock0|clk_ms
+Warning (13012): Latch Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|cnt_ms[12] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Drive_Clock:Drive_Clock0|clk_ms
+Warning (13012): Latch Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|cnt_ms[13] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Drive_Clock:Drive_Clock0|clk_ms
+Warning (13012): Latch Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|cnt_ms[14] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Drive_Clock:Drive_Clock0|clk_ms
+Warning (13012): Latch Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|cnt_ms[15] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Drive_Clock:Drive_Clock0|clk_ms
+Info (13025): Duplicate LATCH primitives merged into single LATCH primitive
+    Info (13026): Duplicate LATCH primitive "Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|send_buff[5][4]" merged with LATCH primitive "Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|send_buff[2][4]"
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "out_led_bus[4]" is stuck at GND
+Info (286030): Timing-Driven Synthesis is running
+Info (17016): Found the following redundant logic cells in design
+    Info (17048): Logic cell "App_Led:App_Led0|lpm_divide:Mod0|lpm_divide_bbm:auto_generated|sign_div_unsign_0mh:divider|alt_u_div_k7f:divider|add_sub_15_result_int[1]~18"
+    Info (17048): Logic cell "Drive_Clock:Drive_Clock0|lpm_divide:Mod2|lpm_divide_lcm:auto_generated|sign_div_unsign_bnh:divider|alt_u_div_9af:divider|add_sub_17_result_int[1]~28"
+    Info (17048): Logic cell "Drive_Clock:Drive_Clock0|lpm_divide:Mod0|lpm_divide_qcm:auto_generated|sign_div_unsign_fnh:divider|alt_u_div_iaf:divider|add_sub_30_result_int[7]~46"
+    Info (17048): Logic cell "Drive_Clock:Drive_Clock0|lpm_divide:Mod0|lpm_divide_qcm:auto_generated|sign_div_unsign_fnh:divider|alt_u_div_iaf:divider|add_sub_30_result_int[6]~48"
+    Info (17048): Logic cell "Drive_Clock:Drive_Clock0|lpm_divide:Mod0|lpm_divide_qcm:auto_generated|sign_div_unsign_fnh:divider|alt_u_div_iaf:divider|add_sub_30_result_int[5]~50"
+    Info (17048): Logic cell "Drive_Clock:Drive_Clock0|lpm_divide:Mod0|lpm_divide_qcm:auto_generated|sign_div_unsign_fnh:divider|alt_u_div_iaf:divider|add_sub_30_result_int[4]~52"
+    Info (17048): Logic cell "Drive_Clock:Drive_Clock0|lpm_divide:Mod0|lpm_divide_qcm:auto_generated|sign_div_unsign_fnh:divider|alt_u_div_iaf:divider|add_sub_30_result_int[3]~54"
+    Info (17048): Logic cell "Drive_Clock:Drive_Clock0|lpm_divide:Mod0|lpm_divide_qcm:auto_generated|sign_div_unsign_fnh:divider|alt_u_div_iaf:divider|add_sub_30_result_int[2]~56"
+    Info (17048): Logic cell "Drive_Clock:Drive_Clock0|lpm_divide:Mod0|lpm_divide_qcm:auto_generated|sign_div_unsign_fnh:divider|alt_u_div_iaf:divider|add_sub_30_result_int[1]~58"
+    Info (17048): Logic cell "Drive_Clock:Drive_Clock0|lpm_divide:Mod0|lpm_divide_qcm:auto_generated|sign_div_unsign_fnh:divider|alt_u_div_iaf:divider|add_sub_31_result_int[0]~60"
+    Info (17048): Logic cell "Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|Add13~0"
+    Info (17048): Logic cell "Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|Add13~2"
+    Info (17048): Logic cell "Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|lpm_divide:Mod0|lpm_divide_n9m:auto_generated|sign_div_unsign_ckh:divider|alt_u_div_c4f:divider|add_sub_8_result_int[0]~0"
+Info (144001): Generated suppressed messages file E:/_10_EnglishPath/_05_CycloneIV Code/_03_Usart/_03(CRC8)/output_files/Project.map.smsg
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 4 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "in_key_bus[1]"
+    Warning (15610): No output dependent on input pin "in_key_bus[2]"
+    Warning (15610): No output dependent on input pin "in_key_bus[3]"
+    Warning (15610): No output dependent on input pin "in_key_bus[4]"
+Info (21057): Implemented 1410 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 7 input pins
+    Info (21059): Implemented 5 output pins
+    Info (21061): Implemented 1398 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 91 warnings
+    Info: Peak virtual memory: 766 megabytes
+    Info: Processing ended: Wed Apr 26 21:26:55 2017
+    Info: Elapsed time: 00:00:21
+    Info: Total CPU time (on all processors): 00:00:36
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in E:/_10_EnglishPath/_05_CycloneIV Code/_03_Usart/_03(CRC8)/output_files/Project.map.smsg.
+
+

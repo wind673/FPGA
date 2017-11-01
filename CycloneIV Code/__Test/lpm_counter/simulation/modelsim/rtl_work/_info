@@ -1,0 +1,25 @@
+m255
+K3
+13
+cModel Technology
+Z0 dE:\_13_EnglishPath\_01_AX515_Code\__Test\lpm_counter\simulation\modelsim
+vlpm_counter0
+!i10b 1
+!s100 a]Bd_;A^BUJ;EU:aCGY9M2
+ISI5n7Rkehf5Ld9`:`f5ma1
+VPkEfVfFF74hDcP<hiNGXI2
+Z1 dE:\_13_EnglishPath\_01_AX515_Code\__Test\lpm_counter\simulation\modelsim
+w1473738745
+8E:/_13_EnglishPath/_01_AX515_Code/__Test/lpm_counter/lpm_counter0.v
+FE:/_13_EnglishPath/_01_AX515_Code/__Test/lpm_counter/lpm_counter0.v
+L0 39
+OV;L;10.1b;51
+r1
+!s85 0
+31
+!s108 1473740573.889000
+!s107 E:/_13_EnglishPath/_01_AX515_Code/__Test/lpm_counter/lpm_counter0.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/_13_EnglishPath/_01_AX515_Code/__Test/lpm_counter|E:/_13_EnglishPath/_01_AX515_Code/__Test/lpm_counter/lpm_counter0.v|
+!s101 -O0
+o-vlog01compat -work work -O0
+!s92 -vlog01compat -work work +incdir+E:/_13_EnglishPath/_01_AX515_Code/__Test/lpm_counter -O0

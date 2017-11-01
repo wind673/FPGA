@@ -1,0 +1,88 @@
+|counter
+pin_out[0] <= lpm_counter0:inst.q[0]
+pin_out[1] <= lpm_counter0:inst.q[1]
+pin_out[2] <= lpm_counter0:inst.q[2]
+pin_out[3] <= lpm_counter0:inst.q[3]
+pin_updown => lpm_counter0:inst.updown
+pin_clock => lpm_counter0:inst.clock
+
+
+|counter|lpm_counter0:inst
+clock => clock.IN1
+updown => updown.IN1
+q[0] <= lpm_counter:LPM_COUNTER_component.q
+q[1] <= lpm_counter:LPM_COUNTER_component.q
+q[2] <= lpm_counter:LPM_COUNTER_component.q
+q[3] <= lpm_counter:LPM_COUNTER_component.q
+
+
+|counter|lpm_counter0:inst|lpm_counter:LPM_COUNTER_component
+clock => cntr_uvh:auto_generated.clock
+clk_en => ~NO_FANOUT~
+cnt_en => ~NO_FANOUT~
+updown => cntr_uvh:auto_generated.updown
+aclr => ~NO_FANOUT~
+aset => ~NO_FANOUT~
+aconst => ~NO_FANOUT~
+aload => ~NO_FANOUT~
+sclr => ~NO_FANOUT~
+sset => ~NO_FANOUT~
+sconst => ~NO_FANOUT~
+sload => ~NO_FANOUT~
+data[0] => ~NO_FANOUT~
+data[1] => ~NO_FANOUT~
+data[2] => ~NO_FANOUT~
+data[3] => ~NO_FANOUT~
+cin => ~NO_FANOUT~
+q[0] <= cntr_uvh:auto_generated.q[0]
+q[1] <= cntr_uvh:auto_generated.q[1]
+q[2] <= cntr_uvh:auto_generated.q[2]
+q[3] <= cntr_uvh:auto_generated.q[3]
+cout <= <GND>
+eq[0] <= <GND>
+eq[1] <= <GND>
+eq[2] <= <GND>
+eq[3] <= <GND>
+eq[4] <= <GND>
+eq[5] <= <GND>
+eq[6] <= <GND>
+eq[7] <= <GND>
+eq[8] <= <GND>
+eq[9] <= <GND>
+eq[10] <= <GND>
+eq[11] <= <GND>
+eq[12] <= <GND>
+eq[13] <= <GND>
+eq[14] <= <GND>
+eq[15] <= <GND>
+
+
+|counter|lpm_counter0:inst|lpm_counter:LPM_COUNTER_component|cntr_uvh:auto_generated
+clock => counter_reg_bit[3].CLK
+clock => counter_reg_bit[2].CLK
+clock => counter_reg_bit[1].CLK
+clock => counter_reg_bit[0].CLK
+q[0] <= counter_reg_bit[0].DB_MAX_OUTPUT_PORT_TYPE
+q[1] <= counter_reg_bit[1].DB_MAX_OUTPUT_PORT_TYPE
+q[2] <= counter_reg_bit[2].DB_MAX_OUTPUT_PORT_TYPE
+q[3] <= counter_reg_bit[3].DB_MAX_OUTPUT_PORT_TYPE
+updown => _.IN0
+updown => cout_actual.IN1
+updown => counter_comb_bita0.DATAB
+updown => counter_comb_bita1.DATAB
+updown => counter_comb_bita2.DATAB
+updown => counter_comb_bita3.DATAB
+
+
+|counter|lpm_counter0:inst|lpm_counter:LPM_COUNTER_component|cntr_uvh:auto_generated|cmpr_kkc:cmpr1
+aeb <= aeb_result_wire[0].DB_MAX_OUTPUT_PORT_TYPE
+dataa[0] => data_wire[0].IN0
+dataa[1] => data_wire[0].IN0
+dataa[2] => data_wire[1].IN0
+dataa[3] => data_wire[1].IN0
+datab[0] => data_wire[0].IN1
+datab[1] => data_wire[0].IN1
+datab[2] => data_wire[1].IN1
+datab[3] => data_wire[1].IN1
+
+

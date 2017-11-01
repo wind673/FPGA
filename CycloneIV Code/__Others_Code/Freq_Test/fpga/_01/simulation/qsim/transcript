@@ -1,0 +1,56 @@
+# do Project.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# 
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 15:07:02 on Apr 25,2017
+# vlog -work work Project.vo 
+# -- Compiling module Interface_bsp
+# 
+# Top level modules:
+# 	Interface_bsp
+# End time: 15:07:02 on Apr 25,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 15:07:02 on Apr 25,2017
+# vlog -work work tx.vwf.vt 
+# -- Compiling module Interface_bsp_vlg_sample_tst
+# -- Compiling module Interface_bsp_vlg_check_tst
+# ** Warning: tx.vwf.vt(145): (vlog-2576) [BSOB] - Bit-select into 'out_led_bus_expected_prev' is out of bounds.
+# 
+# ** Warning: tx.vwf.vt(145): (vlog-2576) [BSOB] - Bit-select into 'out_led_bus_prev' is out of bounds.
+# 
+# ** Warning: tx.vwf.vt(145): (vlog-2576) [BSOB] - Bit-select into 'out_led_bus_expected_prev' is out of bounds.
+# 
+# ** Warning: tx.vwf.vt(146): (vlog-2576) [BSOB] - Bit-select into 'out_led_bus_expected_prev' is out of bounds.
+# 
+# ** Warning: tx.vwf.vt(146): (vlog-2576) [BSOB] - Bit-select into 'last_out_led_bus_exp' is out of bounds.
+# 
+# ** Warning: tx.vwf.vt(155): (vlog-2576) [BSOB] - Bit-select into 'last_out_led_bus_exp' is out of bounds.
+# 
+# ** Warning: tx.vwf.vt(155): (vlog-2576) [BSOB] - Bit-select into 'out_led_bus_expected_prev' is out of bounds.
+# 
+# -- Compiling module Interface_bsp_vlg_vec_tst
+# 
+# Top level modules:
+# 	Interface_bsp_vlg_vec_tst
+# End time: 15:07:02 on Apr 25,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 7
+# vsim -c -do "Project.do" 
+# Start time: 15:07:03 on Apr 25,2017
+# Loading work.Interface_bsp_vlg_vec_tst
+# Loading work.Interface_bsp
+# Loading cycloneive_ver.cycloneive_io_obuf
+# Loading cycloneive_ver.cycloneive_io_ibuf
+# Loading cycloneive_ver.cycloneive_clkctrl
+# Loading cycloneive_ver.cycloneive_mux41
+# Loading cycloneive_ver.cycloneive_ena_reg
+# Loading cycloneive_ver.cycloneive_lcell_comb
+# Loading altera_ver.dffeas
+# Loading work.Interface_bsp_vlg_sample_tst
+# Loading work.Interface_bsp_vlg_check_tst
+# Loading altera_ver.PRIM_GDFF_LOW
+# Simulation passed !
+# ** Note: $finish    : tx.vwf.vt(221)
+#    Time: 1 us  Iteration: 0  Instance: /Interface_bsp_vlg_vec_tst/tb_out
+# End time: 15:07:03 on Apr 25,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0

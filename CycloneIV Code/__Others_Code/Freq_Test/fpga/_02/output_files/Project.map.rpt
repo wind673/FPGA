@@ -1,0 +1,1689 @@
+Analysis & Synthesis report for Project
+Tue May 09 16:22:23 2017
+Quartus II 64-Bit Version 15.0.0 Build 145 04/22/2015 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. User-Specified and Inferred Latches
+  9. Registers Removed During Synthesis
+ 10. General Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Parameter Settings for User Entity Instance: signal_low:signal_low|pll_100mhz:comb_3|altpll:altpll_component
+ 13. Parameter Settings for Inferred Entity Instance: Drive_Clock:Drive_Clock0|lpm_divide:Mod2
+ 14. Parameter Settings for Inferred Entity Instance: App_Led:App_Led0|lpm_divide:Mod0
+ 15. Parameter Settings for Inferred Entity Instance: Drive_Clock:Drive_Clock0|lpm_divide:Mod1
+ 16. Parameter Settings for Inferred Entity Instance: Drive_Clock:Drive_Clock0|lpm_divide:Mod0
+ 17. altpll Parameter Settings by Entity Instance
+ 18. Port Connectivity Checks: "Drive_ADC:Drive_ADC"
+ 19. Port Connectivity Checks: "Drive_Usart_Top:Drive_Usart_Top"
+ 20. Port Connectivity Checks: "Drive_Clock:Drive_Clock0"
+ 21. Port Connectivity Checks: "signal:signal"
+ 22. Post-Synthesis Netlist Statistics for Top Partition
+ 23. Elapsed Time Per Partition
+ 24. Analysis & Synthesis Messages
+ 25. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2015 Altera Corporation. All rights reserved.
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, the Altera Quartus II License Agreement,
+the Altera MegaCore Function License Agreement, or other 
+applicable license agreement, including, without limitation, 
+that your use is for the sole purpose of programming logic 
+devices manufactured by Altera and sold by Altera or its 
+authorized distributors.  Please refer to the applicable 
+agreement for further details.
+
+
+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++------------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Tue May 09 16:22:23 2017       ;
+; Quartus II 64-Bit Version          ; 15.0.0 Build 145 04/22/2015 SJ Full Version ;
+; Revision Name                      ; Project                                     ;
+; Top-level Entity Name              ; Interface_bsp                               ;
+; Family                             ; Cyclone IV E                                ;
+; Total logic elements               ; 2,291                                       ;
+;     Total combinational functions  ; 2,163                                       ;
+;     Dedicated logic registers      ; 431                                         ;
+; Total registers                    ; 431                                         ;
+; Total pins                         ; 38                                          ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 0                                           ;
+; Embedded Multiplier 9-bit elements ; 0                                           ;
+; Total PLLs                         ; 1                                           ;
++------------------------------------+---------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EP4CE22E22C8       ;                    ;
+; Top-level entity name                                                      ; Interface_bsp      ; Project            ;
+; Family name                                                                ; Cyclone IV E       ; Cyclone V          ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                 ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM Block Balancing                                                   ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; On                 ; On                 ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
+; Synthesis Seed                                                             ; 1                  ; 1                  ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 4           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-4         ; < 0.1%      ;
+;     Processors 5-8         ;   0.0%      ;
++----------------------------+-------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                     ;
++-------------------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path          ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                        ; Library ;
++-------------------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------------+---------+
+; _06_signal/signal_low.v                   ; yes             ; User Verilog HDL File        ; C:/Users/asus6/Desktop/fpga/ADC(FPGA)/_01/_06_signal/signal_low.v                   ;         ;
+; _06_signal/signal.v                       ; yes             ; User Verilog HDL File        ; C:/Users/asus6/Desktop/fpga/ADC(FPGA)/_01/_06_signal/signal.v                       ;         ;
+; _06_signal/pll_100mhz.v                   ; yes             ; User Wizard-Generated File   ; C:/Users/asus6/Desktop/fpga/ADC(FPGA)/_01/_06_signal/pll_100mhz.v                   ;         ;
+; _06_signal/counter_low.v                  ; yes             ; User Verilog HDL File        ; C:/Users/asus6/Desktop/fpga/ADC(FPGA)/_01/_06_signal/counter_low.v                  ;         ;
+; _06_signal/counter.v                      ; yes             ; User Verilog HDL File        ; C:/Users/asus6/Desktop/fpga/ADC(FPGA)/_01/_06_signal/counter.v                      ;         ;
+; _06_signal/count_2s.v                     ; yes             ; User Verilog HDL File        ; C:/Users/asus6/Desktop/fpga/ADC(FPGA)/_01/_06_signal/count_2s.v                     ;         ;
+; _01_Interface/Interface_bsp.v             ; yes             ; User Verilog HDL File        ; C:/Users/asus6/Desktop/fpga/ADC(FPGA)/_01/_01_Interface/Interface_bsp.v             ;         ;
+; _02_Drive/Drive_Clock.v                   ; yes             ; User Verilog HDL File        ; C:/Users/asus6/Desktop/fpga/ADC(FPGA)/_01/_02_Drive/Drive_Clock.v                   ;         ;
+; _03_App/App_Led.v                         ; yes             ; User Verilog HDL File        ; C:/Users/asus6/Desktop/fpga/ADC(FPGA)/_01/_03_App/App_Led.v                         ;         ;
+; _02_Drive/Drive_Uart/Drive_Usart_Top.v    ; yes             ; User Verilog HDL File        ; C:/Users/asus6/Desktop/fpga/ADC(FPGA)/_01/_02_Drive/Drive_Uart/Drive_Usart_Top.v    ;         ;
+; _02_Drive/Drive_Uart/Drive_Usart_Handle.v ; yes             ; User Verilog HDL File        ; C:/Users/asus6/Desktop/fpga/ADC(FPGA)/_01/_02_Drive/Drive_Uart/Drive_Usart_Handle.v ;         ;
+; _02_Drive/Drive_Uart/Drive_Usart_Bsp.v    ; yes             ; User Verilog HDL File        ; C:/Users/asus6/Desktop/fpga/ADC(FPGA)/_01/_02_Drive/Drive_Uart/Drive_Usart_Bsp.v    ;         ;
+; _02_Drive/Drive_ADC.v                     ; yes             ; User Verilog HDL File        ; C:/Users/asus6/Desktop/fpga/ADC(FPGA)/_01/_02_Drive/Drive_ADC.v                     ;         ;
+; _02_Drive/Drive_DAC.v                     ; yes             ; User Verilog HDL File        ; C:/Users/asus6/Desktop/fpga/ADC(FPGA)/_01/_02_Drive/Drive_DAC.v                     ;         ;
+; altpll.tdf                                ; yes             ; Megafunction                 ; g:/altera/15.0/quartus/libraries/megafunctions/altpll.tdf                           ;         ;
+; aglobal150.inc                            ; yes             ; Megafunction                 ; g:/altera/15.0/quartus/libraries/megafunctions/aglobal150.inc                       ;         ;
+; stratix_pll.inc                           ; yes             ; Megafunction                 ; g:/altera/15.0/quartus/libraries/megafunctions/stratix_pll.inc                      ;         ;
+; stratixii_pll.inc                         ; yes             ; Megafunction                 ; g:/altera/15.0/quartus/libraries/megafunctions/stratixii_pll.inc                    ;         ;
+; cycloneii_pll.inc                         ; yes             ; Megafunction                 ; g:/altera/15.0/quartus/libraries/megafunctions/cycloneii_pll.inc                    ;         ;
+; db/pll_100mhz_altpll.v                    ; yes             ; Auto-Generated Megafunction  ; C:/Users/asus6/Desktop/fpga/ADC(FPGA)/_01/db/pll_100mhz_altpll.v                    ;         ;
+; lpm_divide.tdf                            ; yes             ; Megafunction                 ; g:/altera/15.0/quartus/libraries/megafunctions/lpm_divide.tdf                       ;         ;
+; abs_divider.inc                           ; yes             ; Megafunction                 ; g:/altera/15.0/quartus/libraries/megafunctions/abs_divider.inc                      ;         ;
+; sign_div_unsign.inc                       ; yes             ; Megafunction                 ; g:/altera/15.0/quartus/libraries/megafunctions/sign_div_unsign.inc                  ;         ;
+; db/lpm_divide_lcm.tdf                     ; yes             ; Auto-Generated Megafunction  ; C:/Users/asus6/Desktop/fpga/ADC(FPGA)/_01/db/lpm_divide_lcm.tdf                     ;         ;
+; db/sign_div_unsign_bnh.tdf                ; yes             ; Auto-Generated Megafunction  ; C:/Users/asus6/Desktop/fpga/ADC(FPGA)/_01/db/sign_div_unsign_bnh.tdf                ;         ;
+; db/alt_u_div_9af.tdf                      ; yes             ; Auto-Generated Megafunction  ; C:/Users/asus6/Desktop/fpga/ADC(FPGA)/_01/db/alt_u_div_9af.tdf                      ;         ;
+; db/add_sub_7pc.tdf                        ; yes             ; Auto-Generated Megafunction  ; C:/Users/asus6/Desktop/fpga/ADC(FPGA)/_01/db/add_sub_7pc.tdf                        ;         ;
+; db/add_sub_8pc.tdf                        ; yes             ; Auto-Generated Megafunction  ; C:/Users/asus6/Desktop/fpga/ADC(FPGA)/_01/db/add_sub_8pc.tdf                        ;         ;
+; db/lpm_divide_bbm.tdf                     ; yes             ; Auto-Generated Megafunction  ; C:/Users/asus6/Desktop/fpga/ADC(FPGA)/_01/db/lpm_divide_bbm.tdf                     ;         ;
+; db/sign_div_unsign_0mh.tdf                ; yes             ; Auto-Generated Megafunction  ; C:/Users/asus6/Desktop/fpga/ADC(FPGA)/_01/db/sign_div_unsign_0mh.tdf                ;         ;
+; db/alt_u_div_k7f.tdf                      ; yes             ; Auto-Generated Megafunction  ; C:/Users/asus6/Desktop/fpga/ADC(FPGA)/_01/db/alt_u_div_k7f.tdf                      ;         ;
+; db/lpm_divide_6bm.tdf                     ; yes             ; Auto-Generated Megafunction  ; C:/Users/asus6/Desktop/fpga/ADC(FPGA)/_01/db/lpm_divide_6bm.tdf                     ;         ;
+; db/sign_div_unsign_rlh.tdf                ; yes             ; Auto-Generated Megafunction  ; C:/Users/asus6/Desktop/fpga/ADC(FPGA)/_01/db/sign_div_unsign_rlh.tdf                ;         ;
+; db/alt_u_div_77f.tdf                      ; yes             ; Auto-Generated Megafunction  ; C:/Users/asus6/Desktop/fpga/ADC(FPGA)/_01/db/alt_u_div_77f.tdf                      ;         ;
+; db/lpm_divide_qcm.tdf                     ; yes             ; Auto-Generated Megafunction  ; C:/Users/asus6/Desktop/fpga/ADC(FPGA)/_01/db/lpm_divide_qcm.tdf                     ;         ;
+; db/sign_div_unsign_fnh.tdf                ; yes             ; Auto-Generated Megafunction  ; C:/Users/asus6/Desktop/fpga/ADC(FPGA)/_01/db/sign_div_unsign_fnh.tdf                ;         ;
+; db/alt_u_div_iaf.tdf                      ; yes             ; Auto-Generated Megafunction  ; C:/Users/asus6/Desktop/fpga/ADC(FPGA)/_01/db/alt_u_div_iaf.tdf                      ;         ;
++-------------------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------------+---------+
+
+
++-------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                                   ;
++---------------------------------------------+---------------------------------+
+; Resource                                    ; Usage                           ;
++---------------------------------------------+---------------------------------+
+; Estimated Total logic elements              ; 2,291                           ;
+;                                             ;                                 ;
+; Total combinational functions               ; 2163                            ;
+; Logic element usage by number of LUT inputs ;                                 ;
+;     -- 4 input functions                    ; 640                             ;
+;     -- 3 input functions                    ; 606                             ;
+;     -- <=2 input functions                  ; 917                             ;
+;                                             ;                                 ;
+; Logic elements by mode                      ;                                 ;
+;     -- normal mode                          ; 1430                            ;
+;     -- arithmetic mode                      ; 733                             ;
+;                                             ;                                 ;
+; Total registers                             ; 431                             ;
+;     -- Dedicated logic registers            ; 431                             ;
+;     -- I/O registers                        ; 0                               ;
+;                                             ;                                 ;
+; I/O pins                                    ; 38                              ;
+;                                             ;                                 ;
+; Embedded Multiplier 9-bit elements          ; 0                               ;
+;                                             ;                                 ;
+; Total PLLs                                  ; 1                               ;
+;     -- PLLs                                 ; 1                               ;
+;                                             ;                                 ;
+; Maximum fan-out node                        ; Drive_Clock:Drive_Clock0|clk_us ;
+; Maximum fan-out                             ; 163                             ;
+; Total fan-out                               ; 7386                            ;
+; Average fan-out                             ; 2.76                            ;
++---------------------------------------------+---------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                 ;
++------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node                     ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                     ; Library Name ;
++------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------------+--------------+
+; |Interface_bsp                                 ; 2163 (0)          ; 431 (0)      ; 0           ; 0            ; 0       ; 0         ; 38   ; 0            ; |Interface_bsp                                                                                                                          ; work         ;
+;    |App_Led:App_Led0|                          ; 55 (12)           ; 10 (10)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Interface_bsp|App_Led:App_Led0                                                                                                         ; work         ;
+;       |lpm_divide:Mod0|                        ; 43 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Interface_bsp|App_Led:App_Led0|lpm_divide:Mod0                                                                                         ; work         ;
+;          |lpm_divide_bbm:auto_generated|       ; 43 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Interface_bsp|App_Led:App_Led0|lpm_divide:Mod0|lpm_divide_bbm:auto_generated                                                           ; work         ;
+;             |sign_div_unsign_0mh:divider|      ; 43 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Interface_bsp|App_Led:App_Led0|lpm_divide:Mod0|lpm_divide_bbm:auto_generated|sign_div_unsign_0mh:divider                               ; work         ;
+;                |alt_u_div_k7f:divider|         ; 43 (43)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Interface_bsp|App_Led:App_Led0|lpm_divide:Mod0|lpm_divide_bbm:auto_generated|sign_div_unsign_0mh:divider|alt_u_div_k7f:divider         ; work         ;
+;    |Drive_ADC:Drive_ADC|                       ; 10 (10)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Interface_bsp|Drive_ADC:Drive_ADC                                                                                                      ; work         ;
+;    |Drive_Clock:Drive_Clock0|                  ; 1238 (54)         ; 31 (31)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Interface_bsp|Drive_Clock:Drive_Clock0                                                                                                 ; work         ;
+;       |lpm_divide:Mod0|                        ; 141 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Interface_bsp|Drive_Clock:Drive_Clock0|lpm_divide:Mod0                                                                                 ; work         ;
+;          |lpm_divide_qcm:auto_generated|       ; 141 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Interface_bsp|Drive_Clock:Drive_Clock0|lpm_divide:Mod0|lpm_divide_qcm:auto_generated                                                   ; work         ;
+;             |sign_div_unsign_fnh:divider|      ; 141 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Interface_bsp|Drive_Clock:Drive_Clock0|lpm_divide:Mod0|lpm_divide_qcm:auto_generated|sign_div_unsign_fnh:divider                       ; work         ;
+;                |alt_u_div_iaf:divider|         ; 141 (141)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Interface_bsp|Drive_Clock:Drive_Clock0|lpm_divide:Mod0|lpm_divide_qcm:auto_generated|sign_div_unsign_fnh:divider|alt_u_div_iaf:divider ; work         ;
+;       |lpm_divide:Mod1|                        ; 415 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Interface_bsp|Drive_Clock:Drive_Clock0|lpm_divide:Mod1                                                                                 ; work         ;
+;          |lpm_divide_6bm:auto_generated|       ; 415 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Interface_bsp|Drive_Clock:Drive_Clock0|lpm_divide:Mod1|lpm_divide_6bm:auto_generated                                                   ; work         ;
+;             |sign_div_unsign_rlh:divider|      ; 415 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Interface_bsp|Drive_Clock:Drive_Clock0|lpm_divide:Mod1|lpm_divide_6bm:auto_generated|sign_div_unsign_rlh:divider                       ; work         ;
+;                |alt_u_div_77f:divider|         ; 415 (415)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Interface_bsp|Drive_Clock:Drive_Clock0|lpm_divide:Mod1|lpm_divide_6bm:auto_generated|sign_div_unsign_rlh:divider|alt_u_div_77f:divider ; work         ;
+;       |lpm_divide:Mod2|                        ; 628 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Interface_bsp|Drive_Clock:Drive_Clock0|lpm_divide:Mod2                                                                                 ; work         ;
+;          |lpm_divide_lcm:auto_generated|       ; 628 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Interface_bsp|Drive_Clock:Drive_Clock0|lpm_divide:Mod2|lpm_divide_lcm:auto_generated                                                   ; work         ;
+;             |sign_div_unsign_bnh:divider|      ; 628 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Interface_bsp|Drive_Clock:Drive_Clock0|lpm_divide:Mod2|lpm_divide_lcm:auto_generated|sign_div_unsign_bnh:divider                       ; work         ;
+;                |alt_u_div_9af:divider|         ; 628 (628)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Interface_bsp|Drive_Clock:Drive_Clock0|lpm_divide:Mod2|lpm_divide_lcm:auto_generated|sign_div_unsign_bnh:divider|alt_u_div_9af:divider ; work         ;
+;    |Drive_DAC:Drive_DAC|                       ; 10 (10)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Interface_bsp|Drive_DAC:Drive_DAC                                                                                                      ; work         ;
+;    |Drive_Usart_Top:Drive_Usart_Top|           ; 739 (0)           ; 237 (0)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Interface_bsp|Drive_Usart_Top:Drive_Usart_Top                                                                                          ; work         ;
+;       |Drive_Usart_Bsp:Drive_Usart_Bsp|        ; 167 (167)         ; 78 (78)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Interface_bsp|Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Bsp:Drive_Usart_Bsp                                                          ; work         ;
+;       |Drive_Usart_Handle:Drive_Usart_Handle|  ; 572 (572)         ; 159 (159)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Interface_bsp|Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle                                                    ; work         ;
+;    |signal:signal|                             ; 80 (0)            ; 91 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Interface_bsp|signal:signal                                                                                                            ; work         ;
+;       |count_2s:U1|                            ; 48 (48)           ; 27 (27)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Interface_bsp|signal:signal|count_2s:U1                                                                                                ; work         ;
+;       |counter:U2|                             ; 32 (32)           ; 64 (64)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Interface_bsp|signal:signal|counter:U2                                                                                                 ; work         ;
+;    |signal_low:signal_low|                     ; 31 (0)            ; 62 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Interface_bsp|signal_low:signal_low                                                                                                    ; work         ;
+;       |counter_low:U2|                         ; 31 (31)           ; 62 (62)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Interface_bsp|signal_low:signal_low|counter_low:U2                                                                                     ; work         ;
+;       |pll_100mhz:comb_3|                      ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Interface_bsp|signal_low:signal_low|pll_100mhz:comb_3                                                                                  ; work         ;
+;          |altpll:altpll_component|             ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Interface_bsp|signal_low:signal_low|pll_100mhz:comb_3|altpll:altpll_component                                                          ; work         ;
+;             |pll_100mhz_altpll:auto_generated| ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Interface_bsp|signal_low:signal_low|pll_100mhz:comb_3|altpll:altpll_component|pll_100mhz_altpll:auto_generated                         ; work         ;
++------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                                                                                                                    ;
++---------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------+------------------------+
+; Latch Name                                                                            ; Latch Enable Signal                                                                   ; Free of Timing Hazards ;
++---------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------+------------------------+
+; Drive_DAC:Drive_DAC|out_DAC_data[0]                                                   ; in_clk_50M                                                                            ; yes                    ;
+; Drive_DAC:Drive_DAC|out_DAC_data[1]                                                   ; in_clk_50M                                                                            ; yes                    ;
+; Drive_DAC:Drive_DAC|out_DAC_data[2]                                                   ; in_clk_50M                                                                            ; yes                    ;
+; Drive_DAC:Drive_DAC|out_DAC_data[3]                                                   ; in_clk_50M                                                                            ; yes                    ;
+; Drive_DAC:Drive_DAC|out_DAC_data[4]                                                   ; in_clk_50M                                                                            ; yes                    ;
+; Drive_DAC:Drive_DAC|out_DAC_data[5]                                                   ; in_clk_50M                                                                            ; yes                    ;
+; Drive_DAC:Drive_DAC|out_DAC_data[6]                                                   ; in_clk_50M                                                                            ; yes                    ;
+; Drive_DAC:Drive_DAC|out_DAC_data[7]                                                   ; in_clk_50M                                                                            ; yes                    ;
+; Drive_DAC:Drive_DAC|out_DAC_data[8]                                                   ; in_clk_50M                                                                            ; yes                    ;
+; Drive_DAC:Drive_DAC|out_DAC_data[9]                                                   ; in_clk_50M                                                                            ; yes                    ;
+; Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_start_flag ; Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_start_flag ; yes                    ;
+; Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_buff[8][7] ; Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_start_flag ; yes                    ;
+; Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_buff[7][7] ; Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_start_flag ; yes                    ;
+; Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_buff[6][7] ; Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_start_flag ; yes                    ;
+; Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_buff[5][7] ; Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_start_flag ; yes                    ;
+; Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_buff[4][7] ; Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_start_flag ; yes                    ;
+; Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_buff[3][7] ; Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_start_flag ; yes                    ;
+; Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_buff[2][7] ; Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_start_flag ; yes                    ;
+; Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_buff[1][7] ; Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_start_flag ; yes                    ;
+; Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_buff[8][6] ; Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_start_flag ; yes                    ;
+; Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_buff[7][6] ; Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_start_flag ; yes                    ;
+; Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_buff[6][6] ; Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_start_flag ; yes                    ;
+; Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_buff[5][6] ; Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_start_flag ; yes                    ;
+; Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_buff[4][6] ; Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_start_flag ; yes                    ;
+; Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_buff[3][6] ; Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_start_flag ; yes                    ;
+; Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_buff[2][6] ; Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_start_flag ; yes                    ;
+; Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_buff[1][6] ; Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_start_flag ; yes                    ;
+; Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_buff[8][5] ; Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_start_flag ; yes                    ;
+; Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_buff[7][5] ; Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_start_flag ; yes                    ;
+; Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_buff[6][5] ; Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_start_flag ; yes                    ;
+; Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_buff[5][5] ; Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_start_flag ; yes                    ;
+; Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_buff[4][5] ; Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_start_flag ; yes                    ;
+; Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_buff[3][5] ; Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_start_flag ; yes                    ;
+; Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_buff[2][5] ; Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_start_flag ; yes                    ;
+; Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_buff[1][5] ; Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_start_flag ; yes                    ;
+; Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_buff[8][4] ; Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_start_flag ; yes                    ;
+; Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_buff[7][4] ; Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_start_flag ; yes                    ;
+; Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_buff[6][4] ; Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_start_flag ; yes                    ;
+; Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_buff[5][4] ; Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_start_flag ; yes                    ;
+; Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_buff[4][4] ; Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_start_flag ; yes                    ;
+; Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_buff[3][4] ; Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_start_flag ; yes                    ;
+; Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_buff[2][4] ; Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_start_flag ; yes                    ;
+; Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_buff[1][4] ; Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_start_flag ; yes                    ;
+; Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_buff[8][3] ; Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_start_flag ; yes                    ;
+; Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_buff[7][3] ; Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_start_flag ; yes                    ;
+; Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_buff[6][3] ; Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_start_flag ; yes                    ;
+; Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_buff[5][3] ; Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_start_flag ; yes                    ;
+; Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_buff[4][3] ; Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_start_flag ; yes                    ;
+; Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_buff[3][3] ; Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_start_flag ; yes                    ;
+; Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_buff[2][3] ; Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_start_flag ; yes                    ;
+; Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_buff[1][3] ; Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_start_flag ; yes                    ;
+; Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_buff[8][2] ; Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_start_flag ; yes                    ;
+; Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_buff[7][2] ; Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_start_flag ; yes                    ;
+; Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_buff[6][2] ; Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_start_flag ; yes                    ;
+; Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_buff[5][2] ; Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_start_flag ; yes                    ;
+; Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_buff[4][2] ; Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_start_flag ; yes                    ;
+; Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_buff[3][2] ; Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_start_flag ; yes                    ;
+; Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_buff[2][2] ; Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_start_flag ; yes                    ;
+; Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_buff[1][2] ; Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_start_flag ; yes                    ;
+; Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_buff[8][1] ; Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_start_flag ; yes                    ;
+; Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_buff[7][1] ; Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_start_flag ; yes                    ;
+; Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_buff[6][1] ; Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_start_flag ; yes                    ;
+; Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_buff[5][1] ; Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_start_flag ; yes                    ;
+; Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_buff[4][1] ; Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_start_flag ; yes                    ;
+; Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_buff[3][1] ; Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_start_flag ; yes                    ;
+; Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_buff[2][1] ; Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_start_flag ; yes                    ;
+; Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_buff[1][1] ; Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_start_flag ; yes                    ;
+; Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_buff[8][0] ; Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_start_flag ; yes                    ;
+; Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_buff[7][0] ; Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_start_flag ; yes                    ;
+; Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_buff[6][0] ; Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_start_flag ; yes                    ;
+; Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_buff[5][0] ; Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_start_flag ; yes                    ;
+; Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_buff[4][0] ; Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_start_flag ; yes                    ;
+; Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_buff[3][0] ; Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_start_flag ; yes                    ;
+; Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_buff[2][0] ; Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_start_flag ; yes                    ;
+; Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_buff[1][0] ; Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_start_flag ; yes                    ;
+; Drive_ADC:Drive_ADC|out_ADC_data[7]                                                   ; in_clk_50M                                                                            ; yes                    ;
+; Drive_ADC:Drive_ADC|out_ADC_data[6]                                                   ; in_clk_50M                                                                            ; yes                    ;
+; Drive_ADC:Drive_ADC|out_ADC_data[5]                                                   ; in_clk_50M                                                                            ; yes                    ;
+; Drive_ADC:Drive_ADC|out_ADC_data[4]                                                   ; in_clk_50M                                                                            ; yes                    ;
+; Drive_ADC:Drive_ADC|out_ADC_data[3]                                                   ; in_clk_50M                                                                            ; yes                    ;
+; Drive_ADC:Drive_ADC|out_ADC_data[2]                                                   ; in_clk_50M                                                                            ; yes                    ;
+; Drive_ADC:Drive_ADC|out_ADC_data[1]                                                   ; in_clk_50M                                                                            ; yes                    ;
+; Drive_ADC:Drive_ADC|out_ADC_data[9]                                                   ; in_clk_50M                                                                            ; yes                    ;
+; Drive_ADC:Drive_ADC|out_ADC_data[0]                                                   ; in_clk_50M                                                                            ; yes                    ;
+; Drive_ADC:Drive_ADC|out_ADC_data[8]                                                   ; in_clk_50M                                                                            ; yes                    ;
+; Number of user-specified and inferred latches = 85                                    ;                                                                                       ;                        ;
++---------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++----------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                     ;
++-----------------------------------------------+----------------------------------------+
+; Register name                                 ; Reason for Removal                     ;
++-----------------------------------------------+----------------------------------------+
+; App_Led:App_Led0|cnt[9..15]                   ; Stuck at GND due to stuck port data_in ;
+; Drive_Clock:Drive_Clock0|time_20ns[29..31]    ; Stuck at GND due to stuck port data_in ;
+; signal_low:signal_low|counter_low:U2|data[0]  ; Stuck at GND due to stuck port data_in ;
+; signal_low:signal_low|counter_low:U2|temp[31] ; Lost fanout                            ;
+; Total Number of Removed Registers = 12        ;                                        ;
++-----------------------------------------------+----------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 431   ;
+; Number of registers using Synchronous Clear  ; 104   ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 32    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 220   ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                                      ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                            ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------------------------------------+
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |Interface_bsp|Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|receive_us[16]   ;
+; 10:1               ; 5 bits    ; 30 LEs        ; 30 LEs               ; 0 LEs                  ; Yes        ; |Interface_bsp|Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_crc[6]      ;
+; 11:1               ; 8 bits    ; 56 LEs        ; 56 LEs               ; 0 LEs                  ; Yes        ; |Interface_bsp|Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|out_send_byte[2] ;
+; 6:1                ; 22 bits   ; 88 LEs        ; 44 LEs               ; 44 LEs                 ; No         ; |Interface_bsp|Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|Selector59       ;
+; 6:1                ; 9 bits    ; 36 LEs        ; 18 LEs               ; 18 LEs                 ; No         ; |Interface_bsp|Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|Selector51       ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: signal_low:signal_low|pll_100mhz:comb_3|altpll:altpll_component ;
++-------------------------------+------------------------------+-----------------------------------------------+
+; Parameter Name                ; Value                        ; Type                                          ;
++-------------------------------+------------------------------+-----------------------------------------------+
+; OPERATION_MODE                ; NORMAL                       ; Untyped                                       ;
+; PLL_TYPE                      ; AUTO                         ; Untyped                                       ;
+; LPM_HINT                      ; CBX_MODULE_PREFIX=pll_100mhz ; Untyped                                       ;
+; QUALIFY_CONF_DONE             ; OFF                          ; Untyped                                       ;
+; COMPENSATE_CLOCK              ; CLK0                         ; Untyped                                       ;
+; SCAN_CHAIN                    ; LONG                         ; Untyped                                       ;
+; PRIMARY_CLOCK                 ; INCLK0                       ; Untyped                                       ;
+; INCLK0_INPUT_FREQUENCY        ; 20000                        ; Signed Integer                                ;
+; INCLK1_INPUT_FREQUENCY        ; 0                            ; Untyped                                       ;
+; GATE_LOCK_SIGNAL              ; NO                           ; Untyped                                       ;
+; GATE_LOCK_COUNTER             ; 0                            ; Untyped                                       ;
+; LOCK_HIGH                     ; 1                            ; Untyped                                       ;
+; LOCK_LOW                      ; 1                            ; Untyped                                       ;
+; VALID_LOCK_MULTIPLIER         ; 1                            ; Untyped                                       ;
+; INVALID_LOCK_MULTIPLIER       ; 5                            ; Untyped                                       ;
+; SWITCH_OVER_ON_LOSSCLK        ; OFF                          ; Untyped                                       ;
+; SWITCH_OVER_ON_GATED_LOCK     ; OFF                          ; Untyped                                       ;
+; ENABLE_SWITCH_OVER_COUNTER    ; OFF                          ; Untyped                                       ;
+; SKIP_VCO                      ; OFF                          ; Untyped                                       ;
+; SWITCH_OVER_COUNTER           ; 0                            ; Untyped                                       ;
+; SWITCH_OVER_TYPE              ; AUTO                         ; Untyped                                       ;
+; FEEDBACK_SOURCE               ; EXTCLK0                      ; Untyped                                       ;
+; BANDWIDTH                     ; 0                            ; Untyped                                       ;
+; BANDWIDTH_TYPE                ; AUTO                         ; Untyped                                       ;
+; SPREAD_FREQUENCY              ; 0                            ; Untyped                                       ;
+; DOWN_SPREAD                   ; 0                            ; Untyped                                       ;
+; SELF_RESET_ON_GATED_LOSS_LOCK ; OFF                          ; Untyped                                       ;
+; SELF_RESET_ON_LOSS_LOCK       ; OFF                          ; Untyped                                       ;
+; CLK9_MULTIPLY_BY              ; 0                            ; Untyped                                       ;
+; CLK8_MULTIPLY_BY              ; 0                            ; Untyped                                       ;
+; CLK7_MULTIPLY_BY              ; 0                            ; Untyped                                       ;
+; CLK6_MULTIPLY_BY              ; 0                            ; Untyped                                       ;
+; CLK5_MULTIPLY_BY              ; 1                            ; Untyped                                       ;
+; CLK4_MULTIPLY_BY              ; 1                            ; Untyped                                       ;
+; CLK3_MULTIPLY_BY              ; 1                            ; Untyped                                       ;
+; CLK2_MULTIPLY_BY              ; 1                            ; Untyped                                       ;
+; CLK1_MULTIPLY_BY              ; 1                            ; Untyped                                       ;
+; CLK0_MULTIPLY_BY              ; 2                            ; Signed Integer                                ;
+; CLK9_DIVIDE_BY                ; 0                            ; Untyped                                       ;
+; CLK8_DIVIDE_BY                ; 0                            ; Untyped                                       ;
+; CLK7_DIVIDE_BY                ; 0                            ; Untyped                                       ;
+; CLK6_DIVIDE_BY                ; 0                            ; Untyped                                       ;
+; CLK5_DIVIDE_BY                ; 1                            ; Untyped                                       ;
+; CLK4_DIVIDE_BY                ; 1                            ; Untyped                                       ;
+; CLK3_DIVIDE_BY                ; 1                            ; Untyped                                       ;
+; CLK2_DIVIDE_BY                ; 1                            ; Untyped                                       ;
+; CLK1_DIVIDE_BY                ; 1                            ; Untyped                                       ;
+; CLK0_DIVIDE_BY                ; 1                            ; Signed Integer                                ;
+; CLK9_PHASE_SHIFT              ; 0                            ; Untyped                                       ;
+; CLK8_PHASE_SHIFT              ; 0                            ; Untyped                                       ;
+; CLK7_PHASE_SHIFT              ; 0                            ; Untyped                                       ;
+; CLK6_PHASE_SHIFT              ; 0                            ; Untyped                                       ;
+; CLK5_PHASE_SHIFT              ; 0                            ; Untyped                                       ;
+; CLK4_PHASE_SHIFT              ; 0                            ; Untyped                                       ;
+; CLK3_PHASE_SHIFT              ; 0                            ; Untyped                                       ;
+; CLK2_PHASE_SHIFT              ; 0                            ; Untyped                                       ;
+; CLK1_PHASE_SHIFT              ; 0                            ; Untyped                                       ;
+; CLK0_PHASE_SHIFT              ; 0                            ; Untyped                                       ;
+; CLK5_TIME_DELAY               ; 0                            ; Untyped                                       ;
+; CLK4_TIME_DELAY               ; 0                            ; Untyped                                       ;
+; CLK3_TIME_DELAY               ; 0                            ; Untyped                                       ;
+; CLK2_TIME_DELAY               ; 0                            ; Untyped                                       ;
+; CLK1_TIME_DELAY               ; 0                            ; Untyped                                       ;
+; CLK0_TIME_DELAY               ; 0                            ; Untyped                                       ;
+; CLK9_DUTY_CYCLE               ; 50                           ; Untyped                                       ;
+; CLK8_DUTY_CYCLE               ; 50                           ; Untyped                                       ;
+; CLK7_DUTY_CYCLE               ; 50                           ; Untyped                                       ;
+; CLK6_DUTY_CYCLE               ; 50                           ; Untyped                                       ;
+; CLK5_DUTY_CYCLE               ; 50                           ; Untyped                                       ;
+; CLK4_DUTY_CYCLE               ; 50                           ; Untyped                                       ;
+; CLK3_DUTY_CYCLE               ; 50                           ; Untyped                                       ;
+; CLK2_DUTY_CYCLE               ; 50                           ; Untyped                                       ;
+; CLK1_DUTY_CYCLE               ; 50                           ; Untyped                                       ;
+; CLK0_DUTY_CYCLE               ; 50                           ; Signed Integer                                ;
+; CLK9_USE_EVEN_COUNTER_MODE    ; OFF                          ; Untyped                                       ;
+; CLK8_USE_EVEN_COUNTER_MODE    ; OFF                          ; Untyped                                       ;
+; CLK7_USE_EVEN_COUNTER_MODE    ; OFF                          ; Untyped                                       ;
+; CLK6_USE_EVEN_COUNTER_MODE    ; OFF                          ; Untyped                                       ;
+; CLK5_USE_EVEN_COUNTER_MODE    ; OFF                          ; Untyped                                       ;
+; CLK4_USE_EVEN_COUNTER_MODE    ; OFF                          ; Untyped                                       ;
+; CLK3_USE_EVEN_COUNTER_MODE    ; OFF                          ; Untyped                                       ;
+; CLK2_USE_EVEN_COUNTER_MODE    ; OFF                          ; Untyped                                       ;
+; CLK1_USE_EVEN_COUNTER_MODE    ; OFF                          ; Untyped                                       ;
+; CLK0_USE_EVEN_COUNTER_MODE    ; OFF                          ; Untyped                                       ;
+; CLK9_USE_EVEN_COUNTER_VALUE   ; OFF                          ; Untyped                                       ;
+; CLK8_USE_EVEN_COUNTER_VALUE   ; OFF                          ; Untyped                                       ;
+; CLK7_USE_EVEN_COUNTER_VALUE   ; OFF                          ; Untyped                                       ;
+; CLK6_USE_EVEN_COUNTER_VALUE   ; OFF                          ; Untyped                                       ;
+; CLK5_USE_EVEN_COUNTER_VALUE   ; OFF                          ; Untyped                                       ;
+; CLK4_USE_EVEN_COUNTER_VALUE   ; OFF                          ; Untyped                                       ;
+; CLK3_USE_EVEN_COUNTER_VALUE   ; OFF                          ; Untyped                                       ;
+; CLK2_USE_EVEN_COUNTER_VALUE   ; OFF                          ; Untyped                                       ;
+; CLK1_USE_EVEN_COUNTER_VALUE   ; OFF                          ; Untyped                                       ;
+; CLK0_USE_EVEN_COUNTER_VALUE   ; OFF                          ; Untyped                                       ;
+; LOCK_WINDOW_UI                ;  0.05                        ; Untyped                                       ;
+; LOCK_WINDOW_UI_BITS           ; UNUSED                       ; Untyped                                       ;
+; VCO_RANGE_DETECTOR_LOW_BITS   ; UNUSED                       ; Untyped                                       ;
+; VCO_RANGE_DETECTOR_HIGH_BITS  ; UNUSED                       ; Untyped                                       ;
+; DPA_MULTIPLY_BY               ; 0                            ; Untyped                                       ;
+; DPA_DIVIDE_BY                 ; 1                            ; Untyped                                       ;
+; DPA_DIVIDER                   ; 0                            ; Untyped                                       ;
+; EXTCLK3_MULTIPLY_BY           ; 1                            ; Untyped                                       ;
+; EXTCLK2_MULTIPLY_BY           ; 1                            ; Untyped                                       ;
+; EXTCLK1_MULTIPLY_BY           ; 1                            ; Untyped                                       ;
+; EXTCLK0_MULTIPLY_BY           ; 1                            ; Untyped                                       ;
+; EXTCLK3_DIVIDE_BY             ; 1                            ; Untyped                                       ;
+; EXTCLK2_DIVIDE_BY             ; 1                            ; Untyped                                       ;
+; EXTCLK1_DIVIDE_BY             ; 1                            ; Untyped                                       ;
+; EXTCLK0_DIVIDE_BY             ; 1                            ; Untyped                                       ;
+; EXTCLK3_PHASE_SHIFT           ; 0                            ; Untyped                                       ;
+; EXTCLK2_PHASE_SHIFT           ; 0                            ; Untyped                                       ;
+; EXTCLK1_PHASE_SHIFT           ; 0                            ; Untyped                                       ;
+; EXTCLK0_PHASE_SHIFT           ; 0                            ; Untyped                                       ;
+; EXTCLK3_TIME_DELAY            ; 0                            ; Untyped                                       ;
+; EXTCLK2_TIME_DELAY            ; 0                            ; Untyped                                       ;
+; EXTCLK1_TIME_DELAY            ; 0                            ; Untyped                                       ;
+; EXTCLK0_TIME_DELAY            ; 0                            ; Untyped                                       ;
+; EXTCLK3_DUTY_CYCLE            ; 50                           ; Untyped                                       ;
+; EXTCLK2_DUTY_CYCLE            ; 50                           ; Untyped                                       ;
+; EXTCLK1_DUTY_CYCLE            ; 50                           ; Untyped                                       ;
+; EXTCLK0_DUTY_CYCLE            ; 50                           ; Untyped                                       ;
+; VCO_MULTIPLY_BY               ; 0                            ; Untyped                                       ;
+; VCO_DIVIDE_BY                 ; 0                            ; Untyped                                       ;
+; SCLKOUT0_PHASE_SHIFT          ; 0                            ; Untyped                                       ;
+; SCLKOUT1_PHASE_SHIFT          ; 0                            ; Untyped                                       ;
+; VCO_MIN                       ; 0                            ; Untyped                                       ;
+; VCO_MAX                       ; 0                            ; Untyped                                       ;
+; VCO_CENTER                    ; 0                            ; Untyped                                       ;
+; PFD_MIN                       ; 0                            ; Untyped                                       ;
+; PFD_MAX                       ; 0                            ; Untyped                                       ;
+; M_INITIAL                     ; 0                            ; Untyped                                       ;
+; M                             ; 0                            ; Untyped                                       ;
+; N                             ; 1                            ; Untyped                                       ;
+; M2                            ; 1                            ; Untyped                                       ;
+; N2                            ; 1                            ; Untyped                                       ;
+; SS                            ; 1                            ; Untyped                                       ;
+; C0_HIGH                       ; 0                            ; Untyped                                       ;
+; C1_HIGH                       ; 0                            ; Untyped                                       ;
+; C2_HIGH                       ; 0                            ; Untyped                                       ;
+; C3_HIGH                       ; 0                            ; Untyped                                       ;
+; C4_HIGH                       ; 0                            ; Untyped                                       ;
+; C5_HIGH                       ; 0                            ; Untyped                                       ;
+; C6_HIGH                       ; 0                            ; Untyped                                       ;
+; C7_HIGH                       ; 0                            ; Untyped                                       ;
+; C8_HIGH                       ; 0                            ; Untyped                                       ;
+; C9_HIGH                       ; 0                            ; Untyped                                       ;
+; C0_LOW                        ; 0                            ; Untyped                                       ;
+; C1_LOW                        ; 0                            ; Untyped                                       ;
+; C2_LOW                        ; 0                            ; Untyped                                       ;
+; C3_LOW                        ; 0                            ; Untyped                                       ;
+; C4_LOW                        ; 0                            ; Untyped                                       ;
+; C5_LOW                        ; 0                            ; Untyped                                       ;
+; C6_LOW                        ; 0                            ; Untyped                                       ;
+; C7_LOW                        ; 0                            ; Untyped                                       ;
+; C8_LOW                        ; 0                            ; Untyped                                       ;
+; C9_LOW                        ; 0                            ; Untyped                                       ;
+; C0_INITIAL                    ; 0                            ; Untyped                                       ;
+; C1_INITIAL                    ; 0                            ; Untyped                                       ;
+; C2_INITIAL                    ; 0                            ; Untyped                                       ;
+; C3_INITIAL                    ; 0                            ; Untyped                                       ;
+; C4_INITIAL                    ; 0                            ; Untyped                                       ;
+; C5_INITIAL                    ; 0                            ; Untyped                                       ;
+; C6_INITIAL                    ; 0                            ; Untyped                                       ;
+; C7_INITIAL                    ; 0                            ; Untyped                                       ;
+; C8_INITIAL                    ; 0                            ; Untyped                                       ;
+; C9_INITIAL                    ; 0                            ; Untyped                                       ;
+; C0_MODE                       ; BYPASS                       ; Untyped                                       ;
+; C1_MODE                       ; BYPASS                       ; Untyped                                       ;
+; C2_MODE                       ; BYPASS                       ; Untyped                                       ;
+; C3_MODE                       ; BYPASS                       ; Untyped                                       ;
+; C4_MODE                       ; BYPASS                       ; Untyped                                       ;
+; C5_MODE                       ; BYPASS                       ; Untyped                                       ;
+; C6_MODE                       ; BYPASS                       ; Untyped                                       ;
+; C7_MODE                       ; BYPASS                       ; Untyped                                       ;
+; C8_MODE                       ; BYPASS                       ; Untyped                                       ;
+; C9_MODE                       ; BYPASS                       ; Untyped                                       ;
+; C0_PH                         ; 0                            ; Untyped                                       ;
+; C1_PH                         ; 0                            ; Untyped                                       ;
+; C2_PH                         ; 0                            ; Untyped                                       ;
+; C3_PH                         ; 0                            ; Untyped                                       ;
+; C4_PH                         ; 0                            ; Untyped                                       ;
+; C5_PH                         ; 0                            ; Untyped                                       ;
+; C6_PH                         ; 0                            ; Untyped                                       ;
+; C7_PH                         ; 0                            ; Untyped                                       ;
+; C8_PH                         ; 0                            ; Untyped                                       ;
+; C9_PH                         ; 0                            ; Untyped                                       ;
+; L0_HIGH                       ; 1                            ; Untyped                                       ;
+; L1_HIGH                       ; 1                            ; Untyped                                       ;
+; G0_HIGH                       ; 1                            ; Untyped                                       ;
+; G1_HIGH                       ; 1                            ; Untyped                                       ;
+; G2_HIGH                       ; 1                            ; Untyped                                       ;
+; G3_HIGH                       ; 1                            ; Untyped                                       ;
+; E0_HIGH                       ; 1                            ; Untyped                                       ;
+; E1_HIGH                       ; 1                            ; Untyped                                       ;
+; E2_HIGH                       ; 1                            ; Untyped                                       ;
+; E3_HIGH                       ; 1                            ; Untyped                                       ;
+; L0_LOW                        ; 1                            ; Untyped                                       ;
+; L1_LOW                        ; 1                            ; Untyped                                       ;
+; G0_LOW                        ; 1                            ; Untyped                                       ;
+; G1_LOW                        ; 1                            ; Untyped                                       ;
+; G2_LOW                        ; 1                            ; Untyped                                       ;
+; G3_LOW                        ; 1                            ; Untyped                                       ;
+; E0_LOW                        ; 1                            ; Untyped                                       ;
+; E1_LOW                        ; 1                            ; Untyped                                       ;
+; E2_LOW                        ; 1                            ; Untyped                                       ;
+; E3_LOW                        ; 1                            ; Untyped                                       ;
+; L0_INITIAL                    ; 1                            ; Untyped                                       ;
+; L1_INITIAL                    ; 1                            ; Untyped                                       ;
+; G0_INITIAL                    ; 1                            ; Untyped                                       ;
+; G1_INITIAL                    ; 1                            ; Untyped                                       ;
+; G2_INITIAL                    ; 1                            ; Untyped                                       ;
+; G3_INITIAL                    ; 1                            ; Untyped                                       ;
+; E0_INITIAL                    ; 1                            ; Untyped                                       ;
+; E1_INITIAL                    ; 1                            ; Untyped                                       ;
+; E2_INITIAL                    ; 1                            ; Untyped                                       ;
+; E3_INITIAL                    ; 1                            ; Untyped                                       ;
+; L0_MODE                       ; BYPASS                       ; Untyped                                       ;
+; L1_MODE                       ; BYPASS                       ; Untyped                                       ;
+; G0_MODE                       ; BYPASS                       ; Untyped                                       ;
+; G1_MODE                       ; BYPASS                       ; Untyped                                       ;
+; G2_MODE                       ; BYPASS                       ; Untyped                                       ;
+; G3_MODE                       ; BYPASS                       ; Untyped                                       ;
+; E0_MODE                       ; BYPASS                       ; Untyped                                       ;
+; E1_MODE                       ; BYPASS                       ; Untyped                                       ;
+; E2_MODE                       ; BYPASS                       ; Untyped                                       ;
+; E3_MODE                       ; BYPASS                       ; Untyped                                       ;
+; L0_PH                         ; 0                            ; Untyped                                       ;
+; L1_PH                         ; 0                            ; Untyped                                       ;
+; G0_PH                         ; 0                            ; Untyped                                       ;
+; G1_PH                         ; 0                            ; Untyped                                       ;
+; G2_PH                         ; 0                            ; Untyped                                       ;
+; G3_PH                         ; 0                            ; Untyped                                       ;
+; E0_PH                         ; 0                            ; Untyped                                       ;
+; E1_PH                         ; 0                            ; Untyped                                       ;
+; E2_PH                         ; 0                            ; Untyped                                       ;
+; E3_PH                         ; 0                            ; Untyped                                       ;
+; M_PH                          ; 0                            ; Untyped                                       ;
+; C1_USE_CASC_IN                ; OFF                          ; Untyped                                       ;
+; C2_USE_CASC_IN                ; OFF                          ; Untyped                                       ;
+; C3_USE_CASC_IN                ; OFF                          ; Untyped                                       ;
+; C4_USE_CASC_IN                ; OFF                          ; Untyped                                       ;
+; C5_USE_CASC_IN                ; OFF                          ; Untyped                                       ;
+; C6_USE_CASC_IN                ; OFF                          ; Untyped                                       ;
+; C7_USE_CASC_IN                ; OFF                          ; Untyped                                       ;
+; C8_USE_CASC_IN                ; OFF                          ; Untyped                                       ;
+; C9_USE_CASC_IN                ; OFF                          ; Untyped                                       ;
+; CLK0_COUNTER                  ; G0                           ; Untyped                                       ;
+; CLK1_COUNTER                  ; G0                           ; Untyped                                       ;
+; CLK2_COUNTER                  ; G0                           ; Untyped                                       ;
+; CLK3_COUNTER                  ; G0                           ; Untyped                                       ;
+; CLK4_COUNTER                  ; G0                           ; Untyped                                       ;
+; CLK5_COUNTER                  ; G0                           ; Untyped                                       ;
+; CLK6_COUNTER                  ; E0                           ; Untyped                                       ;
+; CLK7_COUNTER                  ; E1                           ; Untyped                                       ;
+; CLK8_COUNTER                  ; E2                           ; Untyped                                       ;
+; CLK9_COUNTER                  ; E3                           ; Untyped                                       ;
+; L0_TIME_DELAY                 ; 0                            ; Untyped                                       ;
+; L1_TIME_DELAY                 ; 0                            ; Untyped                                       ;
+; G0_TIME_DELAY                 ; 0                            ; Untyped                                       ;
+; G1_TIME_DELAY                 ; 0                            ; Untyped                                       ;
+; G2_TIME_DELAY                 ; 0                            ; Untyped                                       ;
+; G3_TIME_DELAY                 ; 0                            ; Untyped                                       ;
+; E0_TIME_DELAY                 ; 0                            ; Untyped                                       ;
+; E1_TIME_DELAY                 ; 0                            ; Untyped                                       ;
+; E2_TIME_DELAY                 ; 0                            ; Untyped                                       ;
+; E3_TIME_DELAY                 ; 0                            ; Untyped                                       ;
+; M_TIME_DELAY                  ; 0                            ; Untyped                                       ;
+; N_TIME_DELAY                  ; 0                            ; Untyped                                       ;
+; EXTCLK3_COUNTER               ; E3                           ; Untyped                                       ;
+; EXTCLK2_COUNTER               ; E2                           ; Untyped                                       ;
+; EXTCLK1_COUNTER               ; E1                           ; Untyped                                       ;
+; EXTCLK0_COUNTER               ; E0                           ; Untyped                                       ;
+; ENABLE0_COUNTER               ; L0                           ; Untyped                                       ;
+; ENABLE1_COUNTER               ; L0                           ; Untyped                                       ;
+; CHARGE_PUMP_CURRENT           ; 2                            ; Untyped                                       ;
+; LOOP_FILTER_R                 ;  1.000000                    ; Untyped                                       ;
+; LOOP_FILTER_C                 ; 5                            ; Untyped                                       ;
+; CHARGE_PUMP_CURRENT_BITS      ; 9999                         ; Untyped                                       ;
+; LOOP_FILTER_R_BITS            ; 9999                         ; Untyped                                       ;
+; LOOP_FILTER_C_BITS            ; 9999                         ; Untyped                                       ;
+; VCO_POST_SCALE                ; 0                            ; Untyped                                       ;
+; CLK2_OUTPUT_FREQUENCY         ; 0                            ; Untyped                                       ;
+; CLK1_OUTPUT_FREQUENCY         ; 0                            ; Untyped                                       ;
+; CLK0_OUTPUT_FREQUENCY         ; 0                            ; Untyped                                       ;
+; INTENDED_DEVICE_FAMILY        ; Cyclone IV E                 ; Untyped                                       ;
+; PORT_CLKENA0                  ; PORT_UNUSED                  ; Untyped                                       ;
+; PORT_CLKENA1                  ; PORT_UNUSED                  ; Untyped                                       ;
+; PORT_CLKENA2                  ; PORT_UNUSED                  ; Untyped                                       ;
+; PORT_CLKENA3                  ; PORT_UNUSED                  ; Untyped                                       ;
+; PORT_CLKENA4                  ; PORT_UNUSED                  ; Untyped                                       ;
+; PORT_CLKENA5                  ; PORT_UNUSED                  ; Untyped                                       ;
+; PORT_EXTCLKENA0               ; PORT_CONNECTIVITY            ; Untyped                                       ;
+; PORT_EXTCLKENA1               ; PORT_CONNECTIVITY            ; Untyped                                       ;
+; PORT_EXTCLKENA2               ; PORT_CONNECTIVITY            ; Untyped                                       ;
+; PORT_EXTCLKENA3               ; PORT_CONNECTIVITY            ; Untyped                                       ;
+; PORT_EXTCLK0                  ; PORT_UNUSED                  ; Untyped                                       ;
+; PORT_EXTCLK1                  ; PORT_UNUSED                  ; Untyped                                       ;
+; PORT_EXTCLK2                  ; PORT_UNUSED                  ; Untyped                                       ;
+; PORT_EXTCLK3                  ; PORT_UNUSED                  ; Untyped                                       ;
+; PORT_CLKBAD0                  ; PORT_UNUSED                  ; Untyped                                       ;
+; PORT_CLKBAD1                  ; PORT_UNUSED                  ; Untyped                                       ;
+; PORT_CLK0                     ; PORT_USED                    ; Untyped                                       ;
+; PORT_CLK1                     ; PORT_UNUSED                  ; Untyped                                       ;
+; PORT_CLK2                     ; PORT_UNUSED                  ; Untyped                                       ;
+; PORT_CLK3                     ; PORT_UNUSED                  ; Untyped                                       ;
+; PORT_CLK4                     ; PORT_UNUSED                  ; Untyped                                       ;
+; PORT_CLK5                     ; PORT_UNUSED                  ; Untyped                                       ;
+; PORT_CLK6                     ; PORT_UNUSED                  ; Untyped                                       ;
+; PORT_CLK7                     ; PORT_UNUSED                  ; Untyped                                       ;
+; PORT_CLK8                     ; PORT_UNUSED                  ; Untyped                                       ;
+; PORT_CLK9                     ; PORT_UNUSED                  ; Untyped                                       ;
+; PORT_SCANDATA                 ; PORT_UNUSED                  ; Untyped                                       ;
+; PORT_SCANDATAOUT              ; PORT_UNUSED                  ; Untyped                                       ;
+; PORT_SCANDONE                 ; PORT_UNUSED                  ; Untyped                                       ;
+; PORT_SCLKOUT1                 ; PORT_CONNECTIVITY            ; Untyped                                       ;
+; PORT_SCLKOUT0                 ; PORT_CONNECTIVITY            ; Untyped                                       ;
+; PORT_ACTIVECLOCK              ; PORT_UNUSED                  ; Untyped                                       ;
+; PORT_CLKLOSS                  ; PORT_UNUSED                  ; Untyped                                       ;
+; PORT_INCLK1                   ; PORT_UNUSED                  ; Untyped                                       ;
+; PORT_INCLK0                   ; PORT_USED                    ; Untyped                                       ;
+; PORT_FBIN                     ; PORT_UNUSED                  ; Untyped                                       ;
+; PORT_PLLENA                   ; PORT_UNUSED                  ; Untyped                                       ;
+; PORT_CLKSWITCH                ; PORT_UNUSED                  ; Untyped                                       ;
+; PORT_ARESET                   ; PORT_UNUSED                  ; Untyped                                       ;
+; PORT_PFDENA                   ; PORT_UNUSED                  ; Untyped                                       ;
+; PORT_SCANCLK                  ; PORT_UNUSED                  ; Untyped                                       ;
+; PORT_SCANACLR                 ; PORT_UNUSED                  ; Untyped                                       ;
+; PORT_SCANREAD                 ; PORT_UNUSED                  ; Untyped                                       ;
+; PORT_SCANWRITE                ; PORT_UNUSED                  ; Untyped                                       ;
+; PORT_ENABLE0                  ; PORT_CONNECTIVITY            ; Untyped                                       ;
+; PORT_ENABLE1                  ; PORT_CONNECTIVITY            ; Untyped                                       ;
+; PORT_LOCKED                   ; PORT_UNUSED                  ; Untyped                                       ;
+; PORT_CONFIGUPDATE             ; PORT_UNUSED                  ; Untyped                                       ;
+; PORT_FBOUT                    ; PORT_CONNECTIVITY            ; Untyped                                       ;
+; PORT_PHASEDONE                ; PORT_UNUSED                  ; Untyped                                       ;
+; PORT_PHASESTEP                ; PORT_UNUSED                  ; Untyped                                       ;
+; PORT_PHASEUPDOWN              ; PORT_UNUSED                  ; Untyped                                       ;
+; PORT_SCANCLKENA               ; PORT_UNUSED                  ; Untyped                                       ;
+; PORT_PHASECOUNTERSELECT       ; PORT_UNUSED                  ; Untyped                                       ;
+; PORT_VCOOVERRANGE             ; PORT_CONNECTIVITY            ; Untyped                                       ;
+; PORT_VCOUNDERRANGE            ; PORT_CONNECTIVITY            ; Untyped                                       ;
+; M_TEST_SOURCE                 ; 5                            ; Untyped                                       ;
+; C0_TEST_SOURCE                ; 5                            ; Untyped                                       ;
+; C1_TEST_SOURCE                ; 5                            ; Untyped                                       ;
+; C2_TEST_SOURCE                ; 5                            ; Untyped                                       ;
+; C3_TEST_SOURCE                ; 5                            ; Untyped                                       ;
+; C4_TEST_SOURCE                ; 5                            ; Untyped                                       ;
+; C5_TEST_SOURCE                ; 5                            ; Untyped                                       ;
+; C6_TEST_SOURCE                ; 5                            ; Untyped                                       ;
+; C7_TEST_SOURCE                ; 5                            ; Untyped                                       ;
+; C8_TEST_SOURCE                ; 5                            ; Untyped                                       ;
+; C9_TEST_SOURCE                ; 5                            ; Untyped                                       ;
+; CBXI_PARAMETER                ; pll_100mhz_altpll            ; Untyped                                       ;
+; VCO_FREQUENCY_CONTROL         ; AUTO                         ; Untyped                                       ;
+; VCO_PHASE_SHIFT_STEP          ; 0                            ; Untyped                                       ;
+; WIDTH_CLOCK                   ; 5                            ; Signed Integer                                ;
+; WIDTH_PHASECOUNTERSELECT      ; 4                            ; Untyped                                       ;
+; USING_FBMIMICBIDIR_PORT       ; OFF                          ; Untyped                                       ;
+; DEVICE_FAMILY                 ; Cyclone IV E                 ; Untyped                                       ;
+; SCAN_CHAIN_MIF_FILE           ; UNUSED                       ; Untyped                                       ;
+; SIM_GATE_LOCK_DEVICE_BEHAVIOR ; OFF                          ; Untyped                                       ;
+; AUTO_CARRY_CHAINS             ; ON                           ; AUTO_CARRY                                    ;
+; IGNORE_CARRY_BUFFERS          ; OFF                          ; IGNORE_CARRY                                  ;
+; AUTO_CASCADE_CHAINS           ; ON                           ; AUTO_CASCADE                                  ;
+; IGNORE_CASCADE_BUFFERS        ; OFF                          ; IGNORE_CASCADE                                ;
++-------------------------------+------------------------------+-----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: Drive_Clock:Drive_Clock0|lpm_divide:Mod2 ;
++------------------------+----------------+-------------------------------------------------+
+; Parameter Name         ; Value          ; Type                                            ;
++------------------------+----------------+-------------------------------------------------+
+; LPM_WIDTHN             ; 32             ; Untyped                                         ;
+; LPM_WIDTHD             ; 15             ; Untyped                                         ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                         ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                         ;
+; LPM_PIPELINE           ; 0              ; Untyped                                         ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                         ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                         ;
+; CBXI_PARAMETER         ; lpm_divide_lcm ; Untyped                                         ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                         ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                         ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                      ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                    ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                    ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                  ;
++------------------------+----------------+-------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: App_Led:App_Led0|lpm_divide:Mod0 ;
++------------------------+----------------+-----------------------------------------+
+; Parameter Name         ; Value          ; Type                                    ;
++------------------------+----------------+-----------------------------------------+
+; LPM_WIDTHN             ; 17             ; Untyped                                 ;
+; LPM_WIDTHD             ; 9              ; Untyped                                 ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                 ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                 ;
+; LPM_PIPELINE           ; 0              ; Untyped                                 ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                 ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                 ;
+; CBXI_PARAMETER         ; lpm_divide_bbm ; Untyped                                 ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                 ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                 ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                              ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                            ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                            ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                          ;
++------------------------+----------------+-----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: Drive_Clock:Drive_Clock0|lpm_divide:Mod1 ;
++------------------------+----------------+-------------------------------------------------+
+; Parameter Name         ; Value          ; Type                                            ;
++------------------------+----------------+-------------------------------------------------+
+; LPM_WIDTHN             ; 32             ; Untyped                                         ;
+; LPM_WIDTHD             ; 5              ; Untyped                                         ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                         ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                         ;
+; LPM_PIPELINE           ; 0              ; Untyped                                         ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                         ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                         ;
+; CBXI_PARAMETER         ; lpm_divide_6bm ; Untyped                                         ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                         ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                         ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                      ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                    ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                    ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                  ;
++------------------------+----------------+-------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: Drive_Clock:Drive_Clock0|lpm_divide:Mod0 ;
++------------------------+----------------+-------------------------------------------------+
+; Parameter Name         ; Value          ; Type                                            ;
++------------------------+----------------+-------------------------------------------------+
+; LPM_WIDTHN             ; 32             ; Untyped                                         ;
+; LPM_WIDTHD             ; 29             ; Untyped                                         ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                         ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                         ;
+; LPM_PIPELINE           ; 0              ; Untyped                                         ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                         ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                         ;
+; CBXI_PARAMETER         ; lpm_divide_qcm ; Untyped                                         ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                         ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                         ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                      ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                    ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                    ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                  ;
++------------------------+----------------+-------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------+
+; altpll Parameter Settings by Entity Instance                                                    ;
++-------------------------------+-----------------------------------------------------------------+
+; Name                          ; Value                                                           ;
++-------------------------------+-----------------------------------------------------------------+
+; Number of entity instances    ; 1                                                               ;
+; Entity Instance               ; signal_low:signal_low|pll_100mhz:comb_3|altpll:altpll_component ;
+;     -- OPERATION_MODE         ; NORMAL                                                          ;
+;     -- PLL_TYPE               ; AUTO                                                            ;
+;     -- PRIMARY_CLOCK          ; INCLK0                                                          ;
+;     -- INCLK0_INPUT_FREQUENCY ; 20000                                                           ;
+;     -- INCLK1_INPUT_FREQUENCY ; 0                                                               ;
+;     -- VCO_MULTIPLY_BY        ; 0                                                               ;
+;     -- VCO_DIVIDE_BY          ; 0                                                               ;
++-------------------------------+-----------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Drive_ADC:Drive_ADC"                                                                                                                                                             ;
++--------------+--------+----------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port         ; Type   ; Severity ; Details                                                                                                                                                                  ;
++--------------+--------+----------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; out_ADC_data ; Output ; Warning  ; Output or bidir port (10 bits) is smaller than the port expression (32 bits) it drives.  The 22 most-significant bit(s) in the port expression will be connected to GND. ;
++--------------+--------+----------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Drive_Usart_Top:Drive_Usart_Top"                                                                                                                                                ;
++----------------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port           ; Type   ; Severity ; Details                                                                                                                                                               ;
++----------------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; out_led        ; Output ; Warning  ; Output or bidir port (2 bits) is smaller than the port expression (3 bits) it drives.  The 1 most-significant bit(s) in the port expression will be connected to GND. ;
+; out_set_freq   ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                                              ;
+; out_set_vpp    ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                                              ;
+; out_set_phase  ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                                              ;
+; out_set_shifty ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                                              ;
++----------------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Drive_Clock:Drive_Clock0"                                                                ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port      ; Type   ; Severity ; Details                                                                             ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+; out_clk_s ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "signal:signal"                                                                                             ;
++--------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                                                  ;
++--------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; updata ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++--------+--------+----------+----------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 38                          ;
+; cycloneiii_ff         ; 431                         ;
+;     CLR               ; 32                          ;
+;     ENA               ; 188                         ;
+;     ENA SCLR          ; 32                          ;
+;     SCLR              ; 72                          ;
+;     plain             ; 107                         ;
+; cycloneiii_lcell_comb ; 2174                        ;
+;     arith             ; 733                         ;
+;         1 data inputs ; 4                           ;
+;         2 data inputs ; 316                         ;
+;         3 data inputs ; 413                         ;
+;     normal            ; 1441                        ;
+;         0 data inputs ; 47                          ;
+;         1 data inputs ; 24                          ;
+;         2 data inputs ; 537                         ;
+;         3 data inputs ; 193                         ;
+;         4 data inputs ; 640                         ;
+; cycloneiii_pll        ; 1                           ;
+;                       ;                             ;
+; Max LUT depth         ; 64.60                       ;
+; Average LUT depth     ; 26.66                       ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:05     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Analysis & Synthesis
+    Info: Version 15.0.0 Build 145 04/22/2015 SJ Full Version
+    Info: Processing started: Tue May 09 16:22:07 2017
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Project -c Project
+Info (11104): Parallel Compilation has detected 8 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 4 of the 4 physical processors detected instead.
+Info (12021): Found 1 design units, including 1 entities, in source file _06_signal/signal_low.v
+    Info (12023): Found entity 1: signal_low
+Info (12021): Found 1 design units, including 1 entities, in source file _06_signal/signal.v
+    Info (12023): Found entity 1: signal
+Info (12021): Found 1 design units, including 1 entities, in source file _06_signal/pll_100mhz.v
+    Info (12023): Found entity 1: pll_100mhz
+Info (12021): Found 1 design units, including 1 entities, in source file _06_signal/counter_low.v
+    Info (12023): Found entity 1: counter_low
+Info (12021): Found 1 design units, including 1 entities, in source file _06_signal/counter.v
+    Info (12023): Found entity 1: counter
+Info (12021): Found 1 design units, including 1 entities, in source file _06_signal/count_2s.v
+    Info (12023): Found entity 1: count_2s
+Info (12021): Found 1 design units, including 1 entities, in source file _01_interface/interface_bsp.v
+    Info (12023): Found entity 1: Interface_bsp
+Info (12021): Found 1 design units, including 1 entities, in source file _02_drive/drive_clock.v
+    Info (12023): Found entity 1: Drive_Clock
+Info (12021): Found 1 design units, including 1 entities, in source file _03_app/app_led.v
+    Info (12023): Found entity 1: App_Led
+Info (12021): Found 1 design units, including 1 entities, in source file _02_drive/drive_uart/drive_usart_top.v
+    Info (12023): Found entity 1: Drive_Usart_Top
+Info (12021): Found 1 design units, including 1 entities, in source file _02_drive/drive_uart/drive_usart_handle.v
+    Info (12023): Found entity 1: Drive_Usart_Handle
+Info (12021): Found 1 design units, including 1 entities, in source file _02_drive/drive_uart/drive_usart_bsp.v
+    Info (12023): Found entity 1: Drive_Usart_Bsp
+Info (12021): Found 1 design units, including 1 entities, in source file _02_drive/drive_adc.v
+    Info (12023): Found entity 1: Drive_ADC
+Info (12021): Found 1 design units, including 1 entities, in source file _02_drive/drive_dac.v
+    Info (12023): Found entity 1: Drive_DAC
+Info (12021): Found 1 design units, including 1 entities, in source file _05_ip_core/pll_400mhz.v
+    Info (12023): Found entity 1: pll_400mhz
+Info (12021): Found 1 design units, including 1 entities, in source file _05_ip_core/pll_200mhz.v
+    Info (12023): Found entity 1: pll_200mhz
+Critical Warning (10846): Verilog HDL Instantiation warning at signal_low.v(12): instance has no name
+Info (12127): Elaborating entity "Interface_bsp" for the top level hierarchy
+Info (12128): Elaborating entity "signal_low" for hierarchy "signal_low:signal_low"
+Info (12128): Elaborating entity "pll_100mhz" for hierarchy "signal_low:signal_low|pll_100mhz:comb_3"
+Info (12128): Elaborating entity "altpll" for hierarchy "signal_low:signal_low|pll_100mhz:comb_3|altpll:altpll_component"
+Info (12130): Elaborated megafunction instantiation "signal_low:signal_low|pll_100mhz:comb_3|altpll:altpll_component"
+Info (12133): Instantiated megafunction "signal_low:signal_low|pll_100mhz:comb_3|altpll:altpll_component" with the following parameter:
+    Info (12134): Parameter "bandwidth_type" = "AUTO"
+    Info (12134): Parameter "clk0_divide_by" = "1"
+    Info (12134): Parameter "clk0_duty_cycle" = "50"
+    Info (12134): Parameter "clk0_multiply_by" = "2"
+    Info (12134): Parameter "clk0_phase_shift" = "0"
+    Info (12134): Parameter "compensate_clock" = "CLK0"
+    Info (12134): Parameter "inclk0_input_frequency" = "20000"
+    Info (12134): Parameter "intended_device_family" = "Cyclone IV E"
+    Info (12134): Parameter "lpm_hint" = "CBX_MODULE_PREFIX=pll_100mhz"
+    Info (12134): Parameter "lpm_type" = "altpll"
+    Info (12134): Parameter "operation_mode" = "NORMAL"
+    Info (12134): Parameter "pll_type" = "AUTO"
+    Info (12134): Parameter "port_activeclock" = "PORT_UNUSED"
+    Info (12134): Parameter "port_areset" = "PORT_UNUSED"
+    Info (12134): Parameter "port_clkbad0" = "PORT_UNUSED"
+    Info (12134): Parameter "port_clkbad1" = "PORT_UNUSED"
+    Info (12134): Parameter "port_clkloss" = "PORT_UNUSED"
+    Info (12134): Parameter "port_clkswitch" = "PORT_UNUSED"
+    Info (12134): Parameter "port_configupdate" = "PORT_UNUSED"
+    Info (12134): Parameter "port_fbin" = "PORT_UNUSED"
+    Info (12134): Parameter "port_inclk0" = "PORT_USED"
+    Info (12134): Parameter "port_inclk1" = "PORT_UNUSED"
+    Info (12134): Parameter "port_locked" = "PORT_UNUSED"
+    Info (12134): Parameter "port_pfdena" = "PORT_UNUSED"
+    Info (12134): Parameter "port_phasecounterselect" = "PORT_UNUSED"
+    Info (12134): Parameter "port_phasedone" = "PORT_UNUSED"
+    Info (12134): Parameter "port_phasestep" = "PORT_UNUSED"
+    Info (12134): Parameter "port_phaseupdown" = "PORT_UNUSED"
+    Info (12134): Parameter "port_pllena" = "PORT_UNUSED"
+    Info (12134): Parameter "port_scanaclr" = "PORT_UNUSED"
+    Info (12134): Parameter "port_scanclk" = "PORT_UNUSED"
+    Info (12134): Parameter "port_scanclkena" = "PORT_UNUSED"
+    Info (12134): Parameter "port_scandata" = "PORT_UNUSED"
+    Info (12134): Parameter "port_scandataout" = "PORT_UNUSED"
+    Info (12134): Parameter "port_scandone" = "PORT_UNUSED"
+    Info (12134): Parameter "port_scanread" = "PORT_UNUSED"
+    Info (12134): Parameter "port_scanwrite" = "PORT_UNUSED"
+    Info (12134): Parameter "port_clk0" = "PORT_USED"
+    Info (12134): Parameter "port_clk1" = "PORT_UNUSED"
+    Info (12134): Parameter "port_clk2" = "PORT_UNUSED"
+    Info (12134): Parameter "port_clk3" = "PORT_UNUSED"
+    Info (12134): Parameter "port_clk4" = "PORT_UNUSED"
+    Info (12134): Parameter "port_clk5" = "PORT_UNUSED"
+    Info (12134): Parameter "port_clkena0" = "PORT_UNUSED"
+    Info (12134): Parameter "port_clkena1" = "PORT_UNUSED"
+    Info (12134): Parameter "port_clkena2" = "PORT_UNUSED"
+    Info (12134): Parameter "port_clkena3" = "PORT_UNUSED"
+    Info (12134): Parameter "port_clkena4" = "PORT_UNUSED"
+    Info (12134): Parameter "port_clkena5" = "PORT_UNUSED"
+    Info (12134): Parameter "port_extclk0" = "PORT_UNUSED"
+    Info (12134): Parameter "port_extclk1" = "PORT_UNUSED"
+    Info (12134): Parameter "port_extclk2" = "PORT_UNUSED"
+    Info (12134): Parameter "port_extclk3" = "PORT_UNUSED"
+    Info (12134): Parameter "width_clock" = "5"
+Info (12021): Found 1 design units, including 1 entities, in source file db/pll_100mhz_altpll.v
+    Info (12023): Found entity 1: pll_100mhz_altpll
+Info (12128): Elaborating entity "pll_100mhz_altpll" for hierarchy "signal_low:signal_low|pll_100mhz:comb_3|altpll:altpll_component|pll_100mhz_altpll:auto_generated"
+Info (12128): Elaborating entity "counter_low" for hierarchy "signal_low:signal_low|counter_low:U2"
+Info (12128): Elaborating entity "signal" for hierarchy "signal:signal"
+Info (12128): Elaborating entity "count_2s" for hierarchy "signal:signal|count_2s:U1"
+Warning (10230): Verilog HDL assignment warning at count_2s.v(14): truncated value with size 32 to match size of target (26)
+Info (12128): Elaborating entity "counter" for hierarchy "signal:signal|counter:U2"
+Warning (10034): Output port "updata" at counter.v(5) has no driver
+Info (12128): Elaborating entity "Drive_Clock" for hierarchy "Drive_Clock:Drive_Clock0"
+Info (12128): Elaborating entity "App_Led" for hierarchy "App_Led:App_Led0"
+Warning (10230): Verilog HDL assignment warning at App_Led.v(39): truncated value with size 32 to match size of target (16)
+Info (12128): Elaborating entity "Drive_Usart_Top" for hierarchy "Drive_Usart_Top:Drive_Usart_Top"
+Info (12128): Elaborating entity "Drive_Usart_Handle" for hierarchy "Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle"
+Warning (10230): Verilog HDL assignment warning at Drive_Usart_Handle.v(48): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at Drive_Usart_Handle.v(51): truncated value with size 32 to match size of target (8)
+Warning (10235): Verilog HDL Always Construct warning at Drive_Usart_Handle.v(88): variable "send_state" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at Drive_Usart_Handle.v(143): variable "in_test_freq" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10230): Verilog HDL assignment warning at Drive_Usart_Handle.v(143): truncated value with size 32 to match size of target (8)
+Warning (10235): Verilog HDL Always Construct warning at Drive_Usart_Handle.v(144): variable "in_test_freq" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10230): Verilog HDL assignment warning at Drive_Usart_Handle.v(144): truncated value with size 32 to match size of target (8)
+Warning (10235): Verilog HDL Always Construct warning at Drive_Usart_Handle.v(145): variable "in_test_freq" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10230): Verilog HDL assignment warning at Drive_Usart_Handle.v(145): truncated value with size 32 to match size of target (8)
+Warning (10235): Verilog HDL Always Construct warning at Drive_Usart_Handle.v(146): variable "in_test_freq" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10230): Verilog HDL assignment warning at Drive_Usart_Handle.v(146): truncated value with size 32 to match size of target (8)
+Warning (10235): Verilog HDL Always Construct warning at Drive_Usart_Handle.v(158): variable "in_test_Vpp" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10230): Verilog HDL assignment warning at Drive_Usart_Handle.v(158): truncated value with size 32 to match size of target (8)
+Warning (10235): Verilog HDL Always Construct warning at Drive_Usart_Handle.v(159): variable "in_test_Vpp" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10230): Verilog HDL assignment warning at Drive_Usart_Handle.v(159): truncated value with size 32 to match size of target (8)
+Warning (10235): Verilog HDL Always Construct warning at Drive_Usart_Handle.v(160): variable "in_test_Vpp" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10230): Verilog HDL assignment warning at Drive_Usart_Handle.v(160): truncated value with size 32 to match size of target (8)
+Warning (10235): Verilog HDL Always Construct warning at Drive_Usart_Handle.v(161): variable "in_test_Vpp" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10230): Verilog HDL assignment warning at Drive_Usart_Handle.v(161): truncated value with size 32 to match size of target (8)
+Warning (10235): Verilog HDL Always Construct warning at Drive_Usart_Handle.v(174): variable "in_test_freq_low" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10230): Verilog HDL assignment warning at Drive_Usart_Handle.v(174): truncated value with size 32 to match size of target (8)
+Warning (10235): Verilog HDL Always Construct warning at Drive_Usart_Handle.v(175): variable "in_test_freq_low" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10230): Verilog HDL assignment warning at Drive_Usart_Handle.v(175): truncated value with size 32 to match size of target (8)
+Warning (10235): Verilog HDL Always Construct warning at Drive_Usart_Handle.v(176): variable "in_test_freq_low" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10230): Verilog HDL assignment warning at Drive_Usart_Handle.v(176): truncated value with size 32 to match size of target (8)
+Warning (10235): Verilog HDL Always Construct warning at Drive_Usart_Handle.v(177): variable "in_test_freq_low" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10230): Verilog HDL assignment warning at Drive_Usart_Handle.v(177): truncated value with size 32 to match size of target (8)
+Warning (10270): Verilog HDL Case Statement warning at Drive_Usart_Handle.v(90): incomplete case statement has no default case item
+Warning (10240): Verilog HDL Always Construct warning at Drive_Usart_Handle.v(86): inferring latch(es) for variable "send_start_flag", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at Drive_Usart_Handle.v(86): inferring latch(es) for variable "out_set_phase", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at Drive_Usart_Handle.v(86): inferring latch(es) for variable "out_set_vpp", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at Drive_Usart_Handle.v(86): inferring latch(es) for variable "out_set_freq", which holds its previous value in one or more paths through the always construct
+Warning (10230): Verilog HDL assignment warning at Drive_Usart_Handle.v(225): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at Drive_Usart_Handle.v(230): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at Drive_Usart_Handle.v(235): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at Drive_Usart_Handle.v(240): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at Drive_Usart_Handle.v(245): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at Drive_Usart_Handle.v(250): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at Drive_Usart_Handle.v(255): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at Drive_Usart_Handle.v(260): truncated value with size 32 to match size of target (8)
+Warning (10762): Verilog HDL Case Statement warning at Drive_Usart_Handle.v(218): can't check case statement for completeness because the case expression has too many possible states
+Warning (10034): Output port "out_set_shifty" at Drive_Usart_Handle.v(31) has no driver
+Info (10041): Inferred latch for "out_set_freq[0]" at Drive_Usart_Handle.v(86)
+Info (10041): Inferred latch for "out_set_freq[1]" at Drive_Usart_Handle.v(86)
+Info (10041): Inferred latch for "out_set_freq[2]" at Drive_Usart_Handle.v(86)
+Info (10041): Inferred latch for "out_set_freq[3]" at Drive_Usart_Handle.v(86)
+Info (10041): Inferred latch for "out_set_freq[4]" at Drive_Usart_Handle.v(86)
+Info (10041): Inferred latch for "out_set_freq[5]" at Drive_Usart_Handle.v(86)
+Info (10041): Inferred latch for "out_set_freq[6]" at Drive_Usart_Handle.v(86)
+Info (10041): Inferred latch for "out_set_freq[7]" at Drive_Usart_Handle.v(86)
+Info (10041): Inferred latch for "out_set_freq[8]" at Drive_Usart_Handle.v(86)
+Info (10041): Inferred latch for "out_set_freq[9]" at Drive_Usart_Handle.v(86)
+Info (10041): Inferred latch for "out_set_freq[10]" at Drive_Usart_Handle.v(86)
+Info (10041): Inferred latch for "out_set_freq[11]" at Drive_Usart_Handle.v(86)
+Info (10041): Inferred latch for "out_set_freq[12]" at Drive_Usart_Handle.v(86)
+Info (10041): Inferred latch for "out_set_freq[13]" at Drive_Usart_Handle.v(86)
+Info (10041): Inferred latch for "out_set_freq[14]" at Drive_Usart_Handle.v(86)
+Info (10041): Inferred latch for "out_set_freq[15]" at Drive_Usart_Handle.v(86)
+Info (10041): Inferred latch for "out_set_freq[16]" at Drive_Usart_Handle.v(86)
+Info (10041): Inferred latch for "out_set_freq[17]" at Drive_Usart_Handle.v(86)
+Info (10041): Inferred latch for "out_set_freq[18]" at Drive_Usart_Handle.v(86)
+Info (10041): Inferred latch for "out_set_freq[19]" at Drive_Usart_Handle.v(86)
+Info (10041): Inferred latch for "out_set_freq[20]" at Drive_Usart_Handle.v(86)
+Info (10041): Inferred latch for "out_set_freq[21]" at Drive_Usart_Handle.v(86)
+Info (10041): Inferred latch for "out_set_freq[22]" at Drive_Usart_Handle.v(86)
+Info (10041): Inferred latch for "out_set_freq[23]" at Drive_Usart_Handle.v(86)
+Info (10041): Inferred latch for "out_set_freq[24]" at Drive_Usart_Handle.v(86)
+Info (10041): Inferred latch for "out_set_freq[25]" at Drive_Usart_Handle.v(86)
+Info (10041): Inferred latch for "out_set_freq[26]" at Drive_Usart_Handle.v(86)
+Info (10041): Inferred latch for "out_set_freq[27]" at Drive_Usart_Handle.v(86)
+Info (10041): Inferred latch for "out_set_freq[28]" at Drive_Usart_Handle.v(86)
+Info (10041): Inferred latch for "out_set_freq[29]" at Drive_Usart_Handle.v(86)
+Info (10041): Inferred latch for "out_set_freq[30]" at Drive_Usart_Handle.v(86)
+Info (10041): Inferred latch for "out_set_freq[31]" at Drive_Usart_Handle.v(86)
+Info (10041): Inferred latch for "out_set_vpp[0]" at Drive_Usart_Handle.v(86)
+Info (10041): Inferred latch for "out_set_vpp[1]" at Drive_Usart_Handle.v(86)
+Info (10041): Inferred latch for "out_set_vpp[2]" at Drive_Usart_Handle.v(86)
+Info (10041): Inferred latch for "out_set_vpp[3]" at Drive_Usart_Handle.v(86)
+Info (10041): Inferred latch for "out_set_vpp[4]" at Drive_Usart_Handle.v(86)
+Info (10041): Inferred latch for "out_set_vpp[5]" at Drive_Usart_Handle.v(86)
+Info (10041): Inferred latch for "out_set_vpp[6]" at Drive_Usart_Handle.v(86)
+Info (10041): Inferred latch for "out_set_vpp[7]" at Drive_Usart_Handle.v(86)
+Info (10041): Inferred latch for "out_set_vpp[8]" at Drive_Usart_Handle.v(86)
+Info (10041): Inferred latch for "out_set_vpp[9]" at Drive_Usart_Handle.v(86)
+Info (10041): Inferred latch for "out_set_vpp[10]" at Drive_Usart_Handle.v(86)
+Info (10041): Inferred latch for "out_set_vpp[11]" at Drive_Usart_Handle.v(86)
+Info (10041): Inferred latch for "out_set_vpp[12]" at Drive_Usart_Handle.v(86)
+Info (10041): Inferred latch for "out_set_vpp[13]" at Drive_Usart_Handle.v(86)
+Info (10041): Inferred latch for "out_set_vpp[14]" at Drive_Usart_Handle.v(86)
+Info (10041): Inferred latch for "out_set_vpp[15]" at Drive_Usart_Handle.v(86)
+Info (10041): Inferred latch for "out_set_phase[0]" at Drive_Usart_Handle.v(86)
+Info (10041): Inferred latch for "out_set_phase[1]" at Drive_Usart_Handle.v(86)
+Info (10041): Inferred latch for "out_set_phase[2]" at Drive_Usart_Handle.v(86)
+Info (10041): Inferred latch for "out_set_phase[3]" at Drive_Usart_Handle.v(86)
+Info (10041): Inferred latch for "out_set_phase[4]" at Drive_Usart_Handle.v(86)
+Info (10041): Inferred latch for "out_set_phase[5]" at Drive_Usart_Handle.v(86)
+Info (10041): Inferred latch for "out_set_phase[6]" at Drive_Usart_Handle.v(86)
+Info (10041): Inferred latch for "out_set_phase[7]" at Drive_Usart_Handle.v(86)
+Info (10041): Inferred latch for "out_set_phase[8]" at Drive_Usart_Handle.v(86)
+Info (10041): Inferred latch for "out_set_phase[9]" at Drive_Usart_Handle.v(86)
+Info (10041): Inferred latch for "out_set_phase[10]" at Drive_Usart_Handle.v(86)
+Info (10041): Inferred latch for "out_set_phase[11]" at Drive_Usart_Handle.v(86)
+Info (10041): Inferred latch for "out_set_phase[12]" at Drive_Usart_Handle.v(86)
+Info (10041): Inferred latch for "out_set_phase[13]" at Drive_Usart_Handle.v(86)
+Info (10041): Inferred latch for "out_set_phase[14]" at Drive_Usart_Handle.v(86)
+Info (10041): Inferred latch for "out_set_phase[15]" at Drive_Usart_Handle.v(86)
+Info (10041): Inferred latch for "send_buff[8][0]" at Drive_Usart_Handle.v(86)
+Info (10041): Inferred latch for "send_buff[8][1]" at Drive_Usart_Handle.v(86)
+Info (10041): Inferred latch for "send_buff[8][2]" at Drive_Usart_Handle.v(86)
+Info (10041): Inferred latch for "send_buff[8][3]" at Drive_Usart_Handle.v(86)
+Info (10041): Inferred latch for "send_buff[8][4]" at Drive_Usart_Handle.v(86)
+Info (10041): Inferred latch for "send_buff[8][5]" at Drive_Usart_Handle.v(86)
+Info (10041): Inferred latch for "send_buff[8][6]" at Drive_Usart_Handle.v(86)
+Info (10041): Inferred latch for "send_buff[8][7]" at Drive_Usart_Handle.v(86)
+Info (10041): Inferred latch for "send_buff[7][0]" at Drive_Usart_Handle.v(86)
+Info (10041): Inferred latch for "send_buff[7][1]" at Drive_Usart_Handle.v(86)
+Info (10041): Inferred latch for "send_buff[7][2]" at Drive_Usart_Handle.v(86)
+Info (10041): Inferred latch for "send_buff[7][3]" at Drive_Usart_Handle.v(86)
+Info (10041): Inferred latch for "send_buff[7][4]" at Drive_Usart_Handle.v(86)
+Info (10041): Inferred latch for "send_buff[7][5]" at Drive_Usart_Handle.v(86)
+Info (10041): Inferred latch for "send_buff[7][6]" at Drive_Usart_Handle.v(86)
+Info (10041): Inferred latch for "send_buff[7][7]" at Drive_Usart_Handle.v(86)
+Info (10041): Inferred latch for "send_buff[6][0]" at Drive_Usart_Handle.v(86)
+Info (10041): Inferred latch for "send_buff[6][1]" at Drive_Usart_Handle.v(86)
+Info (10041): Inferred latch for "send_buff[6][2]" at Drive_Usart_Handle.v(86)
+Info (10041): Inferred latch for "send_buff[6][3]" at Drive_Usart_Handle.v(86)
+Info (10041): Inferred latch for "send_buff[6][4]" at Drive_Usart_Handle.v(86)
+Info (10041): Inferred latch for "send_buff[6][5]" at Drive_Usart_Handle.v(86)
+Info (10041): Inferred latch for "send_buff[6][6]" at Drive_Usart_Handle.v(86)
+Info (10041): Inferred latch for "send_buff[6][7]" at Drive_Usart_Handle.v(86)
+Info (10041): Inferred latch for "send_buff[5][0]" at Drive_Usart_Handle.v(86)
+Info (10041): Inferred latch for "send_buff[5][1]" at Drive_Usart_Handle.v(86)
+Info (10041): Inferred latch for "send_buff[5][2]" at Drive_Usart_Handle.v(86)
+Info (10041): Inferred latch for "send_buff[5][3]" at Drive_Usart_Handle.v(86)
+Info (10041): Inferred latch for "send_buff[5][4]" at Drive_Usart_Handle.v(86)
+Info (10041): Inferred latch for "send_buff[5][5]" at Drive_Usart_Handle.v(86)
+Info (10041): Inferred latch for "send_buff[5][6]" at Drive_Usart_Handle.v(86)
+Info (10041): Inferred latch for "send_buff[5][7]" at Drive_Usart_Handle.v(86)
+Info (10041): Inferred latch for "send_buff[4][0]" at Drive_Usart_Handle.v(86)
+Info (10041): Inferred latch for "send_buff[4][1]" at Drive_Usart_Handle.v(86)
+Info (10041): Inferred latch for "send_buff[4][2]" at Drive_Usart_Handle.v(86)
+Info (10041): Inferred latch for "send_buff[4][3]" at Drive_Usart_Handle.v(86)
+Info (10041): Inferred latch for "send_buff[4][4]" at Drive_Usart_Handle.v(86)
+Info (10041): Inferred latch for "send_buff[4][5]" at Drive_Usart_Handle.v(86)
+Info (10041): Inferred latch for "send_buff[4][6]" at Drive_Usart_Handle.v(86)
+Info (10041): Inferred latch for "send_buff[4][7]" at Drive_Usart_Handle.v(86)
+Info (10041): Inferred latch for "send_buff[3][0]" at Drive_Usart_Handle.v(86)
+Info (10041): Inferred latch for "send_buff[3][1]" at Drive_Usart_Handle.v(86)
+Info (10041): Inferred latch for "send_buff[3][2]" at Drive_Usart_Handle.v(86)
+Info (10041): Inferred latch for "send_buff[3][3]" at Drive_Usart_Handle.v(86)
+Info (10041): Inferred latch for "send_buff[3][4]" at Drive_Usart_Handle.v(86)
+Info (10041): Inferred latch for "send_buff[3][5]" at Drive_Usart_Handle.v(86)
+Info (10041): Inferred latch for "send_buff[3][6]" at Drive_Usart_Handle.v(86)
+Info (10041): Inferred latch for "send_buff[3][7]" at Drive_Usart_Handle.v(86)
+Info (10041): Inferred latch for "send_buff[2][0]" at Drive_Usart_Handle.v(86)
+Info (10041): Inferred latch for "send_buff[2][1]" at Drive_Usart_Handle.v(86)
+Info (10041): Inferred latch for "send_buff[2][2]" at Drive_Usart_Handle.v(86)
+Info (10041): Inferred latch for "send_buff[2][3]" at Drive_Usart_Handle.v(86)
+Info (10041): Inferred latch for "send_buff[2][4]" at Drive_Usart_Handle.v(86)
+Info (10041): Inferred latch for "send_buff[2][5]" at Drive_Usart_Handle.v(86)
+Info (10041): Inferred latch for "send_buff[2][6]" at Drive_Usart_Handle.v(86)
+Info (10041): Inferred latch for "send_buff[2][7]" at Drive_Usart_Handle.v(86)
+Info (10041): Inferred latch for "send_buff[1][0]" at Drive_Usart_Handle.v(86)
+Info (10041): Inferred latch for "send_buff[1][1]" at Drive_Usart_Handle.v(86)
+Info (10041): Inferred latch for "send_buff[1][2]" at Drive_Usart_Handle.v(86)
+Info (10041): Inferred latch for "send_buff[1][3]" at Drive_Usart_Handle.v(86)
+Info (10041): Inferred latch for "send_buff[1][4]" at Drive_Usart_Handle.v(86)
+Info (10041): Inferred latch for "send_buff[1][5]" at Drive_Usart_Handle.v(86)
+Info (10041): Inferred latch for "send_buff[1][6]" at Drive_Usart_Handle.v(86)
+Info (10041): Inferred latch for "send_buff[1][7]" at Drive_Usart_Handle.v(86)
+Info (10041): Inferred latch for "send_buff[0][0]" at Drive_Usart_Handle.v(86)
+Info (10041): Inferred latch for "send_buff[0][1]" at Drive_Usart_Handle.v(86)
+Info (10041): Inferred latch for "send_buff[0][2]" at Drive_Usart_Handle.v(86)
+Info (10041): Inferred latch for "send_buff[0][3]" at Drive_Usart_Handle.v(86)
+Info (10041): Inferred latch for "send_buff[0][4]" at Drive_Usart_Handle.v(86)
+Info (10041): Inferred latch for "send_buff[0][5]" at Drive_Usart_Handle.v(86)
+Info (10041): Inferred latch for "send_buff[0][6]" at Drive_Usart_Handle.v(86)
+Info (10041): Inferred latch for "send_buff[0][7]" at Drive_Usart_Handle.v(86)
+Info (10041): Inferred latch for "send_start_flag" at Drive_Usart_Handle.v(86)
+Info (12128): Elaborating entity "Drive_Usart_Bsp" for hierarchy "Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Bsp:Drive_Usart_Bsp"
+Warning (10762): Verilog HDL Case Statement warning at Drive_Usart_Bsp.v(53): can't check case statement for completeness because the case expression has too many possible states
+Warning (10762): Verilog HDL Case Statement warning at Drive_Usart_Bsp.v(89): can't check case statement for completeness because the case expression has too many possible states
+Info (12128): Elaborating entity "Drive_ADC" for hierarchy "Drive_ADC:Drive_ADC"
+Warning (10235): Verilog HDL Always Construct warning at Drive_ADC.v(34): variable "in_ADC_data" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at Drive_ADC.v(35): variable "in_ADC_data" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at Drive_ADC.v(36): variable "in_ADC_data" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at Drive_ADC.v(37): variable "in_ADC_data" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at Drive_ADC.v(38): variable "in_ADC_data" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at Drive_ADC.v(39): variable "in_ADC_data" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at Drive_ADC.v(40): variable "in_ADC_data" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at Drive_ADC.v(41): variable "in_ADC_data" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at Drive_ADC.v(42): variable "in_ADC_data" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at Drive_ADC.v(43): variable "in_ADC_data" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10240): Verilog HDL Always Construct warning at Drive_ADC.v(26): inferring latch(es) for variable "out_ADC_data", which holds its previous value in one or more paths through the always construct
+Info (10041): Inferred latch for "out_ADC_data[0]" at Drive_ADC.v(26)
+Info (10041): Inferred latch for "out_ADC_data[1]" at Drive_ADC.v(26)
+Info (10041): Inferred latch for "out_ADC_data[2]" at Drive_ADC.v(26)
+Info (10041): Inferred latch for "out_ADC_data[3]" at Drive_ADC.v(26)
+Info (10041): Inferred latch for "out_ADC_data[4]" at Drive_ADC.v(26)
+Info (10041): Inferred latch for "out_ADC_data[5]" at Drive_ADC.v(26)
+Info (10041): Inferred latch for "out_ADC_data[6]" at Drive_ADC.v(26)
+Info (10041): Inferred latch for "out_ADC_data[7]" at Drive_ADC.v(26)
+Info (10041): Inferred latch for "out_ADC_data[8]" at Drive_ADC.v(26)
+Info (10041): Inferred latch for "out_ADC_data[9]" at Drive_ADC.v(26)
+Info (12128): Elaborating entity "Drive_DAC" for hierarchy "Drive_DAC:Drive_DAC"
+Warning (10235): Verilog HDL Always Construct warning at Drive_DAC.v(33): variable "in_ADC_data" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at Drive_DAC.v(34): variable "in_ADC_data" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at Drive_DAC.v(35): variable "in_ADC_data" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at Drive_DAC.v(36): variable "in_ADC_data" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at Drive_DAC.v(37): variable "in_ADC_data" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at Drive_DAC.v(38): variable "in_ADC_data" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at Drive_DAC.v(39): variable "in_ADC_data" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at Drive_DAC.v(40): variable "in_ADC_data" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at Drive_DAC.v(41): variable "in_ADC_data" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at Drive_DAC.v(42): variable "in_ADC_data" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10240): Verilog HDL Always Construct warning at Drive_DAC.v(25): inferring latch(es) for variable "out_DAC_data", which holds its previous value in one or more paths through the always construct
+Info (10041): Inferred latch for "out_DAC_data[0]" at Drive_DAC.v(25)
+Info (10041): Inferred latch for "out_DAC_data[1]" at Drive_DAC.v(25)
+Info (10041): Inferred latch for "out_DAC_data[2]" at Drive_DAC.v(25)
+Info (10041): Inferred latch for "out_DAC_data[3]" at Drive_DAC.v(25)
+Info (10041): Inferred latch for "out_DAC_data[4]" at Drive_DAC.v(25)
+Info (10041): Inferred latch for "out_DAC_data[5]" at Drive_DAC.v(25)
+Info (10041): Inferred latch for "out_DAC_data[6]" at Drive_DAC.v(25)
+Info (10041): Inferred latch for "out_DAC_data[7]" at Drive_DAC.v(25)
+Info (10041): Inferred latch for "out_DAC_data[8]" at Drive_DAC.v(25)
+Info (10041): Inferred latch for "out_DAC_data[9]" at Drive_DAC.v(25)
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "w_ADC_data[31]" is missing source, defaulting to GND
+    Warning (12110): Net "w_ADC_data[30]" is missing source, defaulting to GND
+    Warning (12110): Net "w_ADC_data[29]" is missing source, defaulting to GND
+    Warning (12110): Net "w_ADC_data[28]" is missing source, defaulting to GND
+    Warning (12110): Net "w_ADC_data[27]" is missing source, defaulting to GND
+    Warning (12110): Net "w_ADC_data[26]" is missing source, defaulting to GND
+    Warning (12110): Net "w_ADC_data[25]" is missing source, defaulting to GND
+    Warning (12110): Net "w_ADC_data[24]" is missing source, defaulting to GND
+    Warning (12110): Net "w_ADC_data[23]" is missing source, defaulting to GND
+    Warning (12110): Net "w_ADC_data[22]" is missing source, defaulting to GND
+    Warning (12110): Net "w_ADC_data[21]" is missing source, defaulting to GND
+    Warning (12110): Net "w_ADC_data[20]" is missing source, defaulting to GND
+    Warning (12110): Net "w_ADC_data[19]" is missing source, defaulting to GND
+    Warning (12110): Net "w_ADC_data[18]" is missing source, defaulting to GND
+    Warning (12110): Net "w_ADC_data[17]" is missing source, defaulting to GND
+    Warning (12110): Net "w_ADC_data[16]" is missing source, defaulting to GND
+    Warning (12110): Net "w_ADC_data[15]" is missing source, defaulting to GND
+    Warning (12110): Net "w_ADC_data[14]" is missing source, defaulting to GND
+    Warning (12110): Net "w_ADC_data[13]" is missing source, defaulting to GND
+    Warning (12110): Net "w_ADC_data[12]" is missing source, defaulting to GND
+    Warning (12110): Net "w_ADC_data[11]" is missing source, defaulting to GND
+    Warning (12110): Net "w_ADC_data[10]" is missing source, defaulting to GND
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "w_ADC_data[31]" is missing source, defaulting to GND
+    Warning (12110): Net "w_ADC_data[30]" is missing source, defaulting to GND
+    Warning (12110): Net "w_ADC_data[29]" is missing source, defaulting to GND
+    Warning (12110): Net "w_ADC_data[28]" is missing source, defaulting to GND
+    Warning (12110): Net "w_ADC_data[27]" is missing source, defaulting to GND
+    Warning (12110): Net "w_ADC_data[26]" is missing source, defaulting to GND
+    Warning (12110): Net "w_ADC_data[25]" is missing source, defaulting to GND
+    Warning (12110): Net "w_ADC_data[24]" is missing source, defaulting to GND
+    Warning (12110): Net "w_ADC_data[23]" is missing source, defaulting to GND
+    Warning (12110): Net "w_ADC_data[22]" is missing source, defaulting to GND
+    Warning (12110): Net "w_ADC_data[21]" is missing source, defaulting to GND
+    Warning (12110): Net "w_ADC_data[20]" is missing source, defaulting to GND
+    Warning (12110): Net "w_ADC_data[19]" is missing source, defaulting to GND
+    Warning (12110): Net "w_ADC_data[18]" is missing source, defaulting to GND
+    Warning (12110): Net "w_ADC_data[17]" is missing source, defaulting to GND
+    Warning (12110): Net "w_ADC_data[16]" is missing source, defaulting to GND
+    Warning (12110): Net "w_ADC_data[15]" is missing source, defaulting to GND
+    Warning (12110): Net "w_ADC_data[14]" is missing source, defaulting to GND
+    Warning (12110): Net "w_ADC_data[13]" is missing source, defaulting to GND
+    Warning (12110): Net "w_ADC_data[12]" is missing source, defaulting to GND
+    Warning (12110): Net "w_ADC_data[11]" is missing source, defaulting to GND
+    Warning (12110): Net "w_ADC_data[10]" is missing source, defaulting to GND
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "w_ADC_data[31]" is missing source, defaulting to GND
+    Warning (12110): Net "w_ADC_data[30]" is missing source, defaulting to GND
+    Warning (12110): Net "w_ADC_data[29]" is missing source, defaulting to GND
+    Warning (12110): Net "w_ADC_data[28]" is missing source, defaulting to GND
+    Warning (12110): Net "w_ADC_data[27]" is missing source, defaulting to GND
+    Warning (12110): Net "w_ADC_data[26]" is missing source, defaulting to GND
+    Warning (12110): Net "w_ADC_data[25]" is missing source, defaulting to GND
+    Warning (12110): Net "w_ADC_data[24]" is missing source, defaulting to GND
+    Warning (12110): Net "w_ADC_data[23]" is missing source, defaulting to GND
+    Warning (12110): Net "w_ADC_data[22]" is missing source, defaulting to GND
+    Warning (12110): Net "w_ADC_data[21]" is missing source, defaulting to GND
+    Warning (12110): Net "w_ADC_data[20]" is missing source, defaulting to GND
+    Warning (12110): Net "w_ADC_data[19]" is missing source, defaulting to GND
+    Warning (12110): Net "w_ADC_data[18]" is missing source, defaulting to GND
+    Warning (12110): Net "w_ADC_data[17]" is missing source, defaulting to GND
+    Warning (12110): Net "w_ADC_data[16]" is missing source, defaulting to GND
+    Warning (12110): Net "w_ADC_data[15]" is missing source, defaulting to GND
+    Warning (12110): Net "w_ADC_data[14]" is missing source, defaulting to GND
+    Warning (12110): Net "w_ADC_data[13]" is missing source, defaulting to GND
+    Warning (12110): Net "w_ADC_data[12]" is missing source, defaulting to GND
+    Warning (12110): Net "w_ADC_data[11]" is missing source, defaulting to GND
+    Warning (12110): Net "w_ADC_data[10]" is missing source, defaulting to GND
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "w_ADC_data[31]" is missing source, defaulting to GND
+    Warning (12110): Net "w_ADC_data[30]" is missing source, defaulting to GND
+    Warning (12110): Net "w_ADC_data[29]" is missing source, defaulting to GND
+    Warning (12110): Net "w_ADC_data[28]" is missing source, defaulting to GND
+    Warning (12110): Net "w_ADC_data[27]" is missing source, defaulting to GND
+    Warning (12110): Net "w_ADC_data[26]" is missing source, defaulting to GND
+    Warning (12110): Net "w_ADC_data[25]" is missing source, defaulting to GND
+    Warning (12110): Net "w_ADC_data[24]" is missing source, defaulting to GND
+    Warning (12110): Net "w_ADC_data[23]" is missing source, defaulting to GND
+    Warning (12110): Net "w_ADC_data[22]" is missing source, defaulting to GND
+    Warning (12110): Net "w_ADC_data[21]" is missing source, defaulting to GND
+    Warning (12110): Net "w_ADC_data[20]" is missing source, defaulting to GND
+    Warning (12110): Net "w_ADC_data[19]" is missing source, defaulting to GND
+    Warning (12110): Net "w_ADC_data[18]" is missing source, defaulting to GND
+    Warning (12110): Net "w_ADC_data[17]" is missing source, defaulting to GND
+    Warning (12110): Net "w_ADC_data[16]" is missing source, defaulting to GND
+    Warning (12110): Net "w_ADC_data[15]" is missing source, defaulting to GND
+    Warning (12110): Net "w_ADC_data[14]" is missing source, defaulting to GND
+    Warning (12110): Net "w_ADC_data[13]" is missing source, defaulting to GND
+    Warning (12110): Net "w_ADC_data[12]" is missing source, defaulting to GND
+    Warning (12110): Net "w_ADC_data[11]" is missing source, defaulting to GND
+    Warning (12110): Net "w_ADC_data[10]" is missing source, defaulting to GND
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "w_ADC_data[31]" is missing source, defaulting to GND
+    Warning (12110): Net "w_ADC_data[30]" is missing source, defaulting to GND
+    Warning (12110): Net "w_ADC_data[29]" is missing source, defaulting to GND
+    Warning (12110): Net "w_ADC_data[28]" is missing source, defaulting to GND
+    Warning (12110): Net "w_ADC_data[27]" is missing source, defaulting to GND
+    Warning (12110): Net "w_ADC_data[26]" is missing source, defaulting to GND
+    Warning (12110): Net "w_ADC_data[25]" is missing source, defaulting to GND
+    Warning (12110): Net "w_ADC_data[24]" is missing source, defaulting to GND
+    Warning (12110): Net "w_ADC_data[23]" is missing source, defaulting to GND
+    Warning (12110): Net "w_ADC_data[22]" is missing source, defaulting to GND
+    Warning (12110): Net "w_ADC_data[21]" is missing source, defaulting to GND
+    Warning (12110): Net "w_ADC_data[20]" is missing source, defaulting to GND
+    Warning (12110): Net "w_ADC_data[19]" is missing source, defaulting to GND
+    Warning (12110): Net "w_ADC_data[18]" is missing source, defaulting to GND
+    Warning (12110): Net "w_ADC_data[17]" is missing source, defaulting to GND
+    Warning (12110): Net "w_ADC_data[16]" is missing source, defaulting to GND
+    Warning (12110): Net "w_ADC_data[15]" is missing source, defaulting to GND
+    Warning (12110): Net "w_ADC_data[14]" is missing source, defaulting to GND
+    Warning (12110): Net "w_ADC_data[13]" is missing source, defaulting to GND
+    Warning (12110): Net "w_ADC_data[12]" is missing source, defaulting to GND
+    Warning (12110): Net "w_ADC_data[11]" is missing source, defaulting to GND
+    Warning (12110): Net "w_ADC_data[10]" is missing source, defaulting to GND
+Info (278001): Inferred 4 megafunctions from design logic
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Drive_Clock:Drive_Clock0|Mod2"
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "App_Led:App_Led0|Mod0"
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Drive_Clock:Drive_Clock0|Mod1"
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Drive_Clock:Drive_Clock0|Mod0"
+Info (12130): Elaborated megafunction instantiation "Drive_Clock:Drive_Clock0|lpm_divide:Mod2"
+Info (12133): Instantiated megafunction "Drive_Clock:Drive_Clock0|lpm_divide:Mod2" with the following parameter:
+    Info (12134): Parameter "LPM_WIDTHN" = "32"
+    Info (12134): Parameter "LPM_WIDTHD" = "15"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_lcm.tdf
+    Info (12023): Found entity 1: lpm_divide_lcm
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_bnh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_bnh
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_9af.tdf
+    Info (12023): Found entity 1: alt_u_div_9af
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_7pc.tdf
+    Info (12023): Found entity 1: add_sub_7pc
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_8pc.tdf
+    Info (12023): Found entity 1: add_sub_8pc
+Info (12130): Elaborated megafunction instantiation "App_Led:App_Led0|lpm_divide:Mod0"
+Info (12133): Instantiated megafunction "App_Led:App_Led0|lpm_divide:Mod0" with the following parameter:
+    Info (12134): Parameter "LPM_WIDTHN" = "17"
+    Info (12134): Parameter "LPM_WIDTHD" = "9"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_bbm.tdf
+    Info (12023): Found entity 1: lpm_divide_bbm
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_0mh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_0mh
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_k7f.tdf
+    Info (12023): Found entity 1: alt_u_div_k7f
+Info (12130): Elaborated megafunction instantiation "Drive_Clock:Drive_Clock0|lpm_divide:Mod1"
+Info (12133): Instantiated megafunction "Drive_Clock:Drive_Clock0|lpm_divide:Mod1" with the following parameter:
+    Info (12134): Parameter "LPM_WIDTHN" = "32"
+    Info (12134): Parameter "LPM_WIDTHD" = "5"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_6bm.tdf
+    Info (12023): Found entity 1: lpm_divide_6bm
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_rlh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_rlh
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_77f.tdf
+    Info (12023): Found entity 1: alt_u_div_77f
+Info (12130): Elaborated megafunction instantiation "Drive_Clock:Drive_Clock0|lpm_divide:Mod0"
+Info (12133): Instantiated megafunction "Drive_Clock:Drive_Clock0|lpm_divide:Mod0" with the following parameter:
+    Info (12134): Parameter "LPM_WIDTHN" = "32"
+    Info (12134): Parameter "LPM_WIDTHD" = "29"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_qcm.tdf
+    Info (12023): Found entity 1: lpm_divide_qcm
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_fnh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_fnh
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_iaf.tdf
+    Info (12023): Found entity 1: alt_u_div_iaf
+Warning (12241): 3 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning (13012): Latch Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_start_flag has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|receive_buff_flag
+Warning (13012): Latch Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_buff[8][7] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|receive_buff[1][4]
+Warning (13012): Latch Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_buff[7][7] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|receive_buff[1][4]
+Warning (13012): Latch Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_buff[6][7] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|receive_buff[1][4]
+Warning (13012): Latch Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_buff[5][7] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|receive_buff[1][0]
+Warning (13012): Latch Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_buff[4][7] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|receive_buff[1][2]
+Warning (13012): Latch Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_buff[3][7] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|receive_buff[1][2]
+Warning (13012): Latch Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_buff[2][7] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|receive_buff[1][2]
+Warning (13012): Latch Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_buff[1][7] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|receive_buff[1][7]
+Warning (13012): Latch Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_buff[8][6] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|receive_buff[1][4]
+Warning (13012): Latch Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_buff[7][6] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|receive_buff[1][4]
+Warning (13012): Latch Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_buff[6][6] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|receive_buff[1][4]
+Warning (13012): Latch Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_buff[5][6] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|receive_buff[1][1]
+Warning (13012): Latch Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_buff[4][6] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|receive_buff[1][2]
+Warning (13012): Latch Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_buff[3][6] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|receive_buff[1][2]
+Warning (13012): Latch Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_buff[2][6] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|receive_buff[1][2]
+Warning (13012): Latch Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_buff[1][6] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|receive_buff[1][6]
+Warning (13012): Latch Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_buff[8][5] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|receive_buff[1][4]
+Warning (13012): Latch Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_buff[7][5] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|receive_buff[1][4]
+Warning (13012): Latch Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_buff[6][5] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|receive_buff[1][4]
+Warning (13012): Latch Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_buff[5][5] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|receive_buff[1][0]
+Warning (13012): Latch Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_buff[4][5] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|receive_buff[1][2]
+Warning (13012): Latch Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_buff[3][5] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|receive_buff[1][2]
+Warning (13012): Latch Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_buff[2][5] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|receive_buff[1][2]
+Warning (13012): Latch Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_buff[1][5] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|receive_buff[1][5]
+Warning (13012): Latch Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_buff[8][4] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|receive_buff[1][4]
+Warning (13012): Latch Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_buff[7][4] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|receive_buff[1][4]
+Warning (13012): Latch Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_buff[6][4] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|receive_buff[1][4]
+Warning (13012): Latch Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_buff[5][4] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|receive_buff[1][1]
+Warning (13012): Latch Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_buff[4][4] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|receive_buff[1][2]
+Warning (13012): Latch Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_buff[3][4] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|receive_buff[1][2]
+Warning (13012): Latch Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_buff[2][4] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|receive_buff[1][2]
+Warning (13012): Latch Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_buff[1][4] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|receive_buff[1][4]
+Warning (13012): Latch Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_buff[8][3] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|receive_buff[1][4]
+Warning (13012): Latch Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_buff[7][3] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|receive_buff[1][4]
+Warning (13012): Latch Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_buff[6][3] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|receive_buff[1][4]
+Warning (13012): Latch Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_buff[5][3] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|receive_buff[1][0]
+Warning (13012): Latch Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_buff[4][3] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|receive_buff[1][2]
+Warning (13012): Latch Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_buff[3][3] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|receive_buff[1][2]
+Warning (13012): Latch Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_buff[2][3] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|receive_buff[1][2]
+Warning (13012): Latch Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_buff[1][3] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|receive_buff[1][3]
+Warning (13012): Latch Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_buff[8][2] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|receive_buff[1][4]
+Warning (13012): Latch Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_buff[7][2] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|receive_buff[1][4]
+Warning (13012): Latch Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_buff[6][2] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|receive_buff[1][4]
+Warning (13012): Latch Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_buff[5][2] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|receive_buff[1][1]
+Warning (13012): Latch Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_buff[4][2] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|receive_buff[1][2]
+Warning (13012): Latch Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_buff[3][2] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|receive_buff[1][2]
+Warning (13012): Latch Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_buff[2][2] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|receive_buff[1][2]
+Warning (13012): Latch Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_buff[1][2] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|receive_buff[1][2]
+Warning (13012): Latch Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_buff[8][1] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|receive_buff[1][4]
+Warning (13012): Latch Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_buff[7][1] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|receive_buff[1][4]
+Warning (13012): Latch Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_buff[6][1] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|receive_buff[1][4]
+Warning (13012): Latch Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_buff[5][1] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|receive_buff[1][0]
+Warning (13012): Latch Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_buff[4][1] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|receive_buff[1][1]
+Warning (13012): Latch Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_buff[3][1] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|receive_buff[1][2]
+Warning (13012): Latch Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_buff[2][1] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|receive_buff[1][2]
+Warning (13012): Latch Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_buff[1][1] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|receive_buff[1][4]
+Warning (13012): Latch Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_buff[8][0] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|receive_buff[1][4]
+Warning (13012): Latch Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_buff[7][0] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|receive_buff[1][4]
+Warning (13012): Latch Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_buff[6][0] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|receive_buff[1][4]
+Warning (13012): Latch Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_buff[5][0] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|receive_buff[1][3]
+Warning (13012): Latch Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_buff[4][0] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|receive_buff[1][0]
+Warning (13012): Latch Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_buff[3][0] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|receive_buff[1][2]
+Warning (13012): Latch Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_buff[2][0] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|receive_buff[1][2]
+Warning (13012): Latch Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|send_buff[1][0] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|receive_buff[1][4]
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "out_led_bus[4]" is stuck at GND
+    Warning (13410): Pin "out_ADC_OE" is stuck at GND
+    Warning (13410): Pin "out_ADC_PD" is stuck at GND
+Info (286030): Timing-Driven Synthesis is running
+Info (17049): 1 registers lost all their fanouts during netlist optimizations.
+Info (17016): Found the following redundant logic cells in design
+    Info (17048): Logic cell "App_Led:App_Led0|lpm_divide:Mod0|lpm_divide_bbm:auto_generated|sign_div_unsign_0mh:divider|alt_u_div_k7f:divider|add_sub_16_result_int[0]~0"
+    Info (17048): Logic cell "App_Led:App_Led0|lpm_divide:Mod0|lpm_divide_bbm:auto_generated|sign_div_unsign_0mh:divider|alt_u_div_k7f:divider|add_sub_15_result_int[1]~18"
+    Info (17048): Logic cell "Drive_Clock:Drive_Clock0|lpm_divide:Mod2|lpm_divide_lcm:auto_generated|sign_div_unsign_bnh:divider|alt_u_div_9af:divider|add_sub_17_result_int[1]~28"
+    Info (17048): Logic cell "Drive_Clock:Drive_Clock0|lpm_divide:Mod0|lpm_divide_qcm:auto_generated|sign_div_unsign_fnh:divider|alt_u_div_iaf:divider|add_sub_30_result_int[7]~46"
+    Info (17048): Logic cell "Drive_Clock:Drive_Clock0|lpm_divide:Mod0|lpm_divide_qcm:auto_generated|sign_div_unsign_fnh:divider|alt_u_div_iaf:divider|add_sub_30_result_int[6]~48"
+    Info (17048): Logic cell "Drive_Clock:Drive_Clock0|lpm_divide:Mod0|lpm_divide_qcm:auto_generated|sign_div_unsign_fnh:divider|alt_u_div_iaf:divider|add_sub_30_result_int[5]~50"
+    Info (17048): Logic cell "Drive_Clock:Drive_Clock0|lpm_divide:Mod0|lpm_divide_qcm:auto_generated|sign_div_unsign_fnh:divider|alt_u_div_iaf:divider|add_sub_30_result_int[4]~52"
+    Info (17048): Logic cell "Drive_Clock:Drive_Clock0|lpm_divide:Mod0|lpm_divide_qcm:auto_generated|sign_div_unsign_fnh:divider|alt_u_div_iaf:divider|add_sub_30_result_int[3]~54"
+    Info (17048): Logic cell "Drive_Clock:Drive_Clock0|lpm_divide:Mod0|lpm_divide_qcm:auto_generated|sign_div_unsign_fnh:divider|alt_u_div_iaf:divider|add_sub_30_result_int[2]~56"
+    Info (17048): Logic cell "Drive_Clock:Drive_Clock0|lpm_divide:Mod0|lpm_divide_qcm:auto_generated|sign_div_unsign_fnh:divider|alt_u_div_iaf:divider|add_sub_30_result_int[1]~58"
+    Info (17048): Logic cell "Drive_Clock:Drive_Clock0|lpm_divide:Mod0|lpm_divide_qcm:auto_generated|sign_div_unsign_fnh:divider|alt_u_div_iaf:divider|add_sub_31_result_int[0]~60"
+Info (144001): Generated suppressed messages file C:/Users/asus6/Desktop/fpga/ADC(FPGA)/_01/output_files/Project.map.smsg
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 1 node(s), including 0 DDIO, 1 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 4 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "in_key_bus[1]"
+    Warning (15610): No output dependent on input pin "in_key_bus[2]"
+    Warning (15610): No output dependent on input pin "in_key_bus[3]"
+    Warning (15610): No output dependent on input pin "in_key_bus[4]"
+Info (21057): Implemented 2365 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 18 input pins
+    Info (21059): Implemented 20 output pins
+    Info (21061): Implemented 2326 logic cells
+    Info (21065): Implemented 1 PLLs
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 325 warnings
+    Info: Peak virtual memory: 738 megabytes
+    Info: Processing ended: Tue May 09 16:22:23 2017
+    Info: Elapsed time: 00:00:16
+    Info: Total CPU time (on all processors): 00:00:29
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in C:/Users/asus6/Desktop/fpga/ADC(FPGA)/_01/output_files/Project.map.smsg.
+
+

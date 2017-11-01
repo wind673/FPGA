@@ -1,0 +1,23 @@
+/*******************************(C) COPYRIGHT 2017 Wind（谢玉伸）*********************************/
+/**============================================================================
+* @FileName    : Drive_Clock.v
+* @Description : 时钟文件
+* @Date        : 2017/4/16
+* @By          : Wind（谢玉伸）
+* @Email       : 1659567673@ qq.com
+* @Platform    : Quartus II 15.0 (64-bit) (EP4CE22E22C8)
+* @Explain     : 提供us、ms、s的时钟信号源
+*=============================================================================*/ 
+module Drive_Clock
+(   
+	 input in_clr 
+	 ,input out_clk_us 
+	 ,input out_clk_rx 
+	 
+	 ,output out_tx
+	 
+	 
+	 
+);
+
+

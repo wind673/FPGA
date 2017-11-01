@@ -1,0 +1,293 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'in_clk_50M'
+Slack : -68.001
+TNS   : -531.990
+
+Type  : Slow 1200mV 85C Model Setup 'Drive_Clock:Drive_Clock0|clk_ms'
+Slack : -8.634
+TNS   : -311.943
+
+Type  : Slow 1200mV 85C Model Setup 'in_clr'
+Slack : -7.211
+TNS   : -149.069
+
+Type  : Slow 1200mV 85C Model Setup 'Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|receive_cnt[0]'
+Slack : -5.013
+TNS   : -83.233
+
+Type  : Slow 1200mV 85C Model Setup 'Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|receive_buff[9][0]'
+Slack : -4.610
+TNS   : -4.610
+
+Type  : Slow 1200mV 85C Model Setup 'Drive_Uart_Top:Drive_Uart_Top0|clkdiv:clkdiv|clkout'
+Slack : -3.365
+TNS   : -82.676
+
+Type  : Slow 1200mV 85C Model Hold 'Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|receive_buff[9][0]'
+Slack : -0.424
+TNS   : -0.424
+
+Type  : Slow 1200mV 85C Model Hold 'Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|receive_cnt[0]'
+Slack : -0.004
+TNS   : -0.004
+
+Type  : Slow 1200mV 85C Model Hold 'in_clr'
+Slack : 0.126
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'Drive_Clock:Drive_Clock0|clk_ms'
+Slack : 0.454
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'Drive_Uart_Top:Drive_Uart_Top0|clkdiv:clkdiv|clkout'
+Slack : 0.455
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'in_clk_50M'
+Slack : 0.466
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Recovery 'Drive_Uart_Top:Drive_Uart_Top0|clkdiv:clkdiv|clkout'
+Slack : -1.685
+TNS   : -7.573
+
+Type  : Slow 1200mV 85C Model Recovery 'in_clk_50M'
+Slack : -0.456
+TNS   : -17.559
+
+Type  : Slow 1200mV 85C Model Recovery 'Drive_Clock:Drive_Clock0|clk_ms'
+Slack : -0.443
+TNS   : -0.443
+
+Type  : Slow 1200mV 85C Model Removal 'Drive_Uart_Top:Drive_Uart_Top0|clkdiv:clkdiv|clkout'
+Slack : 0.244
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Removal 'in_clk_50M'
+Slack : 0.272
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Removal 'Drive_Clock:Drive_Clock0|clk_ms'
+Slack : 0.508
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'in_clk_50M'
+Slack : -3.000
+TNS   : -72.889
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'in_clr'
+Slack : -3.000
+TNS   : -6.412
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'Drive_Clock:Drive_Clock0|clk_ms'
+Slack : -1.487
+TNS   : -53.532
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'Drive_Uart_Top:Drive_Uart_Top0|clkdiv:clkdiv|clkout'
+Slack : -1.487
+TNS   : -50.558
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|receive_cnt[0]'
+Slack : 0.396
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|receive_buff[9][0]'
+Slack : 0.428
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Setup 'in_clk_50M'
+Slack : -61.872
+TNS   : -482.572
+
+Type  : Slow 1200mV 0C Model Setup 'Drive_Clock:Drive_Clock0|clk_ms'
+Slack : -7.963
+TNS   : -289.946
+
+Type  : Slow 1200mV 0C Model Setup 'in_clr'
+Slack : -6.351
+TNS   : -133.991
+
+Type  : Slow 1200mV 0C Model Setup 'Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|receive_cnt[0]'
+Slack : -4.820
+TNS   : -75.855
+
+Type  : Slow 1200mV 0C Model Setup 'Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|receive_buff[9][0]'
+Slack : -4.453
+TNS   : -4.453
+
+Type  : Slow 1200mV 0C Model Setup 'Drive_Uart_Top:Drive_Uart_Top0|clkdiv:clkdiv|clkout'
+Slack : -3.091
+TNS   : -75.141
+
+Type  : Slow 1200mV 0C Model Hold 'Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|receive_buff[9][0]'
+Slack : -0.374
+TNS   : -0.374
+
+Type  : Slow 1200mV 0C Model Hold 'in_clr'
+Slack : -0.083
+TNS   : -0.083
+
+Type  : Slow 1200mV 0C Model Hold 'Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|receive_cnt[0]'
+Slack : 0.008
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'Drive_Clock:Drive_Clock0|clk_ms'
+Slack : 0.403
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'Drive_Uart_Top:Drive_Uart_Top0|clkdiv:clkdiv|clkout'
+Slack : 0.403
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'in_clk_50M'
+Slack : 0.417
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Recovery 'Drive_Uart_Top:Drive_Uart_Top0|clkdiv:clkdiv|clkout'
+Slack : -1.361
+TNS   : -5.013
+
+Type  : Slow 1200mV 0C Model Recovery 'in_clk_50M'
+Slack : -0.346
+TNS   : -12.451
+
+Type  : Slow 1200mV 0C Model Recovery 'Drive_Clock:Drive_Clock0|clk_ms'
+Slack : -0.248
+TNS   : -0.248
+
+Type  : Slow 1200mV 0C Model Removal 'Drive_Uart_Top:Drive_Uart_Top0|clkdiv:clkdiv|clkout'
+Slack : 0.363
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Removal 'in_clk_50M'
+Slack : 0.372
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Removal 'Drive_Clock:Drive_Clock0|clk_ms'
+Slack : 0.617
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'in_clk_50M'
+Slack : -3.000
+TNS   : -72.889
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'in_clr'
+Slack : -3.000
+TNS   : -6.041
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'Drive_Clock:Drive_Clock0|clk_ms'
+Slack : -1.487
+TNS   : -54.844
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'Drive_Uart_Top:Drive_Uart_Top0|clkdiv:clkdiv|clkout'
+Slack : -1.487
+TNS   : -50.558
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|receive_cnt[0]'
+Slack : 0.339
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|receive_buff[9][0]'
+Slack : 0.354
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'in_clk_50M'
+Slack : -29.278
+TNS   : -208.015
+
+Type  : Fast 1200mV 0C Model Setup 'in_clr'
+Slack : -3.205
+TNS   : -62.295
+
+Type  : Fast 1200mV 0C Model Setup 'Drive_Clock:Drive_Clock0|clk_ms'
+Slack : -3.148
+TNS   : -110.802
+
+Type  : Fast 1200mV 0C Model Setup 'Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|receive_cnt[0]'
+Slack : -1.871
+TNS   : -27.325
+
+Type  : Fast 1200mV 0C Model Setup 'Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|receive_buff[9][0]'
+Slack : -1.704
+TNS   : -1.704
+
+Type  : Fast 1200mV 0C Model Setup 'Drive_Uart_Top:Drive_Uart_Top0|clkdiv:clkdiv|clkout'
+Slack : -0.986
+TNS   : -17.407
+
+Type  : Fast 1200mV 0C Model Hold 'Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|receive_buff[9][0]'
+Slack : -0.195
+TNS   : -0.195
+
+Type  : Fast 1200mV 0C Model Hold 'Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|receive_cnt[0]'
+Slack : -0.021
+TNS   : -0.021
+
+Type  : Fast 1200mV 0C Model Hold 'Drive_Clock:Drive_Clock0|clk_ms'
+Slack : 0.028
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'in_clr'
+Slack : 0.068
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'in_clk_50M'
+Slack : 0.108
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'Drive_Uart_Top:Drive_Uart_Top0|clkdiv:clkdiv|clkout'
+Slack : 0.187
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Recovery 'Drive_Uart_Top:Drive_Uart_Top0|clkdiv:clkdiv|clkout'
+Slack : -1.041
+TNS   : -7.504
+
+Type  : Fast 1200mV 0C Model Recovery 'Drive_Clock:Drive_Clock0|clk_ms'
+Slack : -0.459
+TNS   : -0.459
+
+Type  : Fast 1200mV 0C Model Recovery 'in_clk_50M'
+Slack : -0.366
+TNS   : -14.852
+
+Type  : Fast 1200mV 0C Model Removal 'in_clk_50M'
+Slack : -0.052
+TNS   : -0.113
+
+Type  : Fast 1200mV 0C Model Removal 'Drive_Uart_Top:Drive_Uart_Top0|clkdiv:clkdiv|clkout'
+Slack : -0.014
+TNS   : -0.042
+
+Type  : Fast 1200mV 0C Model Removal 'Drive_Clock:Drive_Clock0|clk_ms'
+Slack : 0.049
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'in_clk_50M'
+Slack : -3.000
+TNS   : -52.734
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'in_clr'
+Slack : -3.000
+TNS   : -4.210
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'Drive_Clock:Drive_Clock0|clk_ms'
+Slack : -1.000
+TNS   : -36.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'Drive_Uart_Top:Drive_Uart_Top0|clkdiv:clkdiv|clkout'
+Slack : -1.000
+TNS   : -34.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|receive_buff[9][0]'
+Slack : 0.390
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'Drive_Uart_Top:Drive_Uart_Top0|Drive_Uart_Buff:Drive_Uart_Buff|receive_cnt[0]'
+Slack : 0.390
+TNS   : 0.000
+
+------------------------------------------------------------

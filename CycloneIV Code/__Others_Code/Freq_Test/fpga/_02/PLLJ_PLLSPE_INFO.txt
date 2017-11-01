@@ -1,0 +1,5 @@
+PLL_Name	signal_low:signal_low|pll_100mhz:comb_3|altpll:altpll_component|pll_100mhz_altpll:auto_generated|pll1
+PLLJITTER	30
+PLLSPEmax	84
+PLLSPEmin	-53
+

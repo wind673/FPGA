@@ -1,0 +1,54 @@
+|Interface
+clk_50M => clk_50M.IN1
+clr => ~NO_FANOUT~
+led[0] << <GND>
+led[1] << <GND>
+led[2] << <GND>
+led[3] << <GND>
+
+
+|Interface|Clock:Drive_Clock
+in_clk_50M => clk_s.CLK
+in_clk_50M => clk_ms.CLK
+in_clk_50M => clk_us.CLK
+in_clk_50M => time_20ns[0].CLK
+in_clk_50M => time_20ns[1].CLK
+in_clk_50M => time_20ns[2].CLK
+in_clk_50M => time_20ns[3].CLK
+in_clk_50M => time_20ns[4].CLK
+in_clk_50M => time_20ns[5].CLK
+in_clk_50M => time_20ns[6].CLK
+in_clk_50M => time_20ns[7].CLK
+in_clk_50M => time_20ns[8].CLK
+in_clk_50M => time_20ns[9].CLK
+in_clk_50M => time_20ns[10].CLK
+in_clk_50M => time_20ns[11].CLK
+in_clk_50M => time_20ns[12].CLK
+in_clk_50M => time_20ns[13].CLK
+in_clk_50M => time_20ns[14].CLK
+in_clk_50M => time_20ns[15].CLK
+in_clk_50M => time_20ns[16].CLK
+in_clk_50M => time_20ns[17].CLK
+in_clk_50M => time_20ns[18].CLK
+in_clk_50M => time_20ns[19].CLK
+in_clk_50M => time_20ns[20].CLK
+in_clk_50M => time_20ns[21].CLK
+in_clk_50M => time_20ns[22].CLK
+in_clk_50M => time_20ns[23].CLK
+in_clk_50M => time_20ns[24].CLK
+in_clk_50M => time_20ns[25].CLK
+in_clk_50M => time_20ns[26].CLK
+in_clk_50M => time_20ns[27].CLK
+in_clk_50M => time_20ns[28].CLK
+in_clk_50M => time_20ns[29].CLK
+in_clk_50M => time_20ns[30].CLK
+in_clk_50M => time_20ns[31].CLK
+out_clk_us <= clk_us.DB_MAX_OUTPUT_PORT_TYPE
+out_clk_ms <= clk_ms.DB_MAX_OUTPUT_PORT_TYPE
+out_clk_s <= clk_s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Interface|Led:App_Led
+in_clk_ms => ~NO_FANOUT~
+
+

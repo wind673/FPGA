@@ -1,0 +1,12 @@
+vendor_name = ModelSim
+source_file = 1, E:/_10_EnglishPath/_05_CycloneIV Code/_01_Test/_01_Interface/Interface.v
+source_file = 1, E:/_10_EnglishPath/_05_CycloneIV Code/_01_Test/_02_Drive/Clock.v
+source_file = 1, E:/_10_EnglishPath/_05_CycloneIV Code/_01_Test/_03_App/Led.v
+source_file = 1, E:/_10_EnglishPath/_05_CycloneIV Code/_01_Test/db/Project.cbx.xml
+design_name = \Interface 
+instance = comp, \led[0]~output , led[0]~output, \Interface , 1
+instance = comp, \led[1]~output , led[1]~output, \Interface , 1
+instance = comp, \led[2]~output , led[2]~output, \Interface , 1
+instance = comp, \led[3]~output , led[3]~output, \Interface , 1
+instance = comp, \clk_50M~input , clk_50M~input, \Interface , 1
+instance = comp, \clr~input , clr~input, \Interface , 1

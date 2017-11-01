@@ -1,0 +1,16 @@
+Fitter Status : Successful - Fri Oct 28 22:24:44 2016
+Quartus II 64-Bit Version : 15.0.1 Build 150 06/03/2015 SJ Full Version
+Revision Name : NixieTube
+Top-level Entity Name : Interface
+Family : Cyclone IV E
+Device : EP4CE15F23C8
+Timing Models : Final
+Total logic elements : 1,947 / 15,408 ( 13 % )
+    Total combinational functions : 1,946 / 15,408 ( 13 % )
+    Dedicated logic registers : 69 / 15,408 ( < 1 % )
+Total registers : 69
+Total pins : 15 / 344 ( 4 % )
+Total virtual pins : 0
+Total memory bits : 0 / 516,096 ( 0 % )
+Embedded Multiplier 9-bit elements : 0 / 112 ( 0 % )
+Total PLLs : 0 / 4 ( 0 % )

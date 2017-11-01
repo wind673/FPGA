@@ -1,0 +1,19 @@
+module signal_low (clk_50mhz,signal,cnt);
+
+input clk_50mhz;
+input signal;
+output [31:0] cnt;
+
+wire clk_hz;
+count_hz U1(
+.clk_50mhz(clk_50mhz),
+.clr(),
+.clk_hz(clk_hz)
+);
+
+counter U2(
+.clk_hz(clk_hz),
+.signal(signal),
+.cnt(cnt)
+);
+endmodule

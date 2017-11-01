@@ -1,0 +1,185 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'in_clk_50M'
+Slack : -74.231
+TNS   : -565.312
+
+Type  : Slow 1200mV 85C Model Setup 'Drive_Clock:Drive_Clock0|clk_us'
+Slack : -8.435
+TNS   : -830.520
+
+Type  : Slow 1200mV 85C Model Setup 'Drive_Clock:Drive_Clock0|clk_ms'
+Slack : -7.036
+TNS   : -57.858
+
+Type  : Slow 1200mV 85C Model Setup 'Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Bsp:Drive_Usart_Bsp|out_receive_update'
+Slack : -4.635
+TNS   : -252.192
+
+Type  : Slow 1200mV 85C Model Setup 'Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|receive_buff[1][0]'
+Slack : -3.610
+TNS   : -167.215
+
+Type  : Slow 1200mV 85C Model Hold 'Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|receive_buff[1][0]'
+Slack : -0.356
+TNS   : -5.824
+
+Type  : Slow 1200mV 85C Model Hold 'in_clk_50M'
+Slack : 0.446
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'Drive_Clock:Drive_Clock0|clk_us'
+Slack : 0.453
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Bsp:Drive_Usart_Bsp|out_receive_update'
+Slack : 0.453
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'Drive_Clock:Drive_Clock0|clk_ms'
+Slack : 0.455
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'in_clk_50M'
+Slack : -3.000
+TNS   : -49.097
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'Drive_Clock:Drive_Clock0|clk_us'
+Slack : -1.487
+TNS   : -240.894
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Bsp:Drive_Usart_Bsp|out_receive_update'
+Slack : -1.487
+TNS   : -111.525
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'Drive_Clock:Drive_Clock0|clk_ms'
+Slack : -1.487
+TNS   : -14.870
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|receive_buff[1][0]'
+Slack : 0.335
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Setup 'in_clk_50M'
+Slack : -67.923
+TNS   : -513.236
+
+Type  : Slow 1200mV 0C Model Setup 'Drive_Clock:Drive_Clock0|clk_us'
+Slack : -7.893
+TNS   : -763.665
+
+Type  : Slow 1200mV 0C Model Setup 'Drive_Clock:Drive_Clock0|clk_ms'
+Slack : -6.294
+TNS   : -51.786
+
+Type  : Slow 1200mV 0C Model Setup 'Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Bsp:Drive_Usart_Bsp|out_receive_update'
+Slack : -4.176
+TNS   : -231.489
+
+Type  : Slow 1200mV 0C Model Setup 'Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|receive_buff[1][0]'
+Slack : -3.383
+TNS   : -172.058
+
+Type  : Slow 1200mV 0C Model Hold 'Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|receive_buff[1][0]'
+Slack : -0.340
+TNS   : -5.826
+
+Type  : Slow 1200mV 0C Model Hold 'in_clk_50M'
+Slack : 0.399
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'Drive_Clock:Drive_Clock0|clk_ms'
+Slack : 0.402
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'Drive_Clock:Drive_Clock0|clk_us'
+Slack : 0.403
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Bsp:Drive_Usart_Bsp|out_receive_update'
+Slack : 0.403
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'in_clk_50M'
+Slack : -3.000
+TNS   : -49.097
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'Drive_Clock:Drive_Clock0|clk_us'
+Slack : -1.487
+TNS   : -240.894
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Bsp:Drive_Usart_Bsp|out_receive_update'
+Slack : -1.487
+TNS   : -111.525
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'Drive_Clock:Drive_Clock0|clk_ms'
+Slack : -1.487
+TNS   : -14.870
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|receive_buff[1][0]'
+Slack : 0.139
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'in_clk_50M'
+Slack : -30.853
+TNS   : -230.463
+
+Type  : Fast 1200mV 0C Model Setup 'Drive_Clock:Drive_Clock0|clk_us'
+Slack : -3.138
+TNS   : -268.413
+
+Type  : Fast 1200mV 0C Model Setup 'Drive_Clock:Drive_Clock0|clk_ms'
+Slack : -2.410
+TNS   : -19.118
+
+Type  : Fast 1200mV 0C Model Setup 'Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Bsp:Drive_Usart_Bsp|out_receive_update'
+Slack : -1.492
+TNS   : -64.622
+
+Type  : Fast 1200mV 0C Model Setup 'Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|receive_buff[1][0]'
+Slack : -1.183
+TNS   : -43.126
+
+Type  : Fast 1200mV 0C Model Hold 'Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|receive_buff[1][0]'
+Slack : -0.166
+TNS   : -2.268
+
+Type  : Fast 1200mV 0C Model Hold 'in_clk_50M'
+Slack : 0.181
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'Drive_Clock:Drive_Clock0|clk_ms'
+Slack : 0.186
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'Drive_Clock:Drive_Clock0|clk_us'
+Slack : 0.186
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Bsp:Drive_Usart_Bsp|out_receive_update'
+Slack : 0.186
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'in_clk_50M'
+Slack : -3.000
+TNS   : -35.859
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'Drive_Clock:Drive_Clock0|clk_us'
+Slack : -1.000
+TNS   : -162.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Bsp:Drive_Usart_Bsp|out_receive_update'
+Slack : -1.000
+TNS   : -75.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'Drive_Clock:Drive_Clock0|clk_ms'
+Slack : -1.000
+TNS   : -10.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'Drive_Usart_Top:Drive_Usart_Top|Drive_Usart_Handle:Drive_Usart_Handle|receive_buff[1][0]'
+Slack : 0.327
+TNS   : 0.000
+
+------------------------------------------------------------

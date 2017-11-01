@@ -1,0 +1,52 @@
+m255
+K3
+13
+cModel Technology
+Z0 dE:\_13_EnglishPath\_01_AX515_Code\01(LED)\_02\simulation\modelsim
+T_opt
+VS>WVCD`Hak_6j8IY9F^nX2
+04 8 4 work LED_Test fast 0
+=1-40f02fe37686-57d7d8c7-130-4b44
+o-quiet -auto_acc_if_foreign -work work -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work +acc
+n@_opt
+OL;O;10.1c;51
+vLED
+IaLU6FBabP?=c=`UJJ<j?l1
+VI;m]OX=VW8EGJUS=HaFna0
+Z1 dE:\_13_EnglishPath\_01_AX515_Code\01(LED)\_02\simulation\modelsim
+w1473758973
+8E:/_13_EnglishPath/_01_AX515_Code/01(LED)/_02/LED.v
+FE:/_13_EnglishPath/_01_AX515_Code/01(LED)/_02/LED.v
+L0 3
+Z2 OL;L;10.1c;51
+r1
+31
+Z3 o-vlog01compat -work work -L mtiAvm -L mtiOvm -L mtiUvm -L mtiUPF
+n@l@e@d
+Z4 !s92 -vlog01compat -work work +incdir+E:/_13_EnglishPath/_01_AX515_Code/01(LED)/_02 -L mtiAvm -L mtiOvm -L mtiUvm -L mtiUPF
+!i10b 1
+!s100 M`SGEabBjk0XT3MzC6`K:3
+!s85 0
+!s108 1473763525.931000
+!s107 E:/_13_EnglishPath/_01_AX515_Code/01(LED)/_02/LED.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/_13_EnglishPath/_01_AX515_Code/01(LED)/_02|E:/_13_EnglishPath/_01_AX515_Code/01(LED)/_02/LED.v|
+vLED_Test
+IlHl=<eCbdzOR>]947=c:O3
+VQQz:1h:LPaWBf>lMiNkIC0
+R1
+w1473762951
+8E:/_13_EnglishPath/_01_AX515_Code/01(LED)/_02/LED_Test.v
+FE:/_13_EnglishPath/_01_AX515_Code/01(LED)/_02/LED_Test.v
+L0 2
+R2
+r1
+31
+R3
+R4
+n@l@e@d_@test
+!i10b 1
+!s100 `LZ4Kh6F8R;i0P4IX8A]02
+!s85 0
+!s108 1473763526.431000
+!s107 E:/_13_EnglishPath/_01_AX515_Code/01(LED)/_02/LED_Test.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/_13_EnglishPath/_01_AX515_Code/01(LED)/_02|E:/_13_EnglishPath/_01_AX515_Code/01(LED)/_02/LED_Test.v|

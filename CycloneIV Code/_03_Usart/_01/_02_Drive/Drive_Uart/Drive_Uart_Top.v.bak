@@ -1,0 +1,63 @@
+/*******************************(C) COPYRIGHT 2017 Wind（谢玉伸）*********************************/
+/**============================================================================
+* @FileName    : Drive_Uart_Top.v
+* @Description : Led灯
+* @Date        : 2017/4/16
+* @By          : Wind（谢玉伸）
+* @Email       : 1659567673@ qq.com
+* @Platform    : Quartus II 15.0 (64-bit) (EP4CE22E22C8)
+* @Explain     : Led的应用程序
+*=============================================================================*/ 
+
+module Drive_Uart_Top(clk,,rst_n,rs232_rx,rs232_tx,led);
+ input clk;    //时钟信号50M
+ input rst_n;   //复位信号,低有效
+ input rs232_rx;  //数据输入信号
+ output rs232_tx;  //数据输出信号
+ output [7:0] led;
+ 
+ wire bps_start1,bps_start2;//
+ wire clk_bps1,clk_bps2;
+ wire [7:0] rx_data;   //接收数据存储器,用来存储接收到的数据,直到下一个数据接收
+ wire rx_int;     //接收数据中断信号,接收过程中一直为高,
+ 
+///////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////子模块端口申明///////////////////////////////////
+speed_select_rx     speed_rx(   //数据接收波特率选择模块
+         .clk(clk),
+         .rst_n(rst_n),
+         .bps_start(bps_start1),
+         .clk_bps(clk_bps1)
+         );
+        
+uart_rx    uart_rx(    //数据接收模块
+         .clk(clk),
+         .rst_n(rst_n),
+         .bps_start(bps_start1),
+         .clk_bps(clk_bps1),
+         .rs232_rx(rs232_rx),
+         .rx_data(rx_data),
+         .rx_int(rx_int),
+         .led(led)
+        );
+speed_select_tx  speed_tx(   //数据发送波特率控制模块
+         .clk(clk),
+         .rst_n(rst_n),
+         .bps_start(bps_start2),
+         .clk_bps(clk_bps2)         
+         );
+         
+uart_tx    uart_tx(
+         .clk(clk),
+         .rst_n(rst_n),
+         .bps_start(bps_start2),
+         .clk_bps(clk_bps2),
+         .rs232_tx(rs232_tx),
+         .rx_data(rx_data),
+         .rx_int(rx_int)        
+        );
+		  
+endmodule
+
+
+

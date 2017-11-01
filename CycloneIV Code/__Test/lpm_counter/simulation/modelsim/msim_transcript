@@ -1,0 +1,33 @@
+# Reading D:/altera/12.1/modelsim_ase/tcl/vsim/pref.tcl 
+# do counter_run_msim_rtl_verilog.do 
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Copying d:\altera\12.1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# ** Warning: Copied d:\altera\12.1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
+#          Updated modelsim.ini.
+# 
+# vlog -vlog01compat -work work +incdir+E:/_13_EnglishPath/_01_AX515_Code/__Test/lpm_counter {E:/_13_EnglishPath/_01_AX515_Code/__Test/lpm_counter/lpm_counter0.v}
+# Model Technology ModelSim ALTERA vlog 10.1b Compiler 2012.04 Apr 27 2012
+# -- Compiling module lpm_counter0
+# 
+# Top level modules:
+# 	lpm_counter0
+# 
+vsim stratixiigx.stratixiigx_and1
+# vsim stratixiigx.stratixiigx_and1 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.vital_timing(body)
+# Loading ieee.vital_primitives(body)
+# Loading stratixiigx.stratixiigx_atom_pack(body)
+# Loading stratixiigx.stratixiigx_and1(altvital)
+# bad window path name ".main_pane.source.interior.cs.body.editor.cs.panedWindow.f1.frame.paned.f0.frame.sw.tf.text"
+add wave -position insertpoint  \
+sim:/vital_primitives/DefSchedAnd.Glch1
+# (vish-4014) No objects found matching 'sim:/vital_primitives/DefSchedAnd.Glch1'.
+# window name "hteSearch" already exists in parent

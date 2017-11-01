@@ -1,0 +1,89 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'in_clk_50M'
+Slack : -64.546
+TNS   : -520.450
+
+Type  : Slow 1200mV 85C Model Setup 'Drive_Clock:Drive_Clock0|clk_ms'
+Slack : -7.323
+TNS   : -60.933
+
+Type  : Slow 1200mV 85C Model Hold 'in_clk_50M'
+Slack : 0.446
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'Drive_Clock:Drive_Clock0|clk_ms'
+Slack : 0.455
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'in_clk_50M'
+Slack : -3.000
+TNS   : -72.889
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'Drive_Clock:Drive_Clock0|clk_ms'
+Slack : -1.487
+TNS   : -14.870
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'Drive_Uart_Top:Drive_Uart_Top0|clkdiv:clkdiv|clkout'
+Slack : -1.487
+TNS   : -1.487
+
+Type  : Slow 1200mV 0C Model Setup 'in_clk_50M'
+Slack : -58.743
+TNS   : -472.381
+
+Type  : Slow 1200mV 0C Model Setup 'Drive_Clock:Drive_Clock0|clk_ms'
+Slack : -6.559
+TNS   : -54.685
+
+Type  : Slow 1200mV 0C Model Hold 'in_clk_50M'
+Slack : 0.399
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'Drive_Clock:Drive_Clock0|clk_ms'
+Slack : 0.403
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'in_clk_50M'
+Slack : -3.000
+TNS   : -72.889
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'Drive_Clock:Drive_Clock0|clk_ms'
+Slack : -1.487
+TNS   : -14.885
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'Drive_Uart_Top:Drive_Uart_Top0|clkdiv:clkdiv|clkout'
+Slack : -1.487
+TNS   : -1.487
+
+Type  : Fast 1200mV 0C Model Setup 'in_clk_50M'
+Slack : -27.733
+TNS   : -205.332
+
+Type  : Fast 1200mV 0C Model Setup 'Drive_Clock:Drive_Clock0|clk_ms'
+Slack : -2.556
+TNS   : -20.410
+
+Type  : Fast 1200mV 0C Model Hold 'in_clk_50M'
+Slack : 0.090
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'Drive_Clock:Drive_Clock0|clk_ms'
+Slack : 0.186
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'in_clk_50M'
+Slack : -3.000
+TNS   : -52.761
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'Drive_Clock:Drive_Clock0|clk_ms'
+Slack : -1.000
+TNS   : -10.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'Drive_Uart_Top:Drive_Uart_Top0|clkdiv:clkdiv|clkout'
+Slack : -1.000
+TNS   : -1.000
+
+------------------------------------------------------------

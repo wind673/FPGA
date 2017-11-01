@@ -1,0 +1,48 @@
+/*******************************(C) COPYRIGHT 2016 Wind（谢玉伸）*********************************/
+/**============================================================================
+* @FileName    : TrafficLight.v
+* @Description : 交通灯
+* @Date        : 2016/10/27
+* @By          : Wind（谢玉伸）
+* @Email       : 1659567673@ qq.com
+* @Platform    : Quartus II 15.0 (64-bit) (EP4CE15F23C8)
+* @Explain     : None
+*=============================================================================*/ 
+module TrafficLight
+(
+	input in_clk_s,    
+	output [23:0]out_ShowData;
+);
+
+reg [23:0]ShowData; 
+ 
+
+always @(clk_s)
+begin  
+	 Show_Data = clk_s%10000;	
+ 
+	 
+end 
+
+
+/* 连接输出 ---------------------------*/ 
+assign out_ShowData = ShowData; 
+ 
+ 
+ 
+endmodule
+/*******************************(C) COPYRIGHT 2016 Wind（谢玉伸）*********************************/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
